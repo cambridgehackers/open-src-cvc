@@ -131,12 +131,17 @@ cvc64:	$(MAINOBJ) $(OBJS) hexasm cvclib_str.o exe_main_str.o
 
 # hexasm just takes an object file and dumps it as a long value array
 # create the object files and then create the .s files
-hexasm:	hexasm.o exe_main.o 
-	$(LD) --relocatable -o cvclib.o $(RT_OBJS) 
-	hexasm cvclib.o __cvclib 8 > cvclib_str.s
-	hexasm exe_main.o __exe_main 8 > exe_main_str.s
 
-hexasm.o:
+cvclib.o: $(RT_OBJS)
+	$(LD) --relocatable -o cvclib.o $(RT_OBJS) 
+
+cvclib_str.s: hexasm cvclib.o
+	./hexasm cvclib.o __cvclib 8 > cvclib_str.s
+
+exe_main_str.s: hexasm exe_main.o
+	./hexasm exe_main.o __exe_main 8 > exe_main_str.s
+
+hexasm:
 	$(CC) hexasm.c -o hexasm
 
 
