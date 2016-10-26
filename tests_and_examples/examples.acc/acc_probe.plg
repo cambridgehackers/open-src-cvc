@@ -1,0 +1,69 @@
+** now 0 assign          x to param 1
+** now 0 assign          x to param 2
+** now 0 assign          x to param 3
+now 10 parameter 1 (name is a) changed
+** now 10 assign          3 to param 1
+now 10 parameter 3 (name is c) changed
+** now 10 assign          1 to param 3
+For time 5
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          x
+now 20 parameter 2 (name is b) changed
+** now 20 assign          3 to param 2
+now 20 parameter 3 (name is c) changed
+** now 20 assign          2 to param 3
+For time 10
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          1
+now 30 parameter 3 (name is c) changed
+** now 30 assign          3 to param 3
+For time 15
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          1
+now 40 parameter 1 (name is a) changed
+** now 40 assign         33 to param 1
+now 40 parameter 3 (name is c) changed
+** now 40 assign          9 to param 3
+For time 20
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          2
+now 50 parameter 2 (name is b) changed
+** now 50 assign         44 to param 2
+now 50 parameter 3 (name is c) changed
+** now 50 assign         22 to param 3
+For time 25
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          2
+now 60 parameter 1 (name is a) changed
+** now 60 assign         30 to param 1
+now 70 parameter 1 (name is a) changed
+** now 70 assign         50 to param 1
+now 70 parameter 2 (name is b) changed
+** now 70 assign        200 to param 2
+now 70 parameter 3 (name is c) changed
+** now 70 assign          0 to param 3
+For time 35
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          3
+now 80 parameter 3 (name is c) changed
+** now 80 assign         99 to param 3
+For time 40
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =          9
+now 90 parameter 2 (name is b) changed
+** now 90 assign         90 to param 2
+now 100 parameter 2 (name is b) changed
+** now 100 assign         11 to param 2
+now 100 parameter 3 (name is c) changed
+** now 100 assign         19 to param 3
+For time 50
+    value of parameter 1 = 
+    value of parameter 2 = 
+    value of parameter 3 =         22

@@ -1,0 +1,446 @@
+
+///////////////////////////////////////////////////////////////////////////
+  CVC COVERAGE - NEW TOGGLE COVER ALGORITHM AND TGLDAT FILE DOCUMENTATION
+///////////////////////////////////////////////////////////////////////////
+
+  CVC has a new improved net toggle coverage feature with better
+and more concise untoggle coverage report format and a simpler .tgldat
+format for merging toggle results from multiple runs.
+
+  Full per instance wire toggle coverage is now supported with exclude by
+instance tree path, net and bits of nets using the -optconfigfile statement
+{cover_toggle} properties.  The algorithm for design section specific
+toggle coverage uses the same -optconfigfile mechanism as PLI access
+control and +xprop.
+
+  CVC also continues to support less use event and statement execution
+coverage (see the last two sections of this document).
+
+  Use the "cvc -h" option for detailed explanations of all the coverage
+options in CVC.
+
+  In this document the name of the cvc program is used for both 32 bit cvc
+and 64 bit cvc64.
+
+===============================================================================
+                             TOGGLE COVERAGE 
+===============================================================================
+
+  Toggle coverage reports untoggled nets for each bit of a net when the bit
+does not switch from 0->1 or 1->0.  No "extended" toggles of X/Z are reported;
+X/Z transitions are ignored.  All toggles are checked for at end of each time
+queue cycle, so intra cycle changes are not counted as toggled.  Toggle
+coverage can be controlled to specific instance tree locations using
+the -optconfigfile toggle statements.
+
+  Individual bits of wires can be excluded (then maybe re-included) from
+the report file including untoggled nets by bit and by instance with totals.
+The new concise toggle report mechanism separates toggle reporting from
+toggle recording.   A untoggled report can be specified using the
+-optoncfigfile to only report untoggled nets from a particular subtree
+of a design or even for a particular individual net in a particular instance.
+
+  The report options do not do anything unless either -toggle is used to turn
+on toggling for an entire design (then toggle coverage recording can be
+turned off for some parts of the design) or -optconfigfile {cover_toggle}
+property statements are used to turn on toggle recording and reporting. 
+
+   There are also 4 new Verilog system tasks that control toggle coverage
+recording.  See the "TURNING TOGGLE COVERAGE ON AND OFF DURING ONE
+SIMULATION RUN" section below for detailed descriptions.
+
+##############################
+ NEW CVC TOGGLE REPORT OPTIONS
+##############################
+
+   -untoggled_report_concise 
+	    New option that only prints untoggled bits
+            in as concise a form as possible with minimal coverage
+            statistics.  If this option is selected, these older toggle
+            report options are ignored.
+
+   -driven_const_report_concise
+	    Output a report per instance and per bit
+            of wires directly driven by one constant driver or through a
+            a chain of wires driven by one constant driver.  Report will
+            not be written unless the -mark_driven_const_wires_toggled
+            option is selected.  Option causes older toggle report options
+            to be ignored.
+
+   -mark_driven_const_wires_toggled 
+	    New option that marks all wire bits
+            driven either directly by one constant driver or through a
+            chain of constant drivers.  All bits driven by constants are
+            changed to toggled just before reports are generated or
+            the .tvcd file is written.  New -driven_const_report_concise
+            prints a per instance and per bit report of driven by constants
+            wires that have toggle coverage turned on (i.e. not turned off
+            by a -optconfigfile statement).
+
+            If -optconfigfile is used to select a section of a design for
+            toggle coverage, ports on the other side the section or excluded
+            nets will never be driven const.
+
+#############################
+ UNCHANGED TOGGLE CVC OPTIONS 
+#############################
+
+  Toggle coverage is similar to the other two coverage styles, but also allows
+the ability to create files which contain the toggle vectors.   The following
+toggle options are supported:
+   
+   -toggle  
+	    Turn on toggle coverage for an entire design and create a 
+            coverage report to a file named 'cvc.toggle' by default.
+
+   -toggle_file [file name] 
+	    Turn on toggle coverage for an entire design
+            and print report to a specific file [file name].
+
+  There are two ways to control toggle coverage when toggle reports
+and output .tgldat files are needed for only part of a design.  Easiest is
+to turn on toggle coverage with the -optconfig file statement {cover_toggle}
+properties.  Another way is to use the -toggle option and then turn off
+design parts with the -optconfig exclude statements.  The -toggle_file
+option sets the name of the output toggle coverage report, but does not
+turn on toggle coverage.
+
+##################
+ TVCD FILE REMOVED
+##################
+
+  The old .tvcd file format that used a format similar to dumpvars VCD file
+format has been removed.  It could not work with instance tree net and
+instance specific -optconfigfile including and excluding toggle recording.
+It produced toggle coverage (uncovered nets mostly) reports with too much
+missing design information.  The feature has been replaced with new .tgldat
+file that can be input (using -set_toggled_from_file [file name] options)
+to initialize net bits that were toggled in previous runs and the
+one -write_toggle_data option writes to default verilog.tgldat
+(unless -write_toggle_data_file [file name] is used to change it). 
+
+  The release files coverage/src directory has some simple c programs to
+check that the format of a .tgldat file is correct and to convert old
+style .tvcd (dumpvars like) files to new .tgldat format.
+
+##########################################
+ SAVING TGLDAT RECORDED TOGGLE INFORMATION
+##########################################
+
+  It is useful to merge multiple toggle coverage files across multiple 
+simulations to provide total coverage for a design and its complete
+regression test suite.  Use the -write_toggle_data to write recorded
+toggle information to the default file "verilog.tgldat" and
+-write_toggle_data_file [file name] option to write recorded toggle data
+to file [file name].
+
+  The -untoggled_report_concise report option can be used with the
+-set_toggled_from_file [file name] option to generate a toggle coverage
+report for a previously written .tgldat file by using the -s ($stop
+just before simulation begins) with the +interp to select the interpreter
+and the "-i finish.inp" (input to interactive mode file finish.inp) options.
+The finish.inp file should only contain "$finish;".
+Merging .tgldat recorded toggle results into a report is accomplished by
+using multiple -set_toggled_from_file options then using the
+-write_toggle_data_file to output the new merged plus results of
+simulation (unless the -s option is used).
+
+###################
+ TGLDAT FILE FORMAT
+###################
+
+  The new .tgldat file format is a simple ascii format consisting of
+the fully qualified and hierarchical path name to each net in the toggle
+covered part of a design (or entire design) followed by a set bracket
+surrounded 0->1 list and a set bracket surrounded 1->0 toggle list.
+The following is the .tgldat line for a scalar net.  Notice each entry
+ends with semicolon.
+
+testbench.c1.f1.clk {1} {1};
+
+
+  Here is the .tgldat line for a short vector up to 32 bits (fits on one line): 
+
+testbench.c1.f1.component1.GCB1.carry {1,1,1,1,1,1,1,1} {1,1,1,1,1,1,1,1};
+
+
+  For a vector wider than 32 bits, 3 lines are used.  One for the fully
+qualified hierarchical reference, one for the 0->1 vector, and one for
+the 1->0 toggle vector:
+
+testbench.c1.accumulator
+{0,1,1,1,1,1,1,1,1,1,1,1,1,1, ... }
+{0,1,1,1,1,1,1,1,1,1,1,1,1,1, ... };
+
+  Bit order always internal to Verilog normalized bit order 
+{[high bit], ... , [0th bit]} 
+
+  For a net [1:5] order is {[bit 1 tgl], [bit 2], [bit 3], [bit 4], [bit 5]}
+
+  Line comments that have // as the first two characters of the line are
+allowed and ignored. 
+
+  Two optional special comments are allowed, but not required.  CVC writes
+them when it outputs a .tgldat file.
+
+//writer version: tvcd_to_tgldat 1.01 of 04/26/2013 - a top test a .tgldat input verilog.tgldat
+//date: Tue Apr 23 21:34:54 2013
+
+  Algorithm for matching .tgldat lines is the fully qualified path name and is
+matched against the input design.  If it does not match exactly, the line
+is skipped.  Since .tgldat files are simple ascii files, lines can be
+edited to, for example, add some extra hierarchical prefixes.  Example code
+is provided in the release coverage/src directory.  .tgldat files can
+be concatenated by just joining files, except if any lines repeat the
+initialized toggle state and are the combination of all lines.
+
+The change to .tgldat files was needed because it was impossible to make
+the old format work with per instance -optconfigfile tree and exclude_tree
+per bit toggle recording and reporting.
+
+##################################################################
+ PRODUCING A TOGGLE REPORT THAT MERGES TGLDAT FILES FORM MANY RUNS
+##################################################################
+
+  Use options:
+   -set_toggle_from_file run1.tgldat
+   -set_toggle_from_file run2.tgldat
+   -set_toggle_from_file run3.tgldat
+   -mark_driven_const_wires_toggled
+   -untoggled_report_concise
+   
+   +interp -s // this tells CVC to execute a $stop and enter command input
+              // mode before time 0 simulation
+   -i finish.inp // put "$finish;" as contents of the finish.inp file
+
+################################
+ MAKING A CUMULATIVE TGLDAT FILE 
+################################
+
+   -set_toggled_from_file run1.tgldat
+   -write_toggle_data_file run1and2.tgldat 
+
+#################################################
+ ALTERNATIVE WAY TO MAKE A CUMULATIVE TGLDAT FILE
+#################################################
+
+ %cat run1.tgldat run2.tgldat >& run1and2.tgldat
+
+###################################################
+ CONVERTING AN OLD STYLE TVCD FILE TO A TGLDAT FILE
+###################################################
+
+  Go to the coverage/src directory in your release non-binary
+files and type "make -f makefile.lnx tvcd_to_tgldat"  to run
+the conversion type.
+ 
+  tvcd_to_tgldat [input .tvcd file] [output .tgldat file]
+
+#############################################################################
+ USING OPTION CONTROL FILES FOR SELECTING PARTS OF DESIGN FOR TOGGLE COVERAGE
+#############################################################################
+
+  If you do not want to turn on toggle coverage for an entire design, use an
+option control file during compilation using -optconfigfile. Toggle
+coverage can be turned on at the individual module/instance/net level.
+Notice that for statement and event coverage there is no per instance
+nor per net control, but for net toggling coverage there is.
+
+  Note that the behavior of the tree and instance statements is different
+from all other -optconfigfile controlled design properties.  Namely,
+for {cover_toggle} properties, instance only includes (or excludes)
+the particular instance tree instance and possible net.  For tree
+statements, only the sub tree under the given hierarchical path name
+is included.  If a module name is given (any module in a design),
+then the tree option for {cover_toggle} is treated as being given
+for every instance path to the module type.  The new algorithm
+is changed from the old {cover_toggle} algorithm which always included
+every instance of any module appearing in a design sub tree or at the
+end of an instance path.
+
+  Also, notice that the 'tree' and 'tree_exclude' optconfigfile statements
+level value argument is different from $dumpvars ($dumpfst) usage.
+For 'tree' and 'tree_exclude', the level value for entire subtree is -1, but
+for $dumpvars the value 0 indicates entire subtree underneath.  For  
+-optconfigfile 'tree' and 'tree_exclude', 0 means do nothing, 1 means
+just the current instance (same as 'instance' statement).  For $dumpvars,
+0 means entire subtree underneath, 1 means the instance.  For both values
+greater than 1 mean that many level of subtree underneath.
+
+        // turn every instance of module 'modname' toggle coverage
+        module {modname} {cover_toggle}; 
+
+        // turn on one instance tree instance toggle coverage
+        instance {test.i1.i3.i1} {cover_toggle}
+
+        //turn one net toggle coverage for only instance test.i1
+        instance {test.i1.n1} {cover_toggle};
+
+        //turn on toggle coverage for all hierarchy under instance core5
+        //useful, for example, to report toggle coverage for one cpu or a
+        //multi-core
+        tree (-1) {test.cpu.core5} {cover_toggle};
+
+        //the old tree module form is still supported but probably does
+        //not do what is expected.  Namely, all instances of latch12 anywhere
+        //in a design and all instances of all modules under latch12 have
+        //toggle coverage turned on
+        tree_exclude (-1) {latch12} {cover_toggle};
+
+        //turn off toggle coverage for all hierarchy under module DUT
+        //exclude assumes the -toggle option is used to turn on toggle
+        //coverage recording for an entire design then parts are turned off.  
+        // alternatively, tree can be used then part of the instance tree
+        // can be excluded with tree_exclude.
+        tree_exclude (-1) {test.cpu.core4} {cover_toggle};
+
+        //turn off toggle coverage for variable n2
+        instance_exclude {test.i1.n2} {cover_toggle};
+        
+        //turn off toggle coverage for variable addrbus low bits
+        // here all bits are still recorded but the toggle report and .tgldat
+        // file if written assume bits [31:0] are toggled (i.e. excluded)
+        // from untoggled reporting
+        instance_exclude {test.i1.i4.addrbus[31:0]} {cover_toggle};
+
+ Now pass the file during compilation to turn on desire toggle coverage:
+
+        %cvc -optconfigfile toggle.opt
+
+#############################################################
+ TURNING TOGGLE COVERAGE ON AND OFF DURING ONE SIMULATION RUN
+#############################################################
+
+  Simulation time and event Verilog system task recording control means
+using system tasks to turn off all recording during a particular time
+period during a simulation. It is all or none for all the selected
+parts of a design using -toggle and/or -optconfigfiles.
+
+  During one simulation run at a particular time or triggered by a particular
+edge, toggle recording can be turned off or on by placing system tasks in the
+test bench part of your design's Verilog source (usually enabled with
++define+ command line options).  
+
+ The Verilog system tasks are orthogonal to selecting which parts of a
+design have toggle coverage because they turn off all recording during
+a particular time period within one simulation run.
+
+  The options are: "$toggle_state_reset;" that is used to reset all
+recorded toggle information back to untoggled (see use exmaple below).  
+the "$toggle_record_off_set_old_value_x;" system task disables recording
+of toggle from the execution point of the system task (it does not wait
+for tick slot end) until end of simulation or until recording is re-enabled
+with the "$toggle_record_on;" task. The "$toggle_record_off_set_old_value_x;"
+also set toggle recording state last values to x, so in effect two toggles
+are needed (except for 2-state variables where the last value is set to 0).
+The first toggle is from x to a fixed value and the second toggle that
+is recorded is from 0->1 or 1->0.  The "$toggle_record_off;" stops
+toggle recording when it is executed and leave the last value the same.
+
+  One obvious use of simulation run time based toggle control is to
+disable toggle coverage during circuit initialization.  Code might be:
+
+initial
+ begin
+  // need to removed any toggle at time 0 before initial executed
+   $toggle_state_reset;
+   // make sure all last values start at x (0 for 2-state) 
+   $toggle_record_off_set_old_val_x;
+   @(end_of_initialize) $toggle_record_on;
+  end
+
+Another use is to only record toggle information during the high (posedge) part
+of each clock cycle.  Here the last values need to be preserved so use this:
+
+always @(negedge clk) $toggle_record_off;
+always @(posedge clk) $toggle_record_on;
+
+These system tasks are still provisional so if you have any suggestions for
+improvements, please contact Tachyon DA.
+
+###################################
+ OBSOLETE TOGGLE REPORT CVC OPTIONS
+###################################
+
+ The toggle coverage report file ('cvc.toggle' by default) contains a number
+of options to control the style of reporting.  These options are still
+supported, but in general only work for reporting toggle coverage for an
+entire design.
+
+    -ti      Display toggle coverage information per instance.
+    -tu      Display uncovered nets - those without 100%% coverage.
+    -tc      Display covered nets - those getting 100%% coverage.
+    -tb      Display toggle coverage vectors per bit.
+    <these options are deprecated>
+
+
+===============================================================================
+                             EVENT COVERAGE
+===============================================================================
+
+ Event coverage reports all delay control @ events which are never triggered
+during simulation.  To turn event coverage on for all @ events in a design, 
+use the -event_coverage option.  This will create a report in a default file 
+named 'cvc.events'.  To create a report with a different file name use the
+-event_coverage_file [file name], option.  Performance degradation for
+event coverage is minimal.
+
+ If you do not want to turn on event coverage for an entire design use an
+option control file during compilation using the -optconfigfile option.  For 
+example, to only turn on event coverage for a particular module use one of
+the following file in a option control file:
+
+  NOTE: event toggle coverage is not per instance tree location.  If any
+instances have event coverage recording and reporting, all instances of the
+module type will.
+
+ file : event.opt
+
+     module {modname} {cover_event};
+or
+     /* for instance or tree form, event control toggle coverage turns on */
+     /* coverage for all instances of the same module type as the instance */
+     instance {top.m1.i1, top.m4.i4 } {cover_event }; 
+
+ Now pass the file during compilation to turn on event coverage just for the 
+desired module:
+
+     %cvc -optconfigfile event.opt
+
+===============================================================================
+                           STATEMENT COVERAGE
+===============================================================================
+
+ Statement coverage works in a similar manner to event coverage.  The 
+-stmt_coverage option will turn on statement coverage for an entire design,
+and -stmt_coverage_file [file name] is used to write the report to a desired
+file.  Statement coverage also supports another option, -stmt_tasks, which 
+will turn on statement coverage for tasks/functions.  Performance degradation 
+for statement coverage is noticeable.  
+
+ Again similar to event coverage, if you do not want to turn on statement 
+coverage for an entire design use an option control file during compilation 
+using -optconfigfile.  For example, to only turn on statement 
+coverage for a particular module use the following file in a option control 
+file:
+
+  NOTE: statement toggle coverage is not per instance tree location.  If any
+instances have statement coverage recording and reporting, all instances of
+the module type will.
+
+ file : stmt.opt
+
+     module {modname} {cover_stmt};
+or
+       /* for instance or tree form, statement execution coverage turns on */
+       /* coverage for all instances of the same module type as the instance */
+       instance {top.m1.i1, top.m4.i4 } {cover_stmt };
+
+Now pass the file during compilation to turn on statement coverage just for 
+the desired module:
+
+        %cvc -optconfigfile stmt.opt
+
+
+Part of OSS CVC release
+Copyright (c) 2013-2014 Tachyon Design Automation

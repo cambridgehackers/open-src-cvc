@@ -1,0 +1,17 @@
+
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+// define to not record during initializaton - see cpu_mixed.v source
++define+TGL_ON_AFTER_INIT+
+// define to only record from when clk=1 and not record when clk=0
++define+TGL_OFF_NEGEDGE_CYCLE+
+
+// various options to see how new CVC toggle processing works
+// das_cpu is interesting because nearly every signal is toggled
+// uncomment all 5 lines to see the full new toggle capabilities
+-toggle
+-untoggled_report_concise
+// if const nets are marked, they will always be treated as "toggled"
+// -mark_driven_const_wires_toggled
+// -driven_const_report_concise
+-write_toggle_data_file all-dascpu.tgldat

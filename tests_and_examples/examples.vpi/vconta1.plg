@@ -1,0 +1,31 @@
+  There are 1 top level modules.
+ --- processing a concatenate:
+  Part select xx.a index 7 processed.
+  Part select xx.a index 6 processed.
+  Part select xx.a index 5 processed.
+  Part select xx.a index 4 processed.
+  Part select xx.a index 3 processed.
+  Part select xx.a index 2 processed.
+  Variable xx.b processed.
+  Part select xx.c index 9 processed.
+  Part select xx.c index 8 processed.
+  Part select xx.c index 7 processed.
+  Part select xx.c index 6 processed.
+  Part select xx.c index 5 processed.
+  Part select xx.c index 4 processed.
+  Part select xx.c index 3 processed.
+ === end of concatenate
+  Variable xx.w processed.
+  Variable xx.w processed.
+  Variable xx.w_r processed.
+  Variable xx.w processed.
+  Bit select xx.b index 1 processed.
+  Bit select xx.w index 9 processed.
+  >>> All instances processed - continuing with simulation.
+         0 a=zzzzzzzzxxxxxxzz, b=xxxxxxxxxxxxxxxx, c=zzzzzzxxxxxxxzzz, w=xxxxxxxx
+        10 a=zzzzzzzz000000zz, b=0000000000000000, c=zzzzzz0000000zzz, w=00000000
+        20 a=zzzzzzzz111111zz, b=1111111111111111, c=zzzzzz1111111zzz, w=ffffffff
+        30 a=zzzzzzzz010101zz, b=01010101010101x1, c=zzzzzz0101010zzz, w=aaaaaaaa
+        40 a=zzzzzzzz101010zz, b=10101010101010x0, c=zzzzzz1010101zzz, w=55555555
+        50 a=zzzzzzzz111111zz, b=1111111111111111, c=zzzzzz1111111zzz, w=ffffffff
+        60 a=zzzzzzzz000000zz, b=0000000000000000, c=zzzzzz0000000zzz, w=00000000

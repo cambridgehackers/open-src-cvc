@@ -1,0 +1,17 @@
+//**CVC TOGGLE PROCESSING**//
+
+// +define+TGL_ON_AFTER_INIT+
+// +define+TGL_OFF_NEGEDGE_CYCLE+
+
+//Mandatory for all testing
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+// must not use -toggle here because the tgl_some.cfg file includes the
+// cpu part of das_cpu (omits the test bench part) then exlcudes instances
+// one by one.  This illustrates the toggle coverage verification approach
+// where once an instance is known to have good toggle coverage, it is
+// excluded from future testing
+-optconfigfile tgl_some.cfg
+-mark_driven_const_wires_toggled
+-untoggled_report_concise

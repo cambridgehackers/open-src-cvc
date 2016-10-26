@@ -1,0 +1,38 @@
+
+This directory contains the public domain Verilog test circuits from the
+DA Solutions Ltd. benchmark library used in DA Solutions commercial
+benchmark program back in the late 1990s.  Since DA Solutions no longer
+is active, John Hillawi has kindly allowed us to make them available.
+
+Here is contents of John's original README file:
+
+-- This library was created by DA Solutions for the purposes
+-- of benchmarking Verilog simulation products.
+-- This directory contains the public domain portion of the DA
+-- Solutions library. Other proprietary circuits, provided by
+-- end users were also used in the evaluation, but these remain
+-- confidential to the end users and DA Solutions and are not 
+-- included in this release.
+--
+--
+-- The circuits are:
+--	DA Solutions CPU circuit (das_cpu)
+--	DA Solutions Multiplier circuit (das_mult)
+--	DA Solutions LFSR circuit (das_lfsr)
+--	TI Multiplier circuit (ti_mult)
+--	
+-- Simple gate level libraries are also provided in the libs
+-- directory. However, the user is recommended to obtain fully
+-- functional libraries from the ASIC Manufacturers. with full
+-- functional coding, and full timing parameters, in order to
+-- exactly replicate the DA Solutions 1994 results. DA Solutions
+-- has no authority to ship such libraries with this tape.
+
+We have added a -f file to simplify execution and slightly modified
+the README file for each circuit.  Otherwise the tests are exactly
+as DA Solutions released them.
+
+We have put them on our web site as a public service, and because we
+are in process of publishing papers on our new byte code virtual
+machine interpreter (selected using -O option) that use the
+benchmark circuits for measurements.

@@ -1,0 +1,45 @@
+module iterator has size 1.
+... processing instance task10
+init/always iterator has size 4.
+... processing initial
+... processing 3 type.
+... processing initial
+... processing 4 type.
+block stmt iterator has size 18.
+... processing 3 type.
+... processing 11 type.
+... processing 3 type.
+... processing 3 type.
+... processing 3 type.
+... processing 3 type.
+... processing 57 type.
+... processing 60 type.
+... processing 57 type.
+... processing 3 type.
+... processing 3 type.
+... processing 14 type.
+... processing 60 type.
+... processing 57 type.
+... processing 3 type.
+... processing 3 type.
+... processing 60 type.
+... processing 57 type.
+... processing initial
+... processing 4 type.
+block stmt iterator has size 2.
+... processing 13 type.
+... processing 11 type.
+...processing always
+... processing 4 type.
+block stmt iterator has size 1.
+... processing 13 type.
+There were 1 total cause statements in top modules.
+        10 start   x: ffffffff  y: 1  count: 0
+        10 t1 started
+        30 t1 finished
+        30 return  x: 00000000  y: 0  count: 1
+        30 t1 started
+        35 return  x: 00000000  y: 0  count: 1
+        35 t1 started
+        55 t1 finished
+        55 return  x: 00000002  y: 0  count: 2

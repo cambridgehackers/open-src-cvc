@@ -1,0 +1,9 @@
+(DELAYFILE 
+  (SDFVERSION "3.0") 
+  (CELL 
+   (CELLTYPE "xx" ) 
+   (INSTANCE xx) 
+   (DELAY (ABSOLUTE (PORT i1.a (15) (10) (5))))
+   (DELAY (ABSOLUTE (PORT i2.a (12) (8) (4))))
+  )
+)

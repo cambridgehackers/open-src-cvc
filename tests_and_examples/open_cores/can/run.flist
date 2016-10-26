@@ -1,0 +1,12 @@
+bench/verilog/can_testbench.v
+rtl/verilog/can_acf.v
+rtl/verilog/can_bsp.v
+rtl/verilog/can_btl.v
+rtl/verilog/can_crc.v
+rtl/verilog/can_fifo.v
+rtl/verilog/can_ibo.v
+rtl/verilog/can_register_asyn_syn.v
+rtl/verilog/can_registers.v
+rtl/verilog/can_register_asyn.v
+rtl/verilog/can_register.v
+rtl/verilog/can_top.v

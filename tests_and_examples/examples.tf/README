@@ -1,0 +1,43 @@
+To test PLI 1.0 tf_ interface:
+
+BEFORE STARTING:
+   Run the shell script in install.test directory to verify correct build.
+
+When compiling a design for use with the PLI you may need to compile with
++acc+[level] command.  This option compiles with the following levels of
+PLI access:
+
+        +acc+1 or +acc
+         Enable all PLI capabilities except value change callbacks and
+         delay annotation.
+        +acc+2
+         All features above plus value change callbacks.
+        +acc+3
+         All features above plus module path delay.
+        +acc+4
+         All features above plus gate delay annotation.
+ 
+We are working on VCS style .tab file for more specific access options to 
+increase peformance when using the PLI.
+
+HOW TO RUN THE TEST SCRIPT
+
+1) Run the shell script inst_pli.sh.  Various compiler and Verilog
+   output messages will be printed but there should be no diff command
+   differences printed.  
+
+   By convention makefile.lnx assumes this test is run in release
+   directory tree with include files in pli_incs 2 directory levels up
+   and CVC binary is in bin directory also 2 levels up.
+
+   The commands to run CVC with dynamically loaded user PLI library
+   explicitly access the user .so library in this directory.  For your
+   PLI libraries, it is better to set the LD_LIBRARY_PATH environment
+   variables so explicit "./" is not needed
+
+2) After completing the test, run clean.sh to remove work files.
+   The inst_pli.sh script removes each PLI library .so dynamic library after
+   running the test that uses it so unless something went wrong, you
+   do not need to run clean.sh.  
+
+3) Use makefile.lnx as a template for your PLI models.

@@ -1,0 +1,46 @@
+**fdspec01.v(105) WARN** [653] $period timing check min:typ:max limit expression needs parentheses under 1364 - unportable
+  There are 1 top level modules (timescale -9 / -9).
+  There are 3 instances in test (timescale: -9 / -9).
+  path at **fdspec01.v(88) has delay #(140, 250, 140, 140, 250, 250).
+  path at **fdspec01.v(89) has delay #(40, 50, 40, 40, 50, 50).
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $setuphold vpiTchk delay number 1 wrong - missing 2nd omitted
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(103) limit 600.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+  path at **fdspec01.v(88) has delay #(140, 250, 140, 140, 250, 250).
+  path at **fdspec01.v(89) has delay #(40, 50, 40, 40, 50, 50).
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $setuphold vpiTchk delay number 1 wrong - missing 2nd omitted
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(103) limit 600.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+  path at **fdspec01.v(88) has delay #(140, 250, 140, 140, 250, 250).
+  path at **fdspec01.v(89) has delay #(40, 50, 40, 40, 50, 50).
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $setuphold vpiTchk delay number 1 wrong - missing 2nd omitted
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(103) limit 600.
+**ERR(2021) vpiPLI (level 2) at ***none*(0):
+  vpi_get_delays called for object $width vpiTchk delay number 1 wrong - missing 2nd omitted
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+  All instances processed.

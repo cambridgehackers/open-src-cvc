@@ -1,0 +1,88 @@
+                        RUNNING TESTS
+
+This directory contains a number of test directories.  Each directory
+contains a README file with specific instructions for running the
+tests (usually how to run the test shell script).  Directories are: 
+
+PRIOR TO RUNNING TESTS DO THE FOLLOWING
+
+  Prior to running CVC, make sure your system configuration is correct by 
+running the 'checkcvc64' in the bin directory.  You should see the following
+message:
+
+   "System configuration is fine for CVC compilation."
+
+ If you have only installed 32 bit linux, then checkcvc.  We recommend
+you run cvc64 if you have 64 bit linux installed and are running a modern
+X86 processor because there is no speed loss.  If you need to save
+memory for non giant designs, you can run 32 bit cvc.
+
+ If you receive anything other than this please contact us for help on 
+making adjustments for your desired configuration.
+
+  The cvc binaries either using "make install" or shipped for enterprise
+OSS CVC customers are intended to be install in the bin directory in this
+release directory.  See the top level INSTALL text file for more information.
+
+install.test:
+
+  Installation test.  This test runs CVC on various Verilog files to
+  insure correct build.  It should always be run. Go to the install.test 
+  directory and run the inst_test.sh. See the README file in 
+  the install.test directory for more information.  The inst_test.sh
+  script tests the compiler running cvc (i.e. the 32 bit version).  To run
+  the test with 64 bit cvc64, type "inst_test.sh cvc64".  To test the
+  interpreter run the inst_test_interp.sh.  Again, pass the command argument
+  cvc64 to test cvc64's interpreter installation.
+
+PLI EXAMPLES
+  NOTE:
+   Current PLI significantly can slow down simulation because the +access
+   option is only supported for +acc+[level] on the command line.  We are 
+   working on a PLI specific .tab style access scheme for fine tuned handling
+   of the PLI to increase performance.
+
+examples.tf:
+
+  Examples of PLI 1.0 tf_ interface routines.  The test script uses
+  +loadpli1= option to make dynamic libraries (.so files) and then runs
+  the test. Change to the examples.tf directory and run the inst_pli.sh 
+  script.
+
+examples.acc:
+
+  Examples of PLI 1.0 acc_ interface routines.  The test script uses
+  +loadpli1= option to make dynamic libraries (.so files) and then runs
+  the test. Change to the examples.acc directory and run the inst_pli.sh
+  script. 
+
+examples.vpi:
+
+  Examples of PLI 1.0 acc_ interface routines.  The test script uses
+  +loadvpi= option to make dynamic libraries (.so files) and then runs
+  the test. Change to the examples.vpi directory and run the inst_pli.sh 
+  script. 
+
+examples.dpi:
+
+   This directory contains examples to illustrate how to use the SystemVerilog 
+   Direct Programming Interface (DPI) with CVC.  Change to the examples.dpi
+   directory and run the dpi_test.sh 
+
+examples.xprop
+  
+  Examples of CVC X-propagation features.  This illustrates advanced CVC
+  X-propagation features which are used to find hidden X-bugs, see
+  doc/cvc_xpropagation.pdf for further documentation.
+
+verilog_da_bnchmrks
+
+  These are designs from the old late 1990s DA Solutions benchmarks.
+See the README files in each test benchmark directory.  The most interesting
+benchmark is das_cpu.  We suggest running the various .vc files to see
+various CVC features on a real cpu model with macro cells.  +xprop will
+not run in das_cpu (maybe fixing it is a good exercise) because the cpu
+does not initialize properly.
+
+** NOTE - to learn about new net toggle coverage features run the .vc scripts
+          in das_cpu.

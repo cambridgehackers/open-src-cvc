@@ -1,0 +1,25 @@
+// toggle test - run after run_all_toggle.vc
+
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+-toggle
+-untoggled_report_concise
+// -mark_driven_const_wires_toggled
+// driven const report only needs to be output once
+// -driven_const_report_concise
+
+-set_toggled_from_file all-dascpu.tgldat
+
+// many .tgldat files from different runs could be combined into one report
+// by including additional -set_toggled_from_file options here
+
+// write reand .tgldat to new file so can diff - no sim so just read-write
+-write_toggle_data_file all-dascpu2.tgldat
+
+// this causes cvc64 to enter debug mode before starting simulation 
+// this only works when +interp is chosen - but since there is no simulation
+// the compiler is not needed
++interp -s
+// this file just contains "$finish;" to stop simulation before any toggling
+-i finish.inp

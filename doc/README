@@ -1,0 +1,42 @@
+///////////////////////////////////////////////////////////////////////////
+                   DOUMENTATION DIRECTORY CONTENTS
+///////////////////////////////////////////////////////////////////////////
+
+
+See either the IEEE P1364 Verilog standard LRM that can be purchased from
+IEEE or a book on Verilog to learn Verilog syntax and usage.
+
+For people with experience simulating with Verilog, best approach is probably
+to study the Verilog designs and test cases in the test_and_examples directory.
+Especiall see das_cpu design in the verilog_da_bnchmrks directory and
+the open cores in the open_cores directory.
+
+The documentation directory contains the following files:
+
+
+oss_cvc_quick_start.pdf File containing quick start guide.  Information 
+                      on using CVC and frequently asked questions.
+
+cvc_xpropagation.pdf  File containg information on how to use CVC X-propagation.
+                      
+
+cvc_help.txt          File containing help screen that is printed by CVC
+                      when "cvc -h" is typed.   This file contains
+                      documentation for the most current optimization
+                      options.  When new options are added, they are 
+                      documented first in this help file.
+
+dbg_help.txt          All the gdb style debugger help screens combined into
+                      one file. 
+                      ** NOTE - debugger only allowed when run in interpreted
+                      mode (+interp).
+
+how_to_use_new_toggle_coverage_feature.README
+		      File containing information and guidance for using the
+                      newly added toggle coverage feature.  Also see the
+                      "cvc64 -h" verilog.log file for descriptions of the
+                      new toggle coverage options.
+
+---------
+Part of OSS CVC release
+Copyright (c) 2001-2014 Tachyon Design Automation

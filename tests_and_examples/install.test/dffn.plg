@@ -1,0 +1,66 @@
+         0 in=xxx, out=xxx, clk=x
+        10 in=000, out=xxx, clk=x
+        20 in=000, out=xxx, clk=0
+        30 -- top.pipe1.p[1].dff[2]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[1].dff[1]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[1].dff[0]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[2].dff[2]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[2].dff[1]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[2].dff[0]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[3].dff[2]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[3].dff[1]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[3].dff[0]: positive clock edge old q=x d=x
+        30 -- top.pipe1.p[4].dff[2]: positive clock edge old q=x d=0
+        30 -- top.pipe1.p[4].dff[1]: positive clock edge old q=x d=0
+        30 -- top.pipe1.p[4].dff[0]: positive clock edge old q=x d=0
+        30 in=000, out=xxx, clk=1
+        40 in=000, out=xxx, clk=x
+        50 in=000, out=xxx, clk=0
+        60 in=111, out=xxx, clk=0
+        80 -- top.pipe1.p[1].dff[2]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[1].dff[1]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[1].dff[0]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[2].dff[2]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[2].dff[1]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[2].dff[0]: positive clock edge old q=x d=x
+        80 -- top.pipe1.p[3].dff[2]: positive clock edge old q=x d=0
+        80 -- top.pipe1.p[3].dff[1]: positive clock edge old q=x d=0
+        80 -- top.pipe1.p[3].dff[0]: positive clock edge old q=x d=0
+        80 -- top.pipe1.p[4].dff[2]: positive clock edge old q=0 d=1
+        80 -- top.pipe1.p[4].dff[1]: positive clock edge old q=0 d=1
+        80 -- top.pipe1.p[4].dff[0]: positive clock edge old q=0 d=1
+        80 in=111, out=xxx, clk=1
+        90 in=111, out=xxx, clk=x
+       100 in=111, out=xxx, clk=0
+       110 in=000, out=xxx, clk=0
+       130 -- top.pipe1.p[1].dff[2]: positive clock edge old q=x d=x
+       130 -- top.pipe1.p[1].dff[1]: positive clock edge old q=x d=x
+       130 -- top.pipe1.p[1].dff[0]: positive clock edge old q=x d=x
+       130 -- top.pipe1.p[2].dff[2]: positive clock edge old q=x d=0
+       130 -- top.pipe1.p[2].dff[1]: positive clock edge old q=x d=0
+       130 -- top.pipe1.p[2].dff[0]: positive clock edge old q=x d=0
+       130 -- top.pipe1.p[3].dff[2]: positive clock edge old q=0 d=1
+       130 -- top.pipe1.p[3].dff[1]: positive clock edge old q=0 d=1
+       130 -- top.pipe1.p[3].dff[0]: positive clock edge old q=0 d=1
+       130 -- top.pipe1.p[4].dff[2]: positive clock edge old q=1 d=0
+       130 -- top.pipe1.p[4].dff[1]: positive clock edge old q=1 d=0
+       130 -- top.pipe1.p[4].dff[0]: positive clock edge old q=1 d=0
+       130 in=000, out=xxx, clk=1
+       140 in=000, out=xxx, clk=x
+       150 in=000, out=xxx, clk=0
+       160 in=111, out=xxx, clk=0
+       180 -- top.pipe1.p[1].dff[2]: positive clock edge old q=x d=0
+       180 -- top.pipe1.p[1].dff[1]: positive clock edge old q=x d=0
+       180 -- top.pipe1.p[1].dff[0]: positive clock edge old q=x d=0
+       180 -- top.pipe1.p[2].dff[2]: positive clock edge old q=0 d=1
+       180 -- top.pipe1.p[2].dff[1]: positive clock edge old q=0 d=1
+       180 -- top.pipe1.p[2].dff[0]: positive clock edge old q=0 d=1
+       180 -- top.pipe1.p[3].dff[2]: positive clock edge old q=1 d=0
+       180 -- top.pipe1.p[3].dff[1]: positive clock edge old q=1 d=0
+       180 -- top.pipe1.p[3].dff[0]: positive clock edge old q=1 d=0
+       180 -- top.pipe1.p[4].dff[2]: positive clock edge old q=0 d=1
+       180 -- top.pipe1.p[4].dff[1]: positive clock edge old q=0 d=1
+       180 -- top.pipe1.p[4].dff[0]: positive clock edge old q=0 d=1
+       180 in=111, out=000, clk=1
+       190 in=111, out=000, clk=x
+       200 in=111, out=000, clk=0

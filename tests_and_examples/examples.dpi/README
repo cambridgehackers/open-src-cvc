@@ -1,0 +1,41 @@
+
+       DPI ROUTINE EXAMPLES AND INSTALLATION TEST
+
+This directory contains examples to illustrate how to use the SystemVerilog 
+Direct Programming Interface (DPI) with CVC.  To test for correct installation
+run the dpi_test.sh script that compiles DPI programs into .so libraries which 
+are linked at compile time using -sv_lib [.so lib name] CVC command line 
+option.
+
+Tests are:
+
+ 1) twostate_tasks - test passing of 2-state values as input/outputs to tasks.
+ 2) twostate_functions - use of functions with 2-state values.
+ 3) fourstate - passing/setting 4-state values in DPI.
+ 4) export - using DPI export to call Verilog tasks from C.
+ 5) twostate_array - use of  2-state arrays.
+ 6) fourstate_array - use of 4-state arrays.
+ 7) reals - using reals with the DPI.
+ 8) selects - use built in sv* bit and part select calls.
+ 9) chandle - using chandle types in Verilog to pass C pointers.
+
+
+Currently CVC supports the following built in SV calls from svdpi.h: 
+
+  svDpiVersion
+  svGetBitselBit
+  svGetBitselLogic
+  svPutBitselBit
+  svPutBitselLogic
+  svGetPartselBit
+  svGetPartselLogic
+  svPutPartselBit
+  svPutPartselLogic
+  svGetScope
+  svSetScope
+  svGetNameFromScope
+  svGetScopeFromName
+
+Not yet supported:
+
+ 'void function' - these should just be declared as tasks.

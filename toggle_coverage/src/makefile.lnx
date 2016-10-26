@@ -1,0 +1,50 @@
+# only  32-bit versions released use these - remove -m32 for 64 make
+# tgldat srvc has service procs for basic .tgldat net list manipulation
+CC=gcc
+LIBS=
+ARCHFLGS= 
+
+## optimized
+# CFLAGS= $(ARCHFLGS) -O2 -Wall -m32 
+## 64 bit 
+CFLAGS= $(ARCHFLGS) -O2 -Wall 
+#debug with -g
+## 32 bit
+# CFLAGS= $(ARCHFLGS) -m32 -g -Wall 
+## 64 bit 
+# CFLAGS= $(ARCHFLGS) -g -Wall
+
+tvcd_to_tgldat:	tvcd_to_tgldat.o tgldat_srvc.o
+	$(CC) $(CFLAGS) tvcd_to_tgldat.o tgldat_srvc.o $(LIBS) \
+	-o tvcd_to_tgldat 
+
+tvcd_to_tgldat.o:	tvcd_to_tgldat.c tgldat.h
+	$(CC) $(CFLAGS) -c tvcd_to_tgldat.c
+
+chk_tgldat:	chk_tgldat.o tgldat_srvc.o
+	$(CC) $(CFLAGS) chk_tgldat.o tgldat_srvc.o $(LIBS) -o chk_tgldat 
+
+chk_tgldat.o:	chk_tgldat.c tgldat.h
+	$(CC) $(CFLAGS) -c chk_tgldat.c
+
+tgldat_report:	tgldat_report.o tgldat_srvc.o
+	$(CC) $(CFLAGS) tgldat_report.o tgldat_srvc.o $(LIBS) -o tgldat_report
+
+tgldat_report.o:	tgldat_report.c tgldat.h
+	$(CC) $(CFLAGS) -c tgldat_report.c
+
+tgldat_merge:	tgldat_merge.o tgldat_srvc.o
+	$(CC) $(CFLAGS) tgldat_merge.o tgldat_srvc.o $(LIBS) -o tgldat_merge
+
+tgldat_merge.o:	tgldat_merge.c tgldat.h
+	$(CC) $(CFLAGS) -c tgldat_merge.c
+
+tgldat_srvc.o: tgldat_srvc.c tgldat.h
+	$(CC) $(CFLAGS) -c tgldat_srvc.c
+
+all: tvcd_to_tgldat chk_tgldat tgldat_report tgldat_merge
+
+clean:
+	rm tvcd_to_tgldat.o tvcd_to_tgldat chk_tgldat.o chk_tgldat \
+	tgldat_report.o tgldat_report tgldat_merge.o tgldat_merge \
+	tgldat_srvc.o

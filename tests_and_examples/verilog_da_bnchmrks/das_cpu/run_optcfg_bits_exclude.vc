@@ -1,0 +1,9 @@
+//**CVC TOGGLE PROCESSING**//
+
+//Mandatory for all testing
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+-optconfigfile tgl_tree.cfg
+-mark_driven_const_wires_toggled
+-untoggled_report_concise

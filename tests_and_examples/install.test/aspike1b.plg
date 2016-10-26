@@ -1,0 +1,12 @@
+         0 out=x,in=0,w1=x,w2=x
+         2 out=x,in=0,w1=0,w2=x
+         5 out=z,in=0,w1=0,w2=1
+       100 out=z,in=1,w1=0,w2=1
+       101 out=z,in=1,w1=1,w2=1
+       105 out=1,in=1,w1=1,w2=0
+       111 out=0,in=1,w1=1,w2=0
+       200 out=0,in=x,w1=1,w2=0
+       201 out=0,in=x,w1=x,w2=0
+       204 out=0,in=x,w1=x,w2=x
+       205 out=x,in=x,w1=x,w2=x
+       300 out=x,in=z,w1=x,w2=x

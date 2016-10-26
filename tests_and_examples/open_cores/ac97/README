@@ -1,0 +1,15 @@
+
+To run this test, type:
+
+ %cvc +verbose -f run.flist
+
+
+ You may need to make minor changes to 'run.flist' to get it to run in your 
+simulation environment or pass in the file list using the proper option
+for your simulator.  The +verbose option is needed by CVC to cause
+progress messages and simulation times to be printed.  To inhibit messages,
+use the -q flag.
+
+ All source code provided here is owned by their respective owners.  See 
+licensing details in Verilog source or www.opencores.com for more information
+or to download the original design source.

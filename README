@@ -1,0 +1,24 @@
+
+  This is OSS CVC IEEE P1364 Verilog simulator package release.
+
+Before installing or using OSS CVC you must read and agree to the
+"oss cvc dual licensing modified artistic license".  By installing
+or using OSS CVC Package, you are agreeing to the license.  If you
+do not agree to the license, do not install OSS CVC. Read the
+"oss-cvc-artistic-licensing.faq" in this directory to learn about
+the various possibilities of dual open source and commercial licensing.
+
+INSTALLATION:
+
+Instructions for making CVC or for installing CVC pre-made binaries (if
+you are an Enterprise OSS CVC customer) are in the INSTALL file in this
+directory.
+
+ENTERPRISE OSS CVC:
+
+To purchase Enterprise OSS CVC with pre-made binaries and support send
+email to craigr@tachyon-da.com.
+
+Also send email to craigr@tachyon-da.com to purchase a commercial OSS
+CVC license that allows OSS CVC do be combined with closed source
+software.

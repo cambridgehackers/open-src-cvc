@@ -1,0 +1,24 @@
+**xplipnd.v(15) WARN** [602] x1(level1) input port i (line **xplipnd.v(3)) width 32 mismatch with 2 * i width 64
+**xplipnd.v(16) WARN** [602] x2(level1) input port i (line **xplipnd.v(3)) width 32 mismatch with (2 * i) + 1 width 64
+**xplipnd.v(22) WARN** [602] x1(level2) input port i (line **xplipnd.v(12)) width 32 mismatch with 3 * i width 64
+**xplipnd.v(23) WARN** [602] x2(level2) input port i (line **xplipnd.v(12)) width 32 mismatch with (3 * i) + 1 width 64
+**xplipnd.v(29) WARN** [602] x1(level3) input port i (line **xplipnd.v(19)) width 32 mismatch with 4 * i width 64
+**xplipnd.v(30) WARN** [602] x2(level3) input port i (line **xplipnd.v(19)) width 32 mismatch with (4 * i) + 1 width 64
+**xplipnd.v(36) WARN** [602] x1(level4) input port i (line **xplipnd.v(26)) width 32 mismatch with 4 * i width 64
+**xplipnd.v(37) WARN** [602] x2(level4) input port i (line **xplipnd.v(26)) width 32 mismatch with (4 * i) + 1 width 64
+i=0,p1=500,p2=501
+i=1,p1=502,p2=503
+i=2,p1=500,p2=501
+i=3,p1=502,p2=503
+i=6,p1=500,p2=501
+i=7,p1=502,p2=503
+i=8,p1=500,p2=501
+i=9,p1=502,p2=503
+i=24,p1=500,p2=501
+i=25,p1=502,p2=503
+i=26,p1=500,p2=501
+i=27,p1=502,p2=503
+i=30,p1=500,p2=501
+i=31,p1=502,p2=503
+i=32,p1=500,p2=501
+i=33,p1=502,p2=503

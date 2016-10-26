@@ -1,0 +1,551 @@
+OSS_CVC_7.00a-rhel6x of 06/10/14 (Linux-elf).
+Copyright (c) 1991-2014 Tachyon Design Automation Corp.
+  All Rights reserved.  Licensed software subject to prohitibiions and
+  restrictions.  See OSS CVC artistic license included with release.
+Today is Mon Jun 16 18:28:32 2014.
+Elaborating source file "b.v"
+
+C1 > /* file to generate debugger help */
+C1 > $nokeepcommands;
+C2 > :set nologecho
+interactive input command echo to log file off
+.. printing basic help message
+Type ':help [topic]' or ':help :[debugger command]' to print specific help
+message.  Any name can be abbreviated by a unique prefix within : debugger.
+Colon is required for command name help but not allowed for help topics.
+ 
+Help topics:
+  debugging:  Entering and supplying input for +interp interactive debugging.
+  compiling: No interactive debugger when compiling - alternatives.
+  tracing:  Separate batch tracing system for debugging.
+  differences:  Interactive debugger differences from XL behavior.
+  statements:  Using traditional interactive Verilog statement debugger.
+  data:  Examining variables and expressions.
+  source:  Listing source and navigating between files.
+  scope:  Setting and navigating between instance and task scopes.
+  break points:  Behavioral statement breakpoints and single stepping.
+  changes breaking:  Breaking on net changes and edges.
+  history:  Command history and history number command enable/disable.
+  info:  Determining and setting debugger status and settings.
+  tasks:  System task and functions useful for interactive debugging.
+  commands:  A list of :[command] debugger commands.
+
+... printing help topic messages
+Debugging:
+  Both the standard Verilog XL (TM Cadence Design Systems) statement
+  debugger and a command based GDB style debugger are supported.  The
+  interactive debugger is not available when compiled simulation is used.
+ 
+  Input is typed from the terminal or read from a file.
+  Input is terminated with a new line.  For multi-line commands, all
+  but the last line ends with a back slash escaped new line.  The new
+  command debugger commands begin with a colon as part of the name and
+  cannot be executed from Verilog source.  All interactive commands are
+  echoed to the log file unless ':set noecholog' is used to to suppress log
+  file command echoing (':set echolog' re-enables).
+ 
+  The debugger is entered by pressing the interrupt key (^c), by calling
+  the $stop system task, by the -s command line option, by completing a
+  step command, or by hitting a breakpoint.
+ 
+  The $input("[file]") system task causes debugger commands to be read
+  from [file] the first time interactive mode is entered (by -s?).  $input
+  files do not nest, instead $input in a file causes $input to chain to the
+  new file.  Output is written to the screen and the log file.  stderr is
+  not used.  All typed user input including command prompts and $input
+  commands is written to the log file.  $nolog and $log plus
+  $nokeepcommands and $keepcommands can minimize $input script output.
+  +nokeepcommands option disables history saving.  It is useful if
+  simulation is run from a shell script.
+
+Compiling no interactive debugger:
+  When CVC is used to compile designs to machine code, the interactive
+  debugger is disabled.  Use the +interp option to select slower
+  interpreted simulation and to enable the XL style interactive debugger.
+  Use a a wave form based debugger when debugging compiled designs.  CVC
+  supports both VCD and Springsoft (Novas) FSDB value change dump formats.
+ 
+  CVC ignores the $stop system task when simulating a compiled design.
+  When $stop is executed supressable warning 560 is emitted.  Pressing the
+  interrupt key (usually ctrl-c) kills your simulation the sent quit signal
+  is passed to your shell.
+
+Debugging using the tracing mechanism:
+  An alternative non interactive tracing mechanism is supported.
+  Behavioral statement tracing is started with the -t option or $settrace
+  system task and stopped by calling $cleartrace.  Event tracing is started
+  with the -et option or $setevtrace system task and stopped by calling
+  $clearevtrace.  The -et option allows pre time 0 initialization events
+  to be traced.  Trace output is written to stdout and the log file unless
+  the +tracefile [file name] option or $settracefile([string]) system task
+  are used to direct trace output to a separate file.  The trace mechanism
+  is intended to allow debugging of parallel activity by searching trace
+  output with a debugger.
+ 
+  Trace statements and gates are reconstructed source with parameters
+  replaced by numeric values.  Interactive debugger breakpoint and step
+  tracing also emit source lines.  To avoid duplicate output if tracing
+  and the interactive debugger are used, redirect trace output.
+ 
+  The tracing options works with compiled simulation except only a small
+  subset of tracing messages are printed.
+
+Debugger differences from older P1364 LRMs:
+  1) Multiple line interactive debugger commands must end with escaped new
+  lines.  Verilog statements still require the ending semicolon.
+  2) The $settrace system task (also -t) are divided into the two tracing
+  classes: $settrace and $setevtrace (-t and -et).
+  3) By default when interactive mode is entered the $scope interactive
+  scope is set to the current scope.  This allows examination of local
+  variables on step or break but may require entering $scope command on
+  every interactive entry to run some legacy scripts.  In functions, named
+  blocks do not have scope so function scope remains.  Interactivbe variable
+  access in function named block must use qualified reference from function
+  scope.  To duplicate XL behavior in which interactive scope can only
+  be changed by $scope system task, type: ':set noscopechange' inside the
+  interactive debugger.  When re-enabling commands from the history list,
+  either the command must use rooted names or the scope must be the same
+  as the scope when the command was originally entered.
+  4) Delay back annotation by specparam assignments not supported, and
+  $updatetiming, but similar standard SDF (LABEL form and PLI 2.0 assignment
+  to defparams and specparam before delay elaboration supported.
+
+Interactive Verilog statement execution:
+  Any Verilog statement can be entered at the interactive mode prompt (or
+  in an $input file) except named blocks and initial or always statements.
+  No new variables can be declared and all identifiers are accessed using
+  the current scope (entry scope or change $scope location).  Compound
+  statements and statements with delay or event controls are legal.
+  Commands are:
+ 
+   '.'   Exit the debugger and continue execution (event processing).
+   ':'   Print the current instance and possibly task scope plus location
+         of scope and current :list current location.  Prints scope and
+         listing location, use :where for procedural execution location.
+   ';'   Silently step through next procedural statement and process all
+         events and time movement up to the next procedural statement. The
+         current location for the :list command is not changed.  Tasks and
+         functions are stepped into.
+   ','   Step through next statement and print next source statement.  Same
+         as ';' except the next source line to execute is printed.
+   -[number]  Disable history command [number] if it has not yet completed.
+         The $history task indicates commands that are active with a '*'
+   [number]  Re-execute command [number] from the history list only if the
+         command has finished (no '*' mark when printed with $history).
+         Commands are re-executed in the current scope so if a command sets
+         a change or edge breakpoint, it must contain rooted names or be
+         executed from the same scope as it's original entry.
+
+Displaying internal circuit values:
+  In addition to the normal $display (or $write) system tasks to display
+  values use :print to override declared expression base or width (type
+  ':help :print' for legal values). Use :display to define expressions that
+  are printed whenever interactive mode is entered.  :display and :print
+  take same format and width modifiers.  :expris [expr] to determine the
+  width and type of an expression.  Use :varis [var.] to determine type,
+  width and declaration keywords of a variable.  Use :whatis [name] to
+  determine all uses of an identifier name.  Entire qualified path from
+  function scope required for accessing variables in named blocks in
+  functions.
+
+Listing source statements:
+  The normal $list([scope]) system task can list all of any task or module.
+  The :list command lists 10 lines from a selected location that can be
+  a scope or a [file:][line] reference or argument relative to last listed
+  line.  Type ':set listsize [number]' to change the number of lines listed.
+  The current listing location is independent of current scope except when
+  :scope or $scope is executed, the current list line is set to the first
+  line of the scope.  Also since ',' and :[i]step and hitting a breakpoint
+  print a source line, those commands change the current list line.
+  The explicit [file:][line] list command lists in a new file and :list ++
+  lists the beginning of the next source file (:list -- the previous end).
+  Only these three commands can change listing file.  Type ':help :list'
+  for the format of the various :list command options.
+
+Setting interactive scope:
+  The $scope([scope xmr]) system task changes interactive scope.  The :scope
+  command also changes scope but allows a more general reference.  The
+  :breakpoint command takes a scope reference argument.  Format is:
+ 
+  [file:][line] - first instance of scope determined by [file:][line].
+       [file] can be source file, -y or -v path or any path tail if it is
+       unique.  [line] must be between module - endmodule.  Any ':' in
+       [file] name must be escaped with a back slash.  Scope set to type or
+       first instance but other command argument may select instance for
+       :breakpoint.  Scope list line set to first line of scope not [line].
+       [line] is same as [file:][line] where [file] is current file.
+ .. or .u - upward scope first line - if scope in task - one up task or
+       instance containing task (not up instance).
+ .d - first line of scope of first contained instance (not contained task).
+ [module name]  - first instance of module unless name declared as instance
+       in current scope, then normal downward hierarchical reference.
+ [hierarchical ref.] - first line of instance - same as $scope argument.
+
+Behavioral statement breakpoints:
+  Use the :breakpoint or :ibreakpoint commands to set a breakpoint at a
+  specific source statement.  The break occurs before statement execution.
+  :breakpoint breaks in all instances and :ibreakpoint breaks only in the
+  specified instance.  The :breakpoint argument can be any scope or line
+  reference.  If no line reference is given the break is at the first
+  initial, always or task statement of the scope.  For :ibreakpoint the
+  argument must be an instance reference that may optionally be followed by
+  a ',' and a line reference.  For a line reference, the breakpoint is set
+  at the first procedural statement at or following the line in the scope.
+ 
+  Type ':help :breakpoint' or ':help :ibreakpoint' for other options and
+  argument format.  Use ':info breakpoints' to print a list of breakpoints
+  ':delete [number]' to delete breakpoint [number] (no argument deletes all),
+  ':disabl [number]' to temporarily disable breakpoint and ':enable [number]'
+  to re-enable.  :tbreakpoint and :tibreakpoint are identical to :ibreak
+  and :break except breakpoint removed when hit.  :cond adds expression to
+  breakpoint that must be true to cause stop. :ignore adds count of how many
+  hits to ignore before halting.
+
+Breaking on net changes:
+  Enter a delay or event control followed by the $stop system task to
+  enter interactive mode on value change.  Normally the event control
+  statement will be in a loop (probably a forever) because otherwise the
+  break is disabled after each trigger.  Also when interactive mode is
+  entered from an interactive $stop, a step (',', ':', :step, or :istep)
+  command must be entered before using [number] to re-enable a history
+  statement.  For example: 'forever @(posedge clock) $stop;' is usually
+  better than '@(posedge clock) $stop;'
+
+History mechanism:
+  A command is re-executed by entering its history number.  A uncompleted
+  command (such as a Verilog wait or delay control) is disabled by entering
+  -[number] where [number] is command's assigned number in history list.
+ 
+  The $history system task prints the most recent 20 (or histlistsize if
+  different) history entries.  The debugger :history [optional number]
+  command is more flexible because if an optional number argument appears,
+  that many elements are printed (0 for all).  The interactive command
+  prompt is 'C[number] >' where [number] is a command's history number.
+  The one character, [number] to execute, [-][number] to disable and
+  incorrect (such as mistyped Verilog statement entered interactively)
+  commands are not added to the history list.
+ 
+  All commands input during a run are retained.  Use $nokeepcommands to
+  suppress history accumulation and $keepcommands to re-enable in $input
+  scripts.  +nokeepcomands command line option disables history saving for
+  programs that run a simulation by supplying command input through a pipe.
+  :emptyhistory command discards all retained history commands and resets
+  command number to one.  If any history commands are enabled (have not yet
+  completed or been disabled), :emptyhistory will fail.  When an interactive
+  Verilog statement is executed, if it can be executed immediately (no
+  delays, events or tasks enables), it is executed from inside debugger and
+  control remains in interactive mode.  Non immediate statements are
+  scheduled after already scheduled events and resumes.  $stop or the
+  interrupt signal (^c) must then be used to reenter interactive mode.  Use
+  ':set histlistsize' to set default number of history commands to list and
+ ':info histlistsize' to see current number.
+
+Determining and setting internal debugger state values:
+  The ':info [debugger value name]' command prints the current value of
+  a debugger value.  The ':set [debugger value name] [value]' command
+  changes a debugger value.  Type ':help :info' or ':help :set' for the list
+  of debugger info value names.
+
+The following system tasks may be useful during interactive debugging:
+   $finish;  Terminate simulation.
+   $list([scope reference]);  list source lines of scope (:list is
+      alternative).  $list does not print variables values, use $showvars
+      or :print <expr> for that.  Also $list does not mark source lines
+      with pending events.
+   $system("[OS command string]");  Escape to a sub shell and execute the
+      command string (alternative is :shell [command string]).  Use empty
+      string ("") to invoke an interactive sub-shell.
+   $flushlog;  Call OS flush of buffers for log file and trace file.  Can
+      then use :shell to invoke your editor to inspect output.
+   $history;  Print history list to stdout and log file.  Contrary to XL,
+      '$history;' prints last 20 (or histlistsize) commands.  Use
+      ':history <num>' to print <num> commands.  <num> 0 prints all. :set
+      sets and :info prints debugger histlistsize parameter that determines
+      number of commands to list.
+ $keepcommands;, $nokeepcommands;  Enable (or disable) saving of commands
+      entered interactively to history list.  Default is $keepcommands.
+      Use the +nokeepcommands command line option to disable saving of
+      commands to the history list unless '$keepcommands;' is executed.
+   $input([string]);  Process interactive commands from [string] file.
+   $nolog;, $log;  All commands in $input scripts will be copied to the
+      log file unless $nolog is used.  To re-enable log file output, use
+      $log; with no argument.  To change log file use $log([string]).
+   $reset;, $reset_count;, $reset_value;  During debugging reset to start
+      of simulation.  :reset command is better during debugging since it
+      returns to time 0 leaving the reset count unaffected and allows stop.
+   $scope;  Change interactive environment scope to avoid a need to type
+      full paths for variable names.  :scope and automatic scope tracking
+      are intended to lessen need to set explicit interactive scopes.
+      $scope can set scope to function named block but next ineractive entry
+      (from step?) will change scope to function body scope.
+   $showallinstances;  Print all instances in design with source file and
+      line location.  Useful to find module whose name is forgotten.
+      +printstats and +printallstats give more detailed information.
+      If no other window is available, use $flushlog; and :shell to view.
+   $showscopes;  Used to show scopes in current interactive scope.  Can be
+      called with non zero argument to list entire design scope map.
+   $showvariables;, $showvars  Print all variables in current scope. :print
+      is more terse but $showvars prints more for multiple fan-in wires.
+   $shapshot; print up to 5 pending procedural and 5 pending declarative
+      events and status of every interactive thread.  Same as :snapshot.
+   $display, $write  Write values.  Alternative :print is more flexible but
+      these tasks allow formatted output.
+
+:[command] debugger commands:  :help, :shell, :quit, :where, :print, 
+ :reset, :expris, :varis, :whatis, :list, :set, :info, :scope, 
+ :breakpoint, :ibreakpoint, :delete, :enable, :disabl, :step, :istep, 
+ :history, :emptyhistory, :display, :undisplay, :tbreakpoint, 
+ :tibreakpoint, :ignore, :cond, :snapshot, :nextb
+
+... printing : debugger help command messages
+:help [optional topic or :[command] name prefix]
+   Print help message.
+
+:shell [rest of line is OS command]
+   Execute rest of line as OS command in sub-shell.  Notice no quotes needed.
+   Empty rest of line to spawn interactive shell.  Equivalent to
+   '$system([quotes OS command string]);' system task.
+
+:where
+   Print back trace of most recently suspended control thread including all
+   upward thread enables with source and scope locations.  To see a listing
+   of all pending scheduled event activity and thread states use $snapshot;
+   or :snapshot.  :where corresponds as closely as possible to normal
+   call stack trace back.  ':' prints instance scope and last source
+   listing location.  If :where fails, suspension was from declarative code.
+   Try single step and entering :where again.
+
+:quit
+   Exit.  Equivalent to $finish;
+
+:print [/format][#width] [expression]
+   Evaluate and print expression.  If [/format] is present, interpret the
+   value according to format.  Formats are:  'd' (decimal), 'u' (unsigned),
+   'b' (binary), 'h' or 'x' (hex), 's' (string), or 'c' (1 character).  If
+   the [/format] is omitted, use current default unless the expression is a
+   string or real.  Starting default base is hex, but use ':set printbase'
+   to set different default base.  /u format prints bit pattern as unsigned.
+   If [#width] value is present, interpret as [width] wide, instead of width
+   computed from operator width rules.  Any format or width are ignored for
+   reals, use $realtobits to view bit pattern.
+
+:reset [stop]
+   Reset simulation back to time 0 and restart simulation.  Interactive mode
+   must be explicitly entered by interrupt (^c), calling $stop or [stop]
+   option.  If a -i startup file was given it is executed on interactive
+   entry.  $reset_count and $reset_value are not changed.  If optional
+   :reset stop argument is present, stop just before simulation, else rerun
+   without stopping even if -s option was given on command line.  Equivalent
+   to $reset system task but can be used to restart for debugging models
+   that use the $reset system task.  The $reset system task uses the -s
+   option unless the first argument is non zero and stops before simulation.
+   All uncompleted interactive statements are disabled by either :reset
+   or $reset.  They are re-enabled by typing history command number or
+   running -i start up interactive file.  Debugger state : breakpoints
+   (left enabled) and history are preserved.
+
+:expris [expression]
+   Print type and width of expression.  Use to determine Verilog width and
+   property rules for complex expressions.
+
+:varis [variable]
+   Print type and width and declaration keywords of variable.
+
+:whatis [identifier]
+   Print symbol information for every use of identifier.  Also, emits one
+   instance reference for each use, so a breakpoint can be set.
+
+:list [range]
+   List source within [range] lines.  Some [range]s are relative to last
+   printed line.  Any scope change or $list or previous :list command
+   changes the last printed line.  Legal [range]s are:
+ 
+     + or [empty]             10 lines starting with last printed.
+     +0                       10 lines around current line.
+     -                        10 lines ending 1 before previous first line.
+     ++                       First 10 lines of next file.
+     --                       Last 10 lines of previous file.
+     [file]:[number]          10 lines around [number] in file [file].
+     [number]                 10 lines around [number] in current file.
+     [+/-][offset]            10 lines starting [offset] from current.
+     [+/-][num1],[+/-][num2]  Range, if [+/-] offset from current line.
+     [scope reference]        First 10 lines starting at [scope].
+ 
+   By default 10 lines are list, use ':set listsize [number]' to change
+   number of printed lines to [number].  Notice stepping with ';' does not
+   change last printed line.  Use [file]:[number] to list inside `include
+   files.  ++ and -- exit to file and line of first inclusion of file.
+   Read library files are same as source files.
+
+:set [debugger parameter] [value]
+   Set debugger internal parameter to [value].  Legal set parameters are:
+ 
+   :set listsize [number]     Default is 10 lines to list.
+   :set histlistsize [number] Default is 20 history commands to list.
+   :set noscopechange         Disable automatic scope setting on entry to
+                              interactive mode.
+   :set scopechange           Re-enable automatic scope setting on.  Scope
+                              not set to named blocks in functions.
+   :set printbase [base]      Set default :print command base, values: hex
+                              (default), decimal, octal binary.
+   :set nologecho             Turn off writing of input interactive commands
+                              the log file (default).
+   :set logecho               Turn on writing of input commands.
+
+:info [debugger parameter]
+   Show value of debugger state or parameter setting.  Legal info parameters
+   are: listsize, histlistsize, scopechange, breakpoints, displays,
+   printbase and logecho.  For breakpoints and auto-display expressions
+   prints status information for each.
+
+:scope [scope reference]
+   Change interactive scope to [scope reference] location.  Type
+   ':help scope' for list of legal scope selection forms.  Any [line] is
+   used only to determine surrounding scope.  Scope only applies to
+   interactive mode and system tasks that explicitly are defined to use the
+   interactive scope.   Extended version of $scope system task.  If scope
+   set to function named block scope, next interactive entry will change
+   scope to function body scope (assuming scopechange mode active).
+
+:breakpoint [scope reference] or none
+   Set statement breakpoint at all instances of [scope reference].  Type
+   ':help scope' for a list of legal [scope reference] forms.  If the
+   reference selects an instance, only the type of the instance is used.
+   If the [scope reference] is not a [file:][line] reference, use first
+   initial, always or task statement of scope.  If no argument, set at
+   last :list argument (first if range, closest if backward) that must be
+   within task, function or initial or always block.  Setting a breakpoint
+   at a line means the first procedural statement at or after the line (but
+   must be within scope).  Type ':help breakpoints' for discussion of other
+   breakpoint commands.
+
+:ibreakpoint [scope reference][,[file:][line]] or none
+   Set statement breakpoint at instances of [scope reference] file [file]
+   and [line] line.  Type ':help scope' for a list of legal [scope ref.]s,
+   but here only explicit instance scope references are legal.  If the
+   ',[file:][line]' argument is omitted, use first statement of first
+   initial, always, or task (for task scope).  If ',[line]' but no [file]
+   is given, use first or only file of scope.  If no scope reference and
+   only ',[file:][line]' is given, use current scope.  No argument means
+   set at last :list argument (first if range, closest if backward)
+   that must be within task, function, or initial or always block.
+   Type ':help breakpoints' for discussion of other breakpoint commands.
+
+:delete [optional type] [number]
+   Delete breakpoint or display expression with number [number] or all if
+   number is omitted.  [optional type] is breakpoints or displays (default
+   if omitted is breakpoints).  Type 'info breakpoints' or 'info displays'
+   to determine breakpoint or auto-display number.  If [number] is omitted,
+   delete all breakpoints or auto-display expressions.
+
+:enable [optional type] [number]
+   Enable breakpoint or display with number [number].  [optional type]
+   is either breakpoints or displays (breakpoints is default if omitted) and
+   can be abbreviated to first letter.  Type 'info breakpoints' or
+   'info displays' to determine breakpoint or auto-display expression
+   number and enable state.
+
+:disabl [optional type] [number]
+   Temporarily disable breakpoint or display with number [number].
+   [optional type] is breakpoints or displays (breakpoints is default if
+   omitted) and can be abbreviated to first letter. Type 'info breakpoints'
+   or 'info displays' to determine breakpoint or auto-display number and
+   enable state.  Notice final e must not appear to avoid conflict with
+   Verilog disable keyword (any unique prefix such as 'disa' works).  Also
+   notice that :disabl disables an added : debugger breakpoint, but disable
+   statement or -[number] disables simulation of a Verilog statement.
+
+:step [optional repeat count]
+   Step to next procedural line.  Execute one statement or statements on
+   current line, stop before first statement of next line.  May process
+   pending declarative events before stepping.  Execution steps into any
+   task or function.  Equivalent to ',' interactive Verilog command.
+   Always prints location after stopping.  if optional repeat count, step
+   that many times before stopping and printing message.  If interrupt (^c)
+   or breakpoint hit during stepping, stop stepping and enter interactive
+   mode.
+
+:istep [optional repeat count]
+   Step to next procedural statement that is in same instance tree location.
+   Otherwise identical to :step.  If debugger entered by interrupt, use one
+   :step before :istep since scope may have been in module without any
+   procedural statements.  :istep uses currently executing instance not
+   interactive scope set by $scope.
+
+:history [optional number]
+   Print 20 (or value of histlistsize info debugger parameter) commands.
+   If [number] appears, print [number] (0 means all) history commands.
+   Pauses and prompts for CR every histlistsize lines.
+
+:emptyhistory
+   If all history commands have completed or are disabled with (-[number]
+   command), discard retained history and set next history command to 1.
+
+:display [/format][#width] [expression]
+   Set up [expression] in display table so that it is displayed on every
+   entry to interactive mode.  Arguments are identical to :print command.
+   Use ':delete display' or ':undisplay' to delete all auto-display
+   expressions.  If either is followed by a number, delete that numbered
+   display only.  Use ':info display' to list current displays.  ':display'
+   with no arguments displays all current auto-display expressions.
+   Use 'enable display' and 'disabl display' to temporarily turn off or on
+   an auto-display expression.
+
+:undisplay [optional number]
+   Delete [number] auto-display expression or all current if [number] is
+   not present.  Same as ':delete display' command.
+
+:tbreakpoint [scope reference] or none
+   Command identical to :breakpoint except breakpoint is temporary and
+   removed after it is hit the first time.  To avoid tracing in task or
+   function (approximate DBX/GDB next command), use the :nextb command.
+   It sets a :tibreak at the next line and executes a '.' command.  Because
+   of delay and event controls, other threads may be executed before break
+   is hit.  The :ignore command can be used with :tbreakpoint.  After
+   ignore count hits, the break point is taken and then removed.
+
+:tibreakpoint [scope reference][,[file:][line]] or none
+   Command identical to :ibreakpoint except breakpoint is temporary and
+   removed after it his the first time (see :tbreakpoint help).  Only
+   stops in instance that is same as scope reference instance.
+
+:ignore [breakpoint number] [ignore count]
+   Do not stop at break point [number] until [ignore count] hits of the
+   break point have occurred.  Ignore count assumes last hit was 0th.
+   To remove an :ignore count, use 'ignore [break number] 0'.  Use
+   ':info breakpoints' to determine number of hits and any pending ignore
+   count.
+
+:cond [breakpoint number] [optional condition expression]
+   Do not stop at break point [number] unless [expression] evaluates to
+   a positive non x/z value (i.e. true).  Expression will be checked and
+   evaluated in instance and task/function or named block scope of break
+   point.  Since Verilog variables persist, :cond expression variable always
+   have values.  Conditions are evaluated before ignore counts so if
+   condition is false hit count does not rise.  Use ':cond [break number]'
+   to remove condition.
+
+:snapshot
+   Print snapshot of current procedural location and list of statement at
+   which each procedural (per instance) thread suspended at.  Also lists
+   pending events on head of event list.  May be long so one way to view it
+   is to type: $flushlog; then ':sh [evoke editor on verilog.log file]'.
+
+:nextb
+   Abbreviation for :tibreak [line number of next thread statement]
+   followed by '.'.  Analog of DBX/GDB next command steps over current
+   statement.  Break point is visible and can be removed before it is hit.
+   If no next statement in thread, temporary break point not set and error
+   message emitted.  :nextb over task enable may execute other threads
+   before stopping if the task contains event or delay controls.  :nextb
+   and for that matter any temporary break point do not use up a break
+   point number unless a new break point is set before temporary break
+   point is hit.  See ':help :tbreakpoint' and ':help statements' for
+   more information.
+
+C3 > $finish(2);
+Halted at location **helpgen3.inp(65) time 0 from call to $finish.
+0 simulation events and 18 declarative immediate assigns processed.
+51 behavioral statements executed (0 procedural suspends).
+  Times (in sec.):  Translate 0.0, load/optimize 0.1, simulation 0.1.
+  There were 0 error(s), 1 warning(s), and 45 inform(s).

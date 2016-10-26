@@ -1,0 +1,23 @@
+// Verilog Interface section
+
+module BF003 (  A1 , A2 , B1 , B2 , Y );
+
+// Verilog Port Declaration section
+
+   input  A1;
+   input  A2;
+   input  B1;
+   input  B2;
+   output Y;
+   wire   Y1, Y2, A1_, A2_, B1_, B2_;
+
+// Verilog Structure section (in terms of gate prims)
+
+
+//         aoiudp  ( Y , B1 , B2 , A1 , A2 ) ;
+
+not	g1 (B1_,B1), g2 (B2_,B2), g3 (A1_,A1), g4 (A2_,A2);
+or	g5 (Y1, B1_, B2_), g6 (Y2, A1_,A2_);
+and	g7 (Y, Y1, Y2);
+
+endmodule

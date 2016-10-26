@@ -1,0 +1,65 @@
+// generate help message for individual : debugger commands
+$display("\n... printing : debugger help command messages");
+:help :help
+$write("\n");
+:help :shell
+$write("\n");
+:help :where
+$write("\n");
+:help :quit
+$write("\n");
+:help :print
+$write("\n");
+:help :reset
+$write("\n");
+:help :expris
+$write("\n");
+:help :varis
+$write("\n");
+:help :whatis
+$write("\n");
+:help :list
+$write("\n");
+:help :set
+$write("\n");
+:help :info
+$write("\n");
+:help :scope
+$write("\n");
+:help :breakpoint
+$write("\n");
+:help :ibreakpoint
+$write("\n");
+:help :delete
+$write("\n");
+:help :enable
+$write("\n");
+:help :disabl
+$write("\n");
+:help :step
+$write("\n");
+:help :istep
+$write("\n");
+:help :history
+$write("\n");
+:help :emptyhistory
+$write("\n");
+:help :display
+$write("\n");
+:help :undisplay
+$write("\n");
+:help :tbreakpoint
+$write("\n");
+:help :tibreakpoint
+$write("\n");
+:help :ignore
+$write("\n");
+:help :cond
+$write("\n");
+:help :snapshot
+$write("\n");
+:help :nextb
+$write("\n");
+$keepcommands;
+:set logecho
+$finish(2);

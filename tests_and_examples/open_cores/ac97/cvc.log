@@ -1,0 +1,113 @@
+Highest level modules:
+test
+  Begin compiled design load:
+  Begin simulation:
+
+
+
+
+
+*****************************************************
+* WISHBONE Memory Controller Simulation started ... *
+*****************************************************
+
+
+
+INFO: WISHBONE MASTER MODEL INSTANTIATED (test.m0)
+
+ ......................................................
+ :                                                    :
+ :    Regression Run ...                              :
+ :....................................................:
+
+
+
+*****************************************************
+*** Basic AC97 I/O Test & Reg Wr ...              ***
+*****************************************************
+
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+
+
+
+*****************************************************
+*** Basic AC97 I/O Test & Reg Rd ...              ***
+*****************************************************
+
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+
+
+
+*****************************************************
+*** VSR AC97 I/O Test ...                       ***
+*****************************************************
+
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+
+
+
+*****************************************************
+*** VSR AC97 I/O Test (INT ctrl) ...              ***
+*****************************************************
+
+Sampling selection: 0
+Interrupt threshold: 100%
+Interrupt threshold: 75%
+Interrupt threshold: 50%
+Interrupt threshold: 25%
+Sampling selection: 1
+Interrupt threshold: 100%
+Interrupt threshold: 75%
+Interrupt threshold: 50%
+Interrupt threshold: 25%
+Sampling selection: 2
+Interrupt threshold: 100%
+Interrupt threshold: 75%
+Interrupt threshold: 50%
+Interrupt threshold: 25%
+Sampling selection: 3
+Interrupt threshold: 100%
+Interrupt threshold: 75%
+Interrupt threshold: 50%
+Interrupt threshold: 25%
+Processed 94 samples per channel for each test
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+Halted at location **bench/verilog/test_bench_top.v(656) time 142073235000 ps from call to $finish.
+  Times (in sec.):  Translate 0.0, load/optimize 0.1, simulation 39.2.
+  There were 0 error(s), 0 warning(s), and 551 inform(s).

@@ -1,0 +1,29 @@
+
+Why do vpi_ do call back registered functions return 'int' instead of 'void'
+
+It seems to me the vpi_ simulation related registered call back function
+in the s_cb_data type (LRM section 23.34, p. 584) and system task or
+function call back routines in s_vpi_systf_data (LRM section 23.25, p. 589)
+should have type "void returning function" instead of "int returning
+function".  And in fact the example on page 588 is code this way and
+I think wrong since a void returning call back function 'get_current_cputime'
+is registered in the example. 
+
+I discovered this trying to run some vpi_ code through a lint program. 
+In order to take advantage of the checking ability of ansii C, registered
+functions must be declared as int returning and must explicitly return
+some kind of dummy value (probably 0).
+
+In addition to the advantage of allowing lint warning checking changing
+the fields to void returning allows optimizing C compilers to
+produce much better code.
+
+The s_vpi_vlog_info type defined in vpi_user.h for defining start up
+call back routines does require void returning routines. 
+
+I could not find any use for either s_cb_data call back or s_vpi_systf_data
+routine int return value in the LRM.  Is there something I am missing on
+this?   Since the s_vpi_time type is already being changed, now might be
+a good time to also change the cb_rtn declarations.  
+/Steve
+

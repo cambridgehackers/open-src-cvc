@@ -1,0 +1,7 @@
+CC=gcc
+LIBS= -lm -ldl
+# if you really want to run cvc on an old 32 bit linux remove the define
+CFLAGS=-O2 -m32 -D__X86_64__ 
+
+all:
+	$(CC) $(CFLAGS) $(LIBS) chkcvc.c -o checkcvc

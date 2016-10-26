@@ -1,0 +1,7 @@
+/* file to generate debugger help */
+$nokeepcommands;
+:set nologecho
+:info logecho
+$display(".. printing basic help message");
+:help
+$input("helpgen2.inp");

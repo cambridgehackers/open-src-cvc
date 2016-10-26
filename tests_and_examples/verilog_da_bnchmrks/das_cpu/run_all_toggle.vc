@@ -1,0 +1,12 @@
+
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+// various options to see how new CVC toggle processing works
+// das_cpu is interesting because nearly every signal is toggled
+// uncomment all 5 lines to see the full new toggle capabilities
+-toggle
+-untoggled_report_concise
+-mark_driven_const_wires_toggled
+-driven_const_report_concise
+-write_toggle_data_file all-dascpu.tgldat

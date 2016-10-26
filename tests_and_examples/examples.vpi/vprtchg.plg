@@ -1,0 +1,37 @@
+  There are 1 top level modules.
+  >>> All instances processed - continuing with simulation.
+--> now 0: task10.count=00000000000000000000000000000000.
+--> now 0: task10.x=0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+--> now 10: task10.aa=00000000000000000000000000000000.
+--> now 10: task10.bb=0.
+--> now 10: task10.x=11111111111111111111111111111111.
+--> now 10: task10.y=1.
+        10 start   x: ffffffff  y: 1  count: 0
+--> now 10: task10.t1.a=00000000000000000000000000000000.
+--> now 10: task10.t1.b=0.
+        10 t1 started
+--> now 10: task10.t1.d=0.
+--> now 20: task10.t1.c=00000000000000000000000000000000.
+--> now 30: task10.count=00000000000000000000000000000001.
+        30 t1 finished
+--> now 30: task10.x=00000000000000000000000000000000.
+--> now 30: task10.y=0.
+        30 return  x: 00000000  y: 0  count: 1
+--> now 30: task10.aa=00000000000000000000000000000001.
+--> now 30: task10.bb=1.
+--> now 30: task10.t1.a=00000000000000000000000000000001.
+--> now 30: task10.t1.b=1.
+        30 t1 started
+--> now 30: task10.t1.d=1.
+        35 return  x: 00000000  y: 0  count: 1
+--> now 35: task10.aa=00000000000000000000000000000010.
+--> now 35: task10.bb=0.
+--> now 35: task10.t1.a=00000000000000000000000000000010.
+--> now 35: task10.t1.b=0.
+        35 t1 started
+--> now 35: task10.t1.d=0.
+--> now 45: task10.t1.c=00000000000000000000000000000010.
+--> now 55: task10.count=00000000000000000000000000000010.
+        55 t1 finished
+--> now 55: task10.x=00000000000000000000000000000010.
+        55 return  x: 00000002  y: 0  count: 2

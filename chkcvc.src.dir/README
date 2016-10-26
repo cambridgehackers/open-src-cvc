@@ -1,0 +1,6 @@
+The checkcvc and checkcvc64 binaries are in the release bin directory.
+You should just run those.  The makefile.lnx and makefile.lnx64 can be
+used to make the binaries again if you need to.
+
+If you really want to run on an old 32 bit linux OS, you need to change
+makefile.lnx to not define __X86_64__.

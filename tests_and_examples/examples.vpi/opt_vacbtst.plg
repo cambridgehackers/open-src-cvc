@@ -1,0 +1,15 @@
+*** at end of compilation callback ***
+*** entering interactive mode callback ***
+C1 > // remove C[number]> prefixes and output messages from log file
+C1 > .
+*** exiting interactive mode callback ***
+        10 start   x: ffffffff  y: 1  count: 0
+        10 t1 started
+        30 t1 finished
+        30 return  x: 00000000  y: 0  count: 1
+        30 t1 started
+        35 return  x: 00000000  y: 0  count: 1
+        35 t1 started
+        55 t1 finished
+        55 return  x: 00000002  y: 0  count: 2
+*** at end of simulation callback ***

@@ -1,0 +1,7 @@
+============== WISHBONE Slave Bus Monitor error log ==============
+ 
+   Only ERRONEOUS conditions are logged !
+ 
+Time:              8071935
+tb_ethernet.wb_eth_slave_bus_mon.message_out, Slave provided invalid data during read and qualified it with ACK_I
+Byte select value: SEL_O = 1111, Data bus value: DAT_I =  0000zzzz 

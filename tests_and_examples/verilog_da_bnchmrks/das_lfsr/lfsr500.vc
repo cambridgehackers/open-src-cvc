@@ -1,0 +1,1 @@
+   lfsr500.v +sdfannotate lfsr.sdf -y ../libs/lca100kgate +libext+.v

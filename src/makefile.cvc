@@ -1,0 +1,309 @@
+# This is the makefile to make cvc64 binary - run "make -f makefile.cvc"
+# to make 32 bit binary
+#
+# You should normally run cvc64 because it is higher capacity and about as
+# fast as 32 bit, but cvc64 does take maybe 50% more memory for cvcsim
+# and simulation storage
+#
+# Historically cvc has only run on Red Hat Enterprise Linux (rhel,
+# Centos or scientific linux).  This makefile assumes it is being run
+# on a RHEL/Centos system with normal gcc software development
+# packages installed
+#
+# CVC uses complicated libraries (gcclib) which are not backward incompatible.
+# Namely a cvc64 make on Rhel 6.x will not run on RHEL 5.x or RHEL 4.x,
+# but libraries are forward compatible.  Namely a cvc64 make on a 4.x or 5.x
+# system will run on RHEL 6.x. 
+#
+# making and running binaries should work on any X86 linux system providing
+# the right gcclib family is used.
+#
+# you may need to change some of these variables - really only needed if making
+# cvc/cvc64 for older RHEL 4.x or are developing CVC and need to turn on
+# code generation debugging (flow graph and .s file dumping mostly)
+
+# normally for modern RHEL/Centos 6.x leave variable defines as as is
+LINUX_VERS=__RHEL6X__
+
+# for older RHEL/Centos 4.x this is required to activate large models defines
+# for old 4.x only 64 bit CVC can be made
+# LINUX_VERS=__RHEL4x__
+
+# for RHEL/Centos 5.x probably set this
+# it does not change compilation but causes cvc64 to print a message
+# telling which OS CVC was made on and that it is 64 bit CVC - this helps
+# keeping track of versions
+# LINUX_VERS=__RHEL5x__
+
+ifeq ($(LINUX_VERS),__RHEL4x__)
+$(error ... Only cvc64 can be made on older Centos/RHEL 4.x)
+endif
+
+# no need to tell gcc to use 32 bit compilation and libraries
+FLG32=-m32 -D__CVC32__
+
+CVCCOBJS=v_bbgen.o v_bbgen2.o v_bbgen3.o v_bbopt.o v_cvcms.o v_asmlnk.o \
+ v_aslib.o v_regasn.o v_cvcrt.o v_xprop.o fstapi.o fastlz.o lz4.o
+
+# make normal optimized CVC that pipes .s gas files instead of making .s files
+CVCCFLGS= -D$(LINUX_VERS) $(FLG32)
+
+# __CVC_DEBUG__ must be turned on or the CVC debugging command line options
+# mostly +Odebug and +show_asm won't be recognized
+
+# __CVC_DEBUG__ can be used for a production CVC - only difference
+# is a few statistics will be output when +verbose is used
+# CVCCFLGS=-D$(LINUX_VERS) $(FLG32) -D__CVC_DEBUG__
+
+# alternate to use red-black tree event queue for schedules instead of heap
+# hashing seems faster on modern processors
+#CVCCFLGS=-D$(__LINUX_VERS) $(FLG32) -D__STREE__ -D__CVC_DEBUG__
+
+MAINOBJ=dig_main.o
+
+OBJS=cvc.o v_src.o v_src2.o v_src3.o v_fx.o v_genfx.o v_fx2.o v_fx3.o v_cnv.o \
+v_ex.o v_ex2.o v_ex3.o v_ex4.o v_trch.o v_del.o v_sdf.o v_prp.o v_prp2.o \
+v_sim.o v_dbg.o v_dbg2.o v_cvr.o v_ms.o v_tf.o v_acc.o v_vpi.o v_vpi2.o \
+v_vpi3.o v_dpi.o $(CVCCOBJS)
+
+# runtime linked in obj files
+# no compiler files (v_bbgen*.c, v_bbopt) just CVC runtime file v_cvcrt.o 
+# notice speciil cvc_rt.o runtime only obj with extra -D__CVC_RT__
+RT_OBJS=cvc_rt.o v_src_rt.o v_src2.o v_src3.o v_fx_rt.o \
+v_genfx_rt.o v_fx2_rt.o v_fx3_rt.o v_cnv.o v_ex.o v_ex2.o v_ex3.o \
+v_ex4.o v_trch.o v_del.o v_sdf.o v_prp.o v_prp2.o v_sim.o v_dbg.o \
+v_dbg2.o v_cvr.o v_ms_rt.o v_tf.o v_acc.o v_vpi.o \
+v_vpi2.o v_vpi3.o v_aslib.o v_cvcrt.o v_xprop.o v_dpi.o fstapi.o fastlz.o lz4.o
+
+LIBS= -lm -ldl -lpthread -lz
+
+# choose gcc warns here depending on taste
+WARNS=-Wall
+#WARNS=
+
+# pli incs directory must be one level up from source (normal convention)
+INCS=-I../pli_incs
+
+# for debugging/development use the empty opt flags or gdb won't work right 
+OPTFLGS=-fno-strength-reduce -fomit-frame-pointer
+# OPTFLGS=
+
+# if you are running CVC only on one particular type of old hardware it
+# probably helps simulation speed to set this - not needed for modern 
+# core i series processors
+ARCHFLGS= 
+
+# cflags when making optimized release version 
+# if you are not developing CVC you probably want to just leave this
+CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) $(OPTFLGS) -O2 
+
+# cflags when making optimized debug version 
+# CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) $(OPTFLGS) -O2
+
+# for large design debugging - mostly gdb source tracing will be mostly useless
+# CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) -O2 -g
+
+# for normal gdb debugging 
+# CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) -g 
+
+# for using gprof program for finding speed bottle necks in the compiler
+# use oprof for speed measurements of cvcsim
+# CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) -g -pg
+
+# I still use old dbmalloc lib (it often tells exact malloc that caused
+# original problem) 
+# CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) -D__DBMALLOC__ $(CVCCFLGS) -g 
+
+# select gcc version to use - for older Linux systems may need older compiler
+CC=gcc
+
+# not needed for 64 bit cvc
+# LD=ld
+# ld for 32 bit gcc -m32 so not used here
+# on 64 linux system, need to install 32 bit development packages
+LD=ld -m elf_i386
+
+# loader flags
+LFLAGS=-export-dynamic
+
+# rule for making the CVC binary - this must be first rule in make file
+cvc64:	$(MAINOBJ) $(OBJS) hexasm cvclib_str.o exe_main_str.o 
+	$(CC) $(CFLAGS) $(LFLAGS) $(MAINOBJ) $(OBJS) $(PLIOBJS)\
+        $(LIBS) cvclib_str.o exe_main_str.o -o cvc
+
+# hexasm just takes an object file and dumps it as a long value array
+# create the object files and then create the .s files
+hexasm:	hexasm.o exe_main.o 
+	$(LD) --relocatable -o cvclib.o $(RT_OBJS) 
+	hexasm cvclib.o __cvclib 4 > cvclib_str.s
+	hexasm exe_main.o __exe_main 4 > exe_main_str.s
+
+hexasm.o:
+	$(CC) hexasm.c -o hexasm
+
+
+$(OBJS):	v.h systsks.h igen.h cvmacros.h config.h lz4.h fstapi.h
+
+dig_main.o:	dig_main.c
+	$(CC) $(CFLAGS) -c dig_main.c
+
+exe_main.o:	exe_main.c
+	$(CC) $(CFLAGS) -c exe_main.c
+
+cvclib_str.o:	cvclib_str.s
+	$(CC) $(CFLAGS) -c cvclib_str.s
+
+exe_main_str.o:	exe_main_str.s
+	$(CC) $(CFLAGS) -c exe_main_str.s
+
+# when adding source files need line here - insures exactly right c files used
+# notice some of the .c file need to be made twice - once for cvc compiler
+# and once for cvcsim which is handled by this make file
+cvc.o:	cvc.c
+	$(CC) $(CFLAGS) -c cvc.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c cvc.c -o cvc_rt.o
+# this is how to look at gcc .s file output 
+#	$(CC) $(CFLAGS) -S cvc.c
+
+v_src.o:	v_src.c
+	$(CC) $(CFLAGS) -c v_src.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_src.c -o v_src_rt.o
+
+v_src2.o:	v_src2.c
+	$(CC) $(CFLAGS) -c v_src2.c
+
+v_src3.o:	v_src3.c
+	$(CC) $(CFLAGS) -c v_src3.c
+
+v_fx.o:	v_fx.c
+	$(CC) $(CFLAGS) -c v_fx.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx.c -o v_fx_rt.o
+
+v_genfx.o:	v_genfx.c
+	$(CC) $(CFLAGS) -c v_genfx.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_genfx.c -o v_genfx_rt.o
+
+v_fx2.o:	v_fx2.c
+	$(CC) $(CFLAGS) -c v_fx2.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx2.c -o v_fx2_rt.o
+
+v_fx3.o:	v_fx3.c
+	$(CC) $(CFLAGS) -c v_fx3.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx3.c -o v_fx3_rt.o
+
+v_cnv.o:	v_cnv.c
+	$(CC) $(CFLAGS) -c v_cnv.c
+
+v_ex.o:	v_ex.c
+	$(CC) $(CFLAGS) -c v_ex.c
+
+v_ex2.o:	v_ex2.c
+	$(CC) $(CFLAGS) -c v_ex2.c
+
+v_ex3.o:	v_ex3.c
+	$(CC) $(CFLAGS) -c v_ex3.c
+
+v_ex4.o:	v_ex4.c
+	$(CC) $(CFLAGS) -c v_ex4.c
+
+v_trch.o:	v_trch.c
+	$(CC) $(CFLAGS) -c v_trch.c
+
+v_del.o:	v_del.c
+	$(CC) $(CFLAGS) -c v_del.c
+
+v_sdf.o:	v_sdf.c
+	$(CC) $(CFLAGS) -c v_sdf.c
+
+v_prp.o:	v_prp.c
+	$(CC) $(CFLAGS) -c v_prp.c
+
+v_prp2.o:	v_prp2.c
+	$(CC) $(CFLAGS) -c v_prp2.c
+
+v_sim.o:	v_sim.c
+	$(CC) $(CFLAGS) -c v_sim.c
+#	$(CC) $(CFLAGS) -S v_sim.c
+
+v_dbg.o:	v_dbg.c
+	$(CC) $(CFLAGS) -c v_dbg.c
+
+v_dbg2.o:	v_dbg2.c
+	$(CC) $(CFLAGS) -c v_dbg2.c
+
+v_cvr.o:	v_cvr.c
+	$(CC) $(CFLAGS) -c v_cvr.c
+
+v_ms.o:	v_ms.c
+	$(CC) $(CFLAGS) -c v_ms.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_ms.c -o v_ms_rt.o
+
+v_tf.o:	v_tf.c
+	$(CC) $(CFLAGS) -c v_tf.c
+
+v_vpi.o:	v_vpi.c 
+	$(CC) $(CFLAGS) -c v_vpi.c
+
+v_vpi2.o:	v_vpi2.c
+	$(CC) $(CFLAGS) -c v_vpi2.c 
+
+v_vpi3.o:	v_vpi3.c
+	$(CC) $(CFLAGS) -c v_vpi3.c 
+
+v_dpi.o:	v_dpi.c
+	$(CC) $(CFLAGS) -c v_dpi.c 
+
+v_acc.o:	v_acc.c
+	$(CC) $(CFLAGS) -c v_acc.c 
+
+v_bbgen.o:	v_bbgen.c igen.h
+	$(CC) $(CFLAGS) -c v_bbgen.c
+
+v_bbgen2.o:	v_bbgen2.c igen.h
+	$(CC) $(CFLAGS) -c v_bbgen2.c
+
+v_bbgen3.o:	v_bbgen3.c igen.h
+	$(CC) $(CFLAGS) -c v_bbgen3.c
+
+v_bbopt.o:	v_bbopt.c igen.h 
+	$(CC) $(CFLAGS) -c v_bbopt.c
+
+v_regasn.o:	v_regasn.c igen.h 
+	$(CC) $(CFLAGS) -c v_regasn.c
+
+v_cvcms.o:	v_cvcms.c igen.h 
+	$(CC) $(CFLAGS) -c v_cvcms.c
+
+v_asmlnk.o:	v_asmlnk.c igen.h 
+	$(CC) $(CFLAGS) -c v_asmlnk.c
+
+v_cvcrt.o:	v_cvcrt.c igen.h 
+	$(CC) $(CFLAGS) -c v_cvcrt.c
+
+v_xprop.o:	v_xprop.c 
+	$(CC) $(CFLAGS) -c v_xprop.c
+
+v_aslib.o:	v_aslib.c igen.h 
+##	$(CC) $(ASL_CFLAGS) -c v_aslib.c
+	$(CC) $(CFLAGS) -c v_aslib.c
+# needed for including the runtime library in cvcsim
+	$(CC) $(CFLAGS) -S v_aslib.c
+
+fastlz.o:	fastlz.c
+	$(CC) $(CFLAGS) -c fastlz.c
+
+lz4.o:	lz4.c
+	$(CC) $(CFLAGS) -c lz4.c
+
+# needed because CVC writes the Gtkwave FST format
+fstapi.o:	fstapi.c
+	$(CC) $(CFLAGS) -c fstapi.c
+
+# BEWARE you must run "make -f makefile.cvc clean" before making a 32 bit cvc
+
+.PHONEY: clean
+clean:
+	rm -f $(OBJS) $(RT_OBJS) *.s cvclib.o cvclib_str.o dig_main.o \
+	exe_main.o exe_main_str.o hexasm cvc cvc64
+ 
+# Copyright (c) 2001-2014 Tachyon Design Automation

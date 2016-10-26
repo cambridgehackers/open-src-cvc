@@ -1,0 +1,49 @@
+--------------------------------------------------------------------
+--
+--      These source files may be used and distributed without
+--      restriction.
+--
+--------------------------------------------------------------------
+--
+--      Author  John Hillawi
+--      Names   cpu_rtl.v
+--		cpu_mixed.v
+--		prog5.v
+--      Purpose This circuit was created for the purpose of
+--              comparing simulation performance at Register
+--              Transfer Level and mixed RTL and Gate Level. 
+--		It has been placed in the
+--              public domain to act as an ongoing metric
+--              for comparing performance.
+--
+--------------------------------------------------------------------
+--	
+--	The circuit is typical of synchronous design, being a 
+--	32 bit processor with a 64 bit floating point unit.
+--	The design is modeled at Register Transfer Level 
+--	(cpu_rtl.v) and also has the multiplier unit 
+--	modelled at gate level (cpu_mixed.v). 
+--
+--------------------------------------------------------------------
+--
+--      As a guide to running, a typical script (in this case
+--      Pragmatic C Software Cver) would be:
+--	
+--	cver cpu_rtl.v
+--      cver -f cpu_mixed.vc
+--
+--      To directly execute cpu_mixed test, type this:
+--
+--	cver cpu_mixed.v -y ../libs/lca100kgate +libext+.v
+--
+--	The program will automatically cease at time 8203100
+--	and display idle number 0.
+--
+--------------------------------------------------------------------
+--
+--      The simulation starts with a file (program) being loaded
+--      into the memory of the cpu. The program runs for 8203100 ns
+--      and at the end of the run, the simulation output is written
+--	to standard I/O, and the program will drop into idle number 0.
+--
+--------------------------------------------------------------------

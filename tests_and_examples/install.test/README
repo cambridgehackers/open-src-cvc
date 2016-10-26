@@ -1,0 +1,28 @@
+
+               RUNNING THE CVC INSTALLATION TEST
+
+*** BEWARE cvc and/or cvc64 must now be installed before running these
+*** scripts either somewhere on your shell PATH or in /tmp
+
+First run CVC without any arguments to make sure CVC binary is
+installed.  The first line output CVC version number must match the version
+of your release directory.  If the version number does not match, you probably
+have your shell PATH environment variable set to execute an old version of CVC.
+
+Run the shell command script to insure correct 32 bit installation by typing:
+
+inst_test.sh 
+
+Correct installation is indicated by the following message with no diff
+command output lines before the message:
+
+>>>> Install test completed (this should be only printed message).
+
+To test 64 bit installation, type: "inst_test.sh cvc64".
+
+To test correct interpreter installation run the inst_test_interp.sh script.
+It can also take the cvc64 argument.
+
+By convention the expected output files end with .plg (and .plg64) suffixes.
+
+-------------------------------------------------------------------------

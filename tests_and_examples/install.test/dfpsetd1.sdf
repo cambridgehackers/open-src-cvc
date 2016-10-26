@@ -1,0 +1,8 @@
+(DELAYFILE 
+  (SDFVERSION "3.0") 
+  (CELL 
+   (CELLTYPE "ffnand_test" ) 
+   (INSTANCE ffnand_test)
+   (LABEL (ABSOLUTE (d 100)))
+  )
+)

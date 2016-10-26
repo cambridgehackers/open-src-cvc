@@ -1,0 +1,37 @@
+  There are 1 top level modules.
+  >>> All instances processed - continuing with simulation.
+--> now 0: task10.count changed from <unknown> to 0.
+--> now 0: task10.x changed from <unknown> to (av=7fffffff,bv=7fffffff).
+--> now 10: task10.aa changed from <unknown> to (av=0,bv=0).
+--> now 10: task10.bb changed from <unknown> to 0.
+--> now 10: task10.x changed from (av=ffffffff,bv=0) to (av=ffffffff,bv=0).
+--> now 10: task10.y changed from <unknown> to 1.
+        10 start   x: ffffffff  y: 1  count: 0
+--> now 10: task10.t1.a changed from <unknown> to (av=0,bv=0).
+--> now 10: task10.t1.b changed from <unknown> to 0.
+        10 t1 started
+--> now 10: task10.t1.d changed from <unknown> to 0.
+--> now 20: task10.t1.c changed from <unknown> to (av=0,bv=0).
+--> now 30: task10.count changed from 0 to 1.
+        30 t1 finished
+--> now 30: task10.x changed from (av=0,bv=0) to (av=0,bv=0).
+--> now 30: task10.y changed from 1 to 0.
+        30 return  x: 00000000  y: 0  count: 1
+--> now 30: task10.aa changed from (av=1,bv=0) to (av=1,bv=0).
+--> now 30: task10.bb changed from 0 to 1.
+--> now 30: task10.t1.a changed from (av=1,bv=0) to (av=1,bv=0).
+--> now 30: task10.t1.b changed from 0 to 1.
+        30 t1 started
+--> now 30: task10.t1.d changed from 0 to 1.
+        35 return  x: 00000000  y: 0  count: 1
+--> now 35: task10.aa changed from (av=2,bv=0) to (av=2,bv=0).
+--> now 35: task10.bb changed from 1 to 0.
+--> now 35: task10.t1.a changed from (av=2,bv=0) to (av=2,bv=0).
+--> now 35: task10.t1.b changed from 1 to 0.
+        35 t1 started
+--> now 35: task10.t1.d changed from 1 to 0.
+--> now 45: task10.t1.c changed from (av=2,bv=0) to (av=2,bv=0).
+--> now 55: task10.count changed from 1 to 2.
+        55 t1 finished
+--> now 55: task10.x changed from (av=2,bv=0) to (av=2,bv=0).
+        55 return  x: 00000002  y: 0  count: 2

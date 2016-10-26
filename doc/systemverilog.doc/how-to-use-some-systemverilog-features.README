@@ -1,0 +1,18 @@
+                 ========================================
+                   CVC CURRENT SUPPORT FOR SYSTEMVERILOG 
+                 ========================================
+ 
+ To use the new SystemVerilog features (SV), you must use the -systemverilog 
+or -sv option at compile time.  This is neccessary for CVC to be backward
+compatible with regular Verilog.  Most conflicts between Verilog and 
+SystemVerilog are a result of commonly used variables names which are now
+keywords in SV (byte/int, etc). 
+
+ Currently supported SV features are illustrated in the 'svimplemented.v'
+located in this directory that can be run through CVC.
+
+
+  Using the -sv_lib to use the dpi_ PLI interface also turns on -systemverilog
+(-sv) switch.
+
+Copyright (c) 2001-2014 Tachyon Design Automation

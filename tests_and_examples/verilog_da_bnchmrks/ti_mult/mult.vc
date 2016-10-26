@@ -1,0 +1,2 @@
+mult.v -y ../libs/tgc1000gate +libext+.v
++change_port_type

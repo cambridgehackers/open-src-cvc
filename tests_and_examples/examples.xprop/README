@@ -1,0 +1,40 @@
+
+                     RUNNING CVC X-PROPAGATION TESTS
+
+This directory contains simple examples to illustrate how CVC X-propagation 
+works along with the associated options to invoke CVC X-propagation.  For a 
+complete explanation of CVC X-propagation see doc/cvc_xpropagation.pdf from
+the top level directory.
+
+ These examples are simple and mostly used 'initial' blocks to show 
+X-propagation handling.  To run all examples use the 'xprop_test.sh' script.
+
+
+ The examples in this directory are used to illustrates the following
+functionality:
+
+  xif.v - run with +xprop to show the Verilog semantic handling changes for
+          if statements with X-propagation.
+
+  xcase.v - run with +xprop to show the Verilog semantic handling changes for
+            case statements with X-propagation.
+
+  xnested.v - run with +xprop.  Shows some combinations for if/case statements.
+
+  xtrace.v - run with +xprop +xtrace.   Used to show +xtrace capabilities 
+             when used along with +xprop/+xprop2 will trace each time and 
+             location that an if('bx) or case('bx) occurs causing X-progation
+             to be entered.
+
+  xprop2.v - run with +xprop2 to illustrate alternative X-propagation feature.
+
+  xprop_eval.v - +xprop_eval to show X preservation across certain Verilog 
+                 operators.
+
+  xexcluded.v - +xprop +xprop_excluded.  The +xprop_exlcuded option creates
+                a file called 'cvc.xprop.excluded' that includes all statements
+                that are not eligible for X-propagation along with the reason.
+
+  xconfig.v -  run with '-optconfigfile x.optconfig'.  Example show how CVC's
+               '-optconfigile' can be used to only turn on X-propagation for
+               specific modules.

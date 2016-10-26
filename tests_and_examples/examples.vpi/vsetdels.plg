@@ -1,0 +1,52 @@
+**fdspec01.v(105) WARN** [653] $period timing check min:typ:max limit expression needs parentheses under 1364 - unportable
+  There are 1 top level modules.
+  There are 3 instances in test.
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(88) has delay #(280, 500, 280, 280, 500, 500).
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(89) has delay #(80, 100, 80, 80, 100, 100).
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+  $width timing check at **fdspec01.v(103) limit 600.
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(88) has delay #(280, 500, 280, 280, 500, 500).
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(89) has delay #(80, 100, 80, 80, 100, 100).
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+  $width timing check at **fdspec01.v(103) limit 600.
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(88) has delay #(280, 500, 280, 280, 500, 500).
+**ERR(2106) vpiPLI (level 1) at ***none*(0):
+  vpi_put_delays to object vpiModPath after simulation started - non standard feature
+**ERR(2006) vpiPLI (level 2) at ***none*(0):
+  vpi_put_delays append mode more new delays (3) than old (2) - extra ignored
+  path at **fdspec01.v(89) has delay #(80, 100, 80, 80, 100, 100).
+  $setuphold timing check at **fdspec01.v(101) limit 70.
+  $width timing check at **fdspec01.v(103) limit 600.
+  $width timing check at **fdspec01.v(104) limit 500.
+  $period timing check at **fdspec01.v(105) limit 1200.
+  $skew timing check at **fdspec01.v(106) limit 50.
+  $recovery timing check at **fdspec01.v(107) limit 200.
+  All instances processed.

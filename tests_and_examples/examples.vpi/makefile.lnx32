@@ -1,0 +1,150 @@
+# could add to CFLAGS to turn on warnings if you are using gcc
+WARNS=-Wall
+
+# change path if not running test from installed directory location
+INCS=-I../../pli_incs
+# maybe want -O<something> and/or -g
+CFLAGS= -fPIC -Wall -m32 $(INCS)
+LFLAGS= -G -shared -export-dynamic -melf_i386
+
+# change to your compiler
+CC=gcc
+
+async.o:	async.c 
+	$(CC) $(CFLAGS) -c async.c
+ 
+vhello1.o:	vhello1.c 
+	$(CC) $(CFLAGS) -c vhello1.c
+
+vhello2.o:	vhello2.c 
+	$(CC) $(CFLAGS) -c vhello2.c
+
+vhelbad.o:	vhelbad.c 
+	$(CC) $(CFLAGS) -c vhelbad.c
+
+findcaus.o:	findcaus.c 
+	$(CC) $(CFLAGS) -c findcaus.c
+
+vacbtst.o:	vacbtst.c 
+	$(CC) $(CFLAGS) -c vacbtst.c
+
+vprtchg.o:	vprtchg.c 
+	$(CC) $(CFLAGS) -c vprtchg.c
+
+vprtchg2.o:	vprtchg2.c 
+	$(CC) $(CFLAGS) -c vprtchg2.c
+
+vprtchg3.o:	vprtchg3.c 
+	$(CC) $(CFLAGS) -c vprtchg3.c
+
+vprtdels.o:	vprtdels.c 
+	$(CC) $(CFLAGS) -c vprtdels.c
+
+vprtdel2.o:	vprtdel2.c 
+	$(CC) $(CFLAGS) -c vprtdel2.c
+
+vsetdels.o:	vsetdels.c 
+	$(CC) $(CFLAGS) -c vsetdels.c
+
+vsetval1.o:	vsetval1.c 
+	$(CC) $(CFLAGS) -c vsetval1.c
+
+vsetval2.o:	vsetval2.c 
+	$(CC) $(CFLAGS) -c vsetval2.c
+
+vtimcbs.o:	vtimcbs.c 
+	$(CC) $(CFLAGS) -c vtimcbs.c
+
+vfopen1.o:	vfopen1.c 
+	$(CC) $(CFLAGS) -c vfopen1.c
+
+vfopen2.o:	vfopen2.c 
+	$(CC) $(CFLAGS) -c vfopen2.c
+
+vconta1.o:	vconta1.c 
+	$(CC) $(CFLAGS) -c vconta1.c
+
+vchkprt1.o:	vchkprt1.c 
+	$(CC) $(CFLAGS) -c vchkprt1.c
+
+vchkprt2.o:	vchkprt2.c 
+	$(CC) $(CFLAGS) -c vchkprt2.c
+
+vdrvld1.o:	vdrvld1.c 
+	$(CC) $(CFLAGS) -c vdrvld1.c
+
+vdrvld2.o:	vdrvld2.c 
+	$(CC) $(CFLAGS) -c vdrvld2.c
+
+dfpsetd.o:	dfpsetd.c
+	$(CC) $(CFLAGS) -c dfpsetd.c
+
+# make rules for dynamic libaries
+async.so:	async.o
+	$(LD) $(LFLAGS) async.o -o async.so
+
+vhello1.so:	vhello1.o
+	$(LD) $(LFLAGS) vhello1.o -o vhello1.so
+
+vhello2.so:	vhello2.o
+	$(LD) $(LFLAGS) vhello2.o -o vhello2.so
+
+vhelbad.so:	vhelbad.o
+	$(LD) $(LFLAGS) vhelbad.o -o vhelbad.so
+
+findcaus.so:	findcaus.o
+	$(LD) $(LFLAGS) findcaus.o -o findcaus.so
+
+vacbtst.so:	vacbtst.o
+	$(LD) $(LFLAGS) vacbtst.o -o vacbtst.so
+
+vprtchg.so:	vprtchg.o
+	$(LD) $(LFLAGS) vprtchg.o -o vprtchg.so
+
+vprtchg2.so:	vprtchg2.o
+	$(LD) $(LFLAGS) vprtchg2.o -o vprtchg2.so
+
+vprtchg3.so:	vprtchg3.o
+	$(LD) $(LFLAGS) vprtchg3.o -o vprtchg3.so
+
+vprtdels.so:	vprtdels.o
+	$(LD) $(LFLAGS) vprtdels.o -o vprtdels.so
+
+vprtdel2.so:	vprtdel2.o
+	$(LD) $(LFLAGS) vprtdel2.o -o vprtdel2.so
+
+vsetdels.so:	vsetdels.o
+	$(LD) $(LFLAGS) vsetdels.o -o vsetdels.so
+
+vsetval1.so:	vsetval1.o
+	$(LD) $(LFLAGS) vsetval1.o -o vsetval1.so
+
+vsetval2.so:	vsetval2.o
+	$(LD) $(LFLAGS) vsetval2.o -o vsetval2.so
+
+vtimcbs.so:	vtimcbs.o
+	$(LD) $(LFLAGS) vtimcbs.o -o vtimcbs.so
+
+vfopen1.so:	vfopen1.o
+	$(LD) $(LFLAGS) vfopen1.o -o vfopen1.so
+
+vfopen2.so:	vfopen2.o
+	$(LD) $(LFLAGS) vfopen2.o -o vfopen2.so
+
+vconta1.so:	vconta1.o
+	$(LD) $(LFLAGS) vconta1.o -o vconta1.so
+
+vchkprt1.so:	vchkprt1.o
+	$(LD) $(LFLAGS) vchkprt1.o -o vchkprt1.so
+
+vchkprt2.so:	vchkprt2.o
+	$(LD) $(LFLAGS) vchkprt2.o -o vchkprt2.so
+
+vdrvld1.so:	vdrvld1.o
+	$(LD) $(LFLAGS) vdrvld1.o -o vdrvld1.so
+
+vdrvld2.so:	vdrvld2.o
+	$(LD) $(LFLAGS) vdrvld2.o -o vdrvld2.so
+
+dfpsetd.so:	dfpsetd.o
+	$(LD) $(LFLAGS) dfpsetd.o -o dfpsetd.so

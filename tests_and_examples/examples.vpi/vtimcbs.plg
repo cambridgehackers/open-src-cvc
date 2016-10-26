@@ -1,0 +1,142 @@
+        10 start   x: ffffffff  y: 1  count: 0
+        10 t1 started
+*** start of simulation time wake up at 22
+*** start of simulation time wake up at 28
+        30 t1 finished
+        30 return  x: 00000000  y: 0  count: 1
+        30 t1 started
+*** start of simulation time wake up at 34
+        35 return  x: 00000000  y: 0  count: 1
+        35 t1 started
+*** start of simulation time wake up at 40
+*** normal delay time wake up at 43
+*** rw sync time wake up at 43
+*** ro sync time wake up at 43
+*** next sim time wake up at 45
+*** start of simulation time wake up at 46
+*** start of simulation time wake up at 52
+        55 t1 finished
+        55 return  x: 00000002  y: 0  count: 2
+*** start of simulation time wake up at 58
+*** start of simulation time wake up at 64
+*** start of simulation time wake up at 70
+*** start of simulation time wake up at 76
+*** start of simulation time wake up at 82
+*** start of simulation time wake up at 88
+*** start of simulation time wake up at 94
+*** start of simulation time wake up at 100
+*** start of simulation time wake up at 106
+*** start of simulation time wake up at 112
+*** start of simulation time wake up at 118
+*** start of simulation time wake up at 124
+*** start of simulation time wake up at 130
+*** normal delay time wake up at 130
+*** rw sync time wake up at 130
+*** ro sync time wake up at 130
+*** next sim time wake up at 136
+*** start of simulation time wake up at 136
+*** start of simulation time wake up at 142
+*** start of simulation time wake up at 148
+*** start of simulation time wake up at 154
+*** start of simulation time wake up at 160
+*** start of simulation time wake up at 166
+*** start of simulation time wake up at 172
+*** start of simulation time wake up at 178
+*** start of simulation time wake up at 184
+*** start of simulation time wake up at 190
+*** start of simulation time wake up at 196
+*** start of simulation time wake up at 202
+*** start of simulation time wake up at 208
+*** start of simulation time wake up at 214
+*** normal delay time wake up at 217
+*** rw sync time wake up at 217
+*** ro sync time wake up at 217
+*** next sim time wake up at 220
+*** start of simulation time wake up at 220
+*** start of simulation time wake up at 226
+*** start of simulation time wake up at 232
+*** start of simulation time wake up at 238
+*** start of simulation time wake up at 244
+*** start of simulation time wake up at 250
+*** start of simulation time wake up at 256
+*** start of simulation time wake up at 262
+*** start of simulation time wake up at 268
+*** start of simulation time wake up at 274
+*** start of simulation time wake up at 280
+*** start of simulation time wake up at 286
+*** start of simulation time wake up at 292
+*** start of simulation time wake up at 298
+*** start of simulation time wake up at 304
+*** normal delay time wake up at 304
+*** rw sync time wake up at 304
+*** ro sync time wake up at 304
+*** next sim time wake up at 310
+*** start of simulation time wake up at 310
+*** start of simulation time wake up at 316
+*** normal delay time wake up at 391
+*** rw sync time wake up at 391
+*** ro sync time wake up at 391
+*** next sim time wake up at 478
+*** normal delay time wake up at 478
+*** rw sync time wake up at 478
+*** ro sync time wake up at 478
+*** next sim time wake up at 565
+*** normal delay time wake up at 565
+*** rw sync time wake up at 565
+*** ro sync time wake up at 565
+*** next sim time wake up at 652
+*** normal delay time wake up at 652
+*** rw sync time wake up at 652
+*** ro sync time wake up at 652
+*** next sim time wake up at 739
+*** normal delay time wake up at 739
+*** rw sync time wake up at 739
+*** ro sync time wake up at 739
+*** next sim time wake up at 826
+*** normal delay time wake up at 826
+*** rw sync time wake up at 826
+*** ro sync time wake up at 826
+*** next sim time wake up at 913
+*** normal delay time wake up at 913
+*** rw sync time wake up at 913
+*** ro sync time wake up at 913
+*** next sim time wake up at 1000
+*** normal delay time wake up at 1000
+*** rw sync time wake up at 1000
+*** ro sync time wake up at 1000
+*** next sim time wake up at 1087
+*** normal delay time wake up at 1087
+*** rw sync time wake up at 1087
+*** ro sync time wake up at 1087
+*** next sim time wake up at 1174
+*** normal delay time wake up at 1174
+*** rw sync time wake up at 1174
+*** ro sync time wake up at 1174
+*** next sim time wake up at 1261
+*** normal delay time wake up at 1261
+*** rw sync time wake up at 1261
+*** ro sync time wake up at 1261
+*** next sim time wake up at 1348
+*** normal delay time wake up at 1348
+*** rw sync time wake up at 1348
+*** ro sync time wake up at 1348
+*** next sim time wake up at 1435
+*** normal delay time wake up at 1435
+*** rw sync time wake up at 1435
+*** ro sync time wake up at 1435
+*** next sim time wake up at 1522
+*** normal delay time wake up at 1522
+*** rw sync time wake up at 1522
+*** ro sync time wake up at 1522
+*** next sim time wake up at 1609
+*** normal delay time wake up at 1609
+*** rw sync time wake up at 1609
+*** ro sync time wake up at 1609
+*** next sim time wake up at 1696
+*** normal delay time wake up at 1696
+*** rw sync time wake up at 1696
+*** ro sync time wake up at 1696
+*** next sim time wake up at 1783
+*** normal delay time wake up at 1783
+*** rw sync time wake up at 1783
+*** ro sync time wake up at 1783

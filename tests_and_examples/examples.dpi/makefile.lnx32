@@ -1,0 +1,72 @@
+# could add to CFLAGS to turn on warnings if you are using gcc
+WARNS=-Wall
+
+# change path if not running test from installed directory location
+INCS=-I../../pli_incs
+# maybe want -O<something> and/or -g
+CFLAGS= -fPIC -Wall -m32 $(INCS)
+LFLAGS= -G -shared -export-dynamic -melf_i386
+
+# change to your compiler
+CC=gcc
+
+twostate_tasks.o:	twostate_tasks.c 
+	$(CC) $(CFLAGS) -c twostate_tasks.c
+
+twostate_functions.o:	twostate_functions.c 
+	$(CC) $(CFLAGS) -c twostate_functions.c
+
+fourstate.o:	fourstate.c 
+	$(CC) $(CFLAGS) -c fourstate.c
+
+export.o:	export.c 
+	$(CC) $(CFLAGS) -c export.c
+
+fourstate_array.o:	fourstate_array.c 
+	$(CC) $(CFLAGS) -c fourstate_array.c
+
+twostate_array.o:	twostate_array.c 
+	$(CC) $(CFLAGS) -c twostate_array.c
+
+reals.o:	reals.c 
+	$(CC) $(CFLAGS) -c reals.c
+
+selects.o:	selects.c 
+	$(CC) $(CFLAGS) -c selects.c
+
+chandle.o:	chandle.c 
+	$(CC) $(CFLAGS) -c chandle.c
+
+diffname.o:	diffname.c 
+	$(CC) $(CFLAGS) -c diffname.c
+ 
+# make rules for dynamic libaries
+twostate_tasks.so:	twostate_tasks.o
+	$(LD) $(LFLAGS) twostate_tasks.o -o twostate_tasks.so
+
+twostate_functions.so:	twostate_functions.o
+	$(LD) $(LFLAGS) twostate_functions.o -o twostate_functions.so
+
+fourstate.so:	fourstate.o
+	$(LD) $(LFLAGS) fourstate.o -o fourstate.so
+
+export.so:	export.o
+	$(LD) $(LFLAGS) export.o -o export.so
+
+fourstate_array.so:	fourstate_array.o
+	$(LD) $(LFLAGS) fourstate_array.o -o fourstate_array.so
+
+twostate_array.so:	twostate_array.o
+	$(LD) $(LFLAGS) twostate_array.o -o twostate_array.so
+
+reals.so:	reals.o
+	$(LD) $(LFLAGS) reals.o -o reals.so
+
+selects.so:	selects.o
+	$(LD) $(LFLAGS) selects.o -o selects.so
+
+chandle.so:	chandle.o
+	$(LD) $(LFLAGS) chandle.o -o chandle.so
+
+diffname.so:	diffname.o
+	$(LD) $(LFLAGS) diffname.o -o diffname.so

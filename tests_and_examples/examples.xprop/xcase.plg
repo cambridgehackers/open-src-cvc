@@ -1,0 +1,5 @@
+case1 b = 0xx0
+case2 b = 0xx0
+case3 b = xxx0
+case4 b = 0xx0 c = 1100
+case5 b = 0xx0 c = xxxx

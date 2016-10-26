@@ -1,0 +1,11 @@
+//**GTKWAVE**//
+
+//Mandatory for all testing
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+//enables these to see FST dumping for gtkwave plus various parallel dumping
+//options to speed up FST processing
++fstvars
++fst+parallel2=on
+// +fst+parallel=on

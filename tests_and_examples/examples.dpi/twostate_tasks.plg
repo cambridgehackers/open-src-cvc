@@ -1,0 +1,14 @@
+BYTE = 10
+byte_i=10 byte_o=20
+SHORT INT = 11
+short_i=11 short_o=22
+INT = 22
+int_i=22 int_o=44
+REAL = 123.5
+real_i=123.5 real_o=262.191
+BIT = 1
+bit_i=1 bit_o=0
+BIT VECTOR = 30
+bitv_i=30 bitv_o=60
+BIT VECTOR WIDE = 11111111 22222222 33333333 44444444
+bitvw_i=11111111222222223333333344444444 bitv_o=aaaaaaaabbbbbbbbccccccccdddddddd

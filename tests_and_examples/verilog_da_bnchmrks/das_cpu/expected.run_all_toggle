@@ -1,0 +1,1226 @@
+** CVC driven to never toggles constant bit report.
+** Written : Mon Nov 18 21:54:06 2013
+** By Version : CVC_6.60a-rhel6x of 11/18/13
+MODULE: AN2 (3287 instances) [../libs/lca100kgate/AN2.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A6A (1 wires) [cpu_mixed.v : 7655]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 3 nets 3 bits] 1 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A6A (1 wires) [cpu_mixed.v : 7655]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 3 nets 3 bits] 1 bits (33.33%)
+TOTAL MOD AN2 [9861 wires 9861 bits] const driven bits 2 (0.02%)
+MODULE: AN3 (88 instances) [../libs/lca100kgate/AN3.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A5A (1 wires) [cpu_mixed.v : 7657]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 4 nets 4 bits] 1 bits (25.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A5A (1 wires) [cpu_mixed.v : 7657]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 4 nets 4 bits] 1 bits (25.00%)
+TOTAL MOD AN3 [352 wires 352 bits] const driven bits 2 (0.57%)
+MODULE: AN4 (72 instances) [../libs/lca100kgate/AN4.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A4A (1 wires) [cpu_mixed.v : 7660]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 5 nets 5 bits] 1 bits (20.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A4A (1 wires) [cpu_mixed.v : 7660]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 5 nets 5 bits] 1 bits (20.00%)
+TOTAL MOD AN4 [360 wires 360 bits] const driven bits 2 (0.56%)
+MODULE: AN5 (56 instances) [../libs/lca100kgate/AN5.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A3A (1 wires) [cpu_mixed.v : 7664]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A2A (1 wires) [cpu_mixed.v : 7671]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A1A (1 wires) [cpu_mixed.v : 7679]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A0A (1 wires) [cpu_mixed.v : 7688]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A3A (1 wires) [cpu_mixed.v : 7664]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A2A (1 wires) [cpu_mixed.v : 7671]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A1A (1 wires) [cpu_mixed.v : 7679]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A0A (1 wires) [cpu_mixed.v : 7688]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 6 nets 6 bits] 1 bits (16.67%)
+TOTAL MOD AN5 [336 wires 336 bits] const driven bits 8 (2.38%)
+MODULE: BUF8A (12 instances) [../libs/lca100kgate/BUF8A.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GB1 (1 wires) [cpu_mixed.v : 1314]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GB2 (1 wires) [cpu_mixed.v : 1315]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GB3 (1 wires) [cpu_mixed.v : 1316]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GB4 (1 wires) [cpu_mixed.v : 1317]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GCB7.CY7 (1 wires) [cpu_mixed.v : 7653]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY7 (1 wires) [cpu_mixed.v : 7653]:
+    a: scalar driven by constant
+    z: scalar driven by constant
+  CONST DRIVEN [of 2 nets 2 bits] 2 bits (100.00%)
+TOTAL MOD BUF8A [24 wires 24 bits] const driven bits 12 (50.00%)
+MODULE: FA1A (3080 instances) [../libs/lca100kgate/FA1A.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GS62_9 (1 wires) [cpu_mixed.v : 4454]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_10 (1 wires) [cpu_mixed.v : 4455]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_11 (1 wires) [cpu_mixed.v : 4456]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_12 (1 wires) [cpu_mixed.v : 4457]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_13 (1 wires) [cpu_mixed.v : 4458]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_14 (1 wires) [cpu_mixed.v : 4459]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_15 (1 wires) [cpu_mixed.v : 4460]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_16 (1 wires) [cpu_mixed.v : 4461]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_17 (1 wires) [cpu_mixed.v : 4462]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_18 (1 wires) [cpu_mixed.v : 4463]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_19 (1 wires) [cpu_mixed.v : 4464]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_20 (1 wires) [cpu_mixed.v : 4465]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_21 (1 wires) [cpu_mixed.v : 4466]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_22 (1 wires) [cpu_mixed.v : 4467]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_23 (1 wires) [cpu_mixed.v : 4468]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_24 (1 wires) [cpu_mixed.v : 4469]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_25 (1 wires) [cpu_mixed.v : 4470]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_26 (1 wires) [cpu_mixed.v : 4471]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_27 (1 wires) [cpu_mixed.v : 4472]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_28 (1 wires) [cpu_mixed.v : 4473]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_29 (1 wires) [cpu_mixed.v : 4474]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_30 (1 wires) [cpu_mixed.v : 4475]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_31 (1 wires) [cpu_mixed.v : 4476]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_32 (1 wires) [cpu_mixed.v : 4477]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_33 (1 wires) [cpu_mixed.v : 4478]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_34 (1 wires) [cpu_mixed.v : 4479]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_35 (1 wires) [cpu_mixed.v : 4480]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_36 (1 wires) [cpu_mixed.v : 4481]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_37 (1 wires) [cpu_mixed.v : 4482]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_38 (1 wires) [cpu_mixed.v : 4483]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_39 (1 wires) [cpu_mixed.v : 4484]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_40 (1 wires) [cpu_mixed.v : 4485]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_41 (1 wires) [cpu_mixed.v : 4486]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_42 (1 wires) [cpu_mixed.v : 4487]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_43 (1 wires) [cpu_mixed.v : 4488]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_44 (1 wires) [cpu_mixed.v : 4489]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_45 (1 wires) [cpu_mixed.v : 4490]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_46 (1 wires) [cpu_mixed.v : 4491]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_47 (1 wires) [cpu_mixed.v : 4492]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_48 (1 wires) [cpu_mixed.v : 4493]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_49 (1 wires) [cpu_mixed.v : 4494]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_50 (1 wires) [cpu_mixed.v : 4495]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_51 (1 wires) [cpu_mixed.v : 4496]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_52 (1 wires) [cpu_mixed.v : 4497]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_53 (1 wires) [cpu_mixed.v : 4498]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_54 (1 wires) [cpu_mixed.v : 4499]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_55 (1 wires) [cpu_mixed.v : 4500]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_56 (1 wires) [cpu_mixed.v : 4501]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_57 (1 wires) [cpu_mixed.v : 4502]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_58 (1 wires) [cpu_mixed.v : 4503]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_59 (1 wires) [cpu_mixed.v : 4504]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_60 (1 wires) [cpu_mixed.v : 4505]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_61 (1 wires) [cpu_mixed.v : 4506]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_62 (1 wires) [cpu_mixed.v : 4507]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS62_63 (1 wires) [cpu_mixed.v : 4508]:
+    a: scalar driven by constant
+  CONST DRIVEN [of 8 nets 8 bits] 1 bits (12.50%)
+TOTAL MOD FA1A [24640 wires 24640 bits] const driven bits 55 (0.22%)
+MODULE: carry_block (8 instances) [cpu_mixed.v : 7646]:
+  INSTANCE testbench.c1.f1.component1.GCB7 (2 wires) [cpu_mixed.v : 1312]:
+    carry_in: scalar driven by constant
+  CONST DRIVEN [of 48 nets 69 bits] 1 bits (1.45%)
+  INSTANCE testbench.c1.f1.component1.GGCB (2 wires) [cpu_mixed.v : 1313]:
+    carry_in: scalar driven by constant
+  CONST DRIVEN [of 48 nets 69 bits] 1 bits (1.45%)
+TOTAL MOD carry_block [384 wires 552 bits] const driven bits 2 (0.36%)
+** DESIGN [36937 wires 48663 bits] const driven 83 (0.17%) normal driven 48580 (99.83%)
+
+
+** CVC Toggle Coverage from -untoggled_rpt_concise
+** Written : Mon Nov 18 21:54:06 2013
+** By Version : CVC_6.60a-rhel6x of 11/18/13
+MODULE: AN2 (3287 instances) [../libs/lca100kgate/AN2.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A6A (3 nets) [cpu_mixed.v : 7655]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [2 nets 2 bits] untoggled 2 bits (66.67%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A5B (3 nets) [cpu_mixed.v : 7658]:
+    a: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 2 bits (66.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A6A (3 nets) [cpu_mixed.v : 7655]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [2 nets 2 bits] untoggled 2 bits (66.67%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A5B (3 nets) [cpu_mixed.v : 7658]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 3 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A1D (3 nets) [cpu_mixed.v : 7682]:
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 2 bits (66.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A0D (3 nets) [cpu_mixed.v : 7691]:
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 2 bits (66.67%)
+TOTAL MOD AN2 [9861 nets 9861 bits] untoggled 13 (0.13%)
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+MODULE: AN3 (88 instances) [../libs/lca100kgate/AN3.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A5A (4 nets) [cpu_mixed.v : 7657]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 2 bits (50.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A4B (4 nets) [cpu_mixed.v : 7661]:
+    a: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A5A (4 nets) [cpu_mixed.v : 7657]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 3 bits (75.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A4B (4 nets) [cpu_mixed.v : 7661]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 3 bits (75.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A2C (4 nets) [cpu_mixed.v : 7673]:
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 1 bits (25.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A1AA (4 nets) [cpu_mixed.v : 7678]:
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 1 bits (25.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A1C (4 nets) [cpu_mixed.v : 7681]:
+    c: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A0C (4 nets) [cpu_mixed.v : 7690]:
+    c: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.AgC (4 nets) [cpu_mixed.v : 7699]:
+    b: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+TOTAL MOD AN3 [352 nets 352 bits] untoggled 18 (5.14%)
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+MODULE: AN4 (72 instances) [../libs/lca100kgate/AN4.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A4A (5 nets) [cpu_mixed.v : 7660]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (40.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A3B (5 nets) [cpu_mixed.v : 7665]:
+    a: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A2B (5 nets) [cpu_mixed.v : 7672]:
+    a: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A1B (5 nets) [cpu_mixed.v : 7680]:
+    a: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GCB7.A0B (5 nets) [cpu_mixed.v : 7689]:
+    a: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A4A (5 nets) [cpu_mixed.v : 7660]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    z: no toggles
+  COVER [4 nets 4 bits] untoggled 3 bits (60.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A3B (5 nets) [cpu_mixed.v : 7665]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 3 bits (60.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A2B (5 nets) [cpu_mixed.v : 7672]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 3 bits (60.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A1B (5 nets) [cpu_mixed.v : 7680]:
+    a: no toggles
+    b: no toggles
+    d: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 4 bits (80.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A0AA (5 nets) [cpu_mixed.v : 7687]:
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 1 bits (20.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A0B (5 nets) [cpu_mixed.v : 7689]:
+    a: no toggles
+    b: no toggles
+    d: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 4 bits (80.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.AgB (5 nets) [cpu_mixed.v : 7698]:
+    c: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.AgE (5 nets) [cpu_mixed.v : 7701]:
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 1 bits (20.00%)
+TOTAL MOD AN4 [360 nets 360 bits] untoggled 31 (8.66%)
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+MODULE: AN5 (56 instances) [../libs/lca100kgate/AN5.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.A3A (6 nets) [cpu_mixed.v : 7664]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (33.33%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A2A (6 nets) [cpu_mixed.v : 7671]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (33.33%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A1A (6 nets) [cpu_mixed.v : 7679]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (33.33%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.A0A (6 nets) [cpu_mixed.v : 7688]:
+    a: driven constant
+    b: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (33.33%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.AgA (6 nets) [cpu_mixed.v : 7697]:
+    a: no toggles
+    z: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GCB7.GTR (6 nets) [cpu_mixed.v : 7704]:
+    a: no toggles
+    z: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GGCB.A3A (6 nets) [cpu_mixed.v : 7664]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 3 bits (50.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A2A (6 nets) [cpu_mixed.v : 7671]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 3 bits (50.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A1A (6 nets) [cpu_mixed.v : 7679]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    e: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 4 bits (66.67%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.A0A (6 nets) [cpu_mixed.v : 7688]:
+    a: driven constant
+    b: no toggles
+    c: no toggles
+    e: no toggles
+    z: no toggles
+  COVER [5 nets 5 bits] untoggled 4 bits (66.67%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.AgA (6 nets) [cpu_mixed.v : 7697]:
+    a: no toggles
+    b: no toggles
+    d: no toggles
+    z: no toggles
+  COVER [6 nets 6 bits] untoggled 4 bits (66.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.AgD (6 nets) [cpu_mixed.v : 7700]:
+    z: no toggles
+  COVER [6 nets 6 bits] untoggled 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.GTR (6 nets) [cpu_mixed.v : 7704]:
+    a: no toggles
+    b: no toggles
+    d: no toggles
+    z: no toggles
+  COVER [6 nets 6 bits] untoggled 4 bits (66.67%)
+TOTAL MOD AN5 [336 nets 336 bits] untoggled 35 (10.67%)
+   8 driven to constant bits (8 entire nets), 0 excluded bits
+MODULE: BUF8A (12 instances) [../libs/lca100kgate/BUF8A.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GB1 (2 nets) [cpu_mixed.v : 1314]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GB2 (2 nets) [cpu_mixed.v : 1315]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GB3 (2 nets) [cpu_mixed.v : 1316]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GB4 (2 nets) [cpu_mixed.v : 1317]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GCB7.CY7 (2 nets) [cpu_mixed.v : 7653]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB.CY7 (2 nets) [cpu_mixed.v : 7653]:
+    a: driven constant
+    z: driven constant
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+TOTAL MOD BUF8A [24 nets 24 bits] untoggled 0 (0.00%)
+   12 driven to constant bits (12 entire nets), 0 excluded bits
+MODULE: FA1A (3080 instances) [../libs/lca100kgate/FA1A.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GS62_9 (8 nets) [cpu_mixed.v : 4454]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_10 (8 nets) [cpu_mixed.v : 4455]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_11 (8 nets) [cpu_mixed.v : 4456]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_12 (8 nets) [cpu_mixed.v : 4457]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_13 (8 nets) [cpu_mixed.v : 4458]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_14 (8 nets) [cpu_mixed.v : 4459]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_15 (8 nets) [cpu_mixed.v : 4460]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_16 (8 nets) [cpu_mixed.v : 4461]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_17 (8 nets) [cpu_mixed.v : 4462]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_18 (8 nets) [cpu_mixed.v : 4463]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_19 (8 nets) [cpu_mixed.v : 4464]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_20 (8 nets) [cpu_mixed.v : 4465]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_21 (8 nets) [cpu_mixed.v : 4466]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_22 (8 nets) [cpu_mixed.v : 4467]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_23 (8 nets) [cpu_mixed.v : 4468]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_24 (8 nets) [cpu_mixed.v : 4469]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_25 (8 nets) [cpu_mixed.v : 4470]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_26 (8 nets) [cpu_mixed.v : 4471]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_27 (8 nets) [cpu_mixed.v : 4472]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_28 (8 nets) [cpu_mixed.v : 4473]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_29 (8 nets) [cpu_mixed.v : 4474]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_30 (8 nets) [cpu_mixed.v : 4475]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_31 (8 nets) [cpu_mixed.v : 4476]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_32 (8 nets) [cpu_mixed.v : 4477]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_33 (8 nets) [cpu_mixed.v : 4478]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_34 (8 nets) [cpu_mixed.v : 4479]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_35 (8 nets) [cpu_mixed.v : 4480]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_36 (8 nets) [cpu_mixed.v : 4481]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_37 (8 nets) [cpu_mixed.v : 4482]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_38 (8 nets) [cpu_mixed.v : 4483]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_39 (8 nets) [cpu_mixed.v : 4484]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_40 (8 nets) [cpu_mixed.v : 4485]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_41 (8 nets) [cpu_mixed.v : 4486]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_42 (8 nets) [cpu_mixed.v : 4487]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_43 (8 nets) [cpu_mixed.v : 4488]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_44 (8 nets) [cpu_mixed.v : 4489]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_45 (8 nets) [cpu_mixed.v : 4490]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_46 (8 nets) [cpu_mixed.v : 4491]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_47 (8 nets) [cpu_mixed.v : 4492]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_48 (8 nets) [cpu_mixed.v : 4493]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_49 (8 nets) [cpu_mixed.v : 4494]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_50 (8 nets) [cpu_mixed.v : 4495]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_51 (8 nets) [cpu_mixed.v : 4496]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_52 (8 nets) [cpu_mixed.v : 4497]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_53 (8 nets) [cpu_mixed.v : 4498]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_54 (8 nets) [cpu_mixed.v : 4499]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_55 (8 nets) [cpu_mixed.v : 4500]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_56 (8 nets) [cpu_mixed.v : 4501]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_57 (8 nets) [cpu_mixed.v : 4502]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_58 (8 nets) [cpu_mixed.v : 4503]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_59 (8 nets) [cpu_mixed.v : 4504]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_60 (8 nets) [cpu_mixed.v : 4505]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_61 (8 nets) [cpu_mixed.v : 4506]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_62 (8 nets) [cpu_mixed.v : 4507]:
+    a: driven constant
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 2 bits (25.00%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS62_63 (8 nets) [cpu_mixed.v : 4508]:
+    a: driven constant
+    s: no toggles
+    x1: no toggles
+    x3: no toggles
+  COVER [7 nets 7 bits] untoggled 3 bits (37.50%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GS61_9 (8 nets) [cpu_mixed.v : 4509]:
+    x3: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_10 (8 nets) [cpu_mixed.v : 4510]:
+    x1: no toggles
+    x3: no toggles
+  COVER [8 nets 8 bits] untoggled 2 bits (25.00%)
+  INSTANCE testbench.c1.f1.component1.GS61_13 (8 nets) [cpu_mixed.v : 4513]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_19 (8 nets) [cpu_mixed.v : 4519]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_36 (8 nets) [cpu_mixed.v : 4536]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_45 (8 nets) [cpu_mixed.v : 4545]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_48 (8 nets) [cpu_mixed.v : 4548]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS61_57 (8 nets) [cpu_mixed.v : 4557]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS60_10 (8 nets) [cpu_mixed.v : 4565]:
+    x2: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GS29_9 (8 nets) [cpu_mixed.v : 6269]:
+    x2: no toggles
+    x3: no toggles
+  COVER [8 nets 8 bits] untoggled 2 bits (25.00%)
+  INSTANCE testbench.c1.f1.component1.GS28_9 (8 nets) [cpu_mixed.v : 6324]:
+    x1: no toggles
+  COVER [8 nets 8 bits] untoggled 1 bits (12.50%)
+  INSTANCE testbench.c1.f1.component1.GFS_62 (8 nets) [cpu_mixed.v : 7643]:
+    b: no toggles
+    x2: no toggles
+    x3: no toggles
+  COVER [8 nets 8 bits] untoggled 3 bits (37.50%)
+TOTAL MOD FA1A [24640 nets 24640 bits] untoggled 127 (0.52%)
+   55 driven to constant bits (55 entire nets), 0 excluded bits
+MODULE: OR2 (71 instances) [../libs/lca100kgate/OR2.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.CY6 (3 nets) [cpu_mixed.v : 7654]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 3 bits (100.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY6 (3 nets) [cpu_mixed.v : 7654]:
+    a: no toggles
+    b: no toggles
+    z: no toggles
+  COVER [3 nets 3 bits] untoggled 3 bits (100.00%)
+TOTAL MOD OR2 [213 nets 213 bits] untoggled 6 (2.82%)
+MODULE: OR3 (16 instances) [../libs/lca100kgate/OR3.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.CY5 (4 nets) [cpu_mixed.v : 7656]:
+    b: no toggles
+    c: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY5 (4 nets) [cpu_mixed.v : 7656]:
+    b: no toggles
+    c: no toggles
+  COVER [4 nets 4 bits] untoggled 2 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY1A (4 nets) [cpu_mixed.v : 7676]:
+    a: no toggles
+  COVER [4 nets 4 bits] untoggled 1 bits (25.00%)
+TOTAL MOD OR3 [64 nets 64 bits] untoggled 5 (7.81%)
+MODULE: OR4 (24 instances) [../libs/lca100kgate/OR4.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.CY4 (5 nets) [cpu_mixed.v : 7659]:
+    b: no toggles
+    c: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY4 (5 nets) [cpu_mixed.v : 7659]:
+    b: no toggles
+    c: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY0A (5 nets) [cpu_mixed.v : 7685]:
+    a: no toggles
+  COVER [5 nets 5 bits] untoggled 1 bits (20.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.GCYA (5 nets) [cpu_mixed.v : 7695]:
+    a: no toggles
+    b: no toggles
+  COVER [5 nets 5 bits] untoggled 2 bits (40.00%)
+TOTAL MOD OR4 [120 nets 120 bits] untoggled 7 (5.83%)
+MODULE: OR5 (40 instances) [../libs/lca100kgate/OR5.v : 1]:
+  INSTANCE testbench.c1.f1.component1.GCB7.CY3 (6 nets) [cpu_mixed.v : 7663]:
+    b: no toggles
+    c: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GCB7.CY2 (6 nets) [cpu_mixed.v : 7669]:
+    b: no toggles
+    c: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GCB7.CY1 (6 nets) [cpu_mixed.v : 7677]:
+    b: no toggles
+    c: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GCB7.CY0 (6 nets) [cpu_mixed.v : 7686]:
+    b: no toggles
+    c: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GCB7.GCY (6 nets) [cpu_mixed.v : 7696]:
+    b: no toggles
+  COVER [6 nets 6 bits] untoggled 1 bits (16.67%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY3 (6 nets) [cpu_mixed.v : 7663]:
+    b: no toggles
+    c: no toggles
+  COVER [6 nets 6 bits] untoggled 2 bits (33.33%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY2 (6 nets) [cpu_mixed.v : 7669]:
+    b: no toggles
+    c: no toggles
+    d: no toggles
+  COVER [6 nets 6 bits] untoggled 3 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY1 (6 nets) [cpu_mixed.v : 7677]:
+    b: no toggles
+    c: no toggles
+    d: no toggles
+  COVER [6 nets 6 bits] untoggled 3 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.CY0 (6 nets) [cpu_mixed.v : 7686]:
+    b: no toggles
+    c: no toggles
+    d: no toggles
+  COVER [6 nets 6 bits] untoggled 3 bits (50.00%)
+  INSTANCE testbench.c1.f1.component1.GGCB.GCY (6 nets) [cpu_mixed.v : 7696]:
+    b: no toggles
+    c: no toggles
+    d: no toggles
+  COVER [6 nets 6 bits] untoggled 3 bits (50.00%)
+TOTAL MOD OR5 [240 nets 240 bits] untoggled 23 (9.58%)
+MODULE: carry_block (8 instances) [cpu_mixed.v : 7646]:
+  INSTANCE testbench.c1.f1.component1.GCB7 (48 nets) [cpu_mixed.v : 1312]:
+    carry[6:7]: no toggles
+    carry_in: driven constant
+    gen[7]: no toggles
+    gtran: no toggles
+    t60: no toggles
+    t61: no toggles
+    t62: no toggles
+    t63: no toggles
+    t64: no toggles
+    t65: no toggles
+    t70: no toggles
+    t71: no toggles
+    t72: no toggles
+    t73: no toggles
+    t74: no toggles
+    t75: no toggles
+    t76: no toggles
+    t7g: no toggles
+    tr[7]: no toggles
+  COVER [47 nets 68 bits] untoggled 19 bits (27.54%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+  INSTANCE testbench.c1.f1.component1.GGCB (48 nets) [cpu_mixed.v : 1313]:
+    carry[6:7]: no toggles
+    carry_in: driven constant
+    gen[7]: no toggles
+    gtran: no toggles
+    t3g: no toggles
+    t40: no toggles
+    t41: no toggles
+    t4g: no toggles
+    t50: no toggles
+    t51: no toggles
+    t52: no toggles
+    t5g: no toggles
+    t60: no toggles
+    t61: no toggles
+    t62: no toggles
+    t63: no toggles
+    t64: no toggles
+    t65: no toggles
+    t6g: no toggles
+    t70: no toggles
+    t71: no toggles
+    t72: no toggles
+    t73: no toggles
+    t74: no toggles
+    t75: no toggles
+    t76: no toggles
+    t7g: no toggles
+    tr[6:7]: no toggles
+    tr432: no toggles
+    tr4321: no toggles
+  COVER [47 nets 68 bits] untoggled 31 bits (44.93%)
+   1 driven to constant bits (1 entire nets), 0 excluded bits
+TOTAL MOD carry_block [384 nets 552 bits] untoggled 50 (9.09%)
+   2 driven to constant bits (2 entire nets), 0 excluded bits
+MODULE: cpu (1 instances) [cpu_mixed.v : 747]:
+  INSTANCE testbench.c1 (32 nets) [cpu_mixed.v : 696]:
+    accumulator[0]: no toggles
+    fp_opcode[5]: no toggles
+    i_address[0:9]<of 16> : no toggles
+    i_dv: no toggles
+    idle: no toggles
+    instruction[5]: no toggles
+    mem_address[0:5]<of 16> : no toggles
+    op_address[0:15]<all of net> : no toggles
+  COVER [32 nets 302 bits] untoggled 37 bits (12.25%)
+MODULE: fp_unit (1 instances) [cpu_mixed.v : 507]:
+  INSTANCE testbench.c1.f1 (23 nets) [cpu_mixed.v : 798]:
+    accumulator[0]: no toggles
+    carry: no toggles
+    exp_work[1:3]<of 7> : no toggles
+    exp_work[7]: no toggles
+    fp_opcode[5]: no toggles
+    int_opcode[0]: no toggles
+    int_opcode[4:6]<of 8> : no toggles
+    mult_count[0:4]<of 8> : no toggles
+    op[0:1]: no toggles
+    op[4]: no toggles
+    ov: no toggles
+    step_count[0:2]<of 8> : no toggles
+    wacc[0:3]<of 64> : no toggles
+    wacc[7]: no toggles
+    wop[0:4]<of 64> : no toggles
+    work_reg[0]: no toggles
+    zero[0:63]<all of net> : no toggles
+  COVER [23 nets 633 bits] untoggled 98 bits (15.48%)
+MODULE: i_unit (1 instances) [cpu_mixed.v : 851]:
+  INSTANCE testbench.c1.i1 (24 nets) [cpu_mixed.v : 766]:
+    i_address[0:9]<of 16> : no toggles
+    instruction[5]: no toggles
+    pc[0:9]<of 16> : no toggles
+    pc_a[0:9]<of 16> : no toggles
+    pc_b[13]: no toggles
+    psum[0:9]<of 16> : no toggles
+  COVER [24 nets 192 bits] untoggled 42 bits (21.88%)
+MODULE: mem_mux (1 instances) [cpu_mixed.v : 990]:
+  INSTANCE testbench.c1.mm1 (26 nets) [cpu_mixed.v : 774]:
+    i_address[0:9]<of 16> : no toggles
+    i_dv: no toggles
+    mem_address[0:5]<of 16> : no toggles
+    mmux_iadd[0:9]<of 16> : no toggles
+  COVER [26 nets 178 bits] untoggled 27 bits (15.17%)
+MODULE: memory32 (1 instances) [cpu_mixed.v : 1157]:
+  INSTANCE testbench.c1.m1 (16 nets) [cpu_mixed.v : 792]:
+    dump_done: no toggles
+    idle: no toggles
+    load_line[0:31]<all of net> : no toggles
+    mem_add_reg[0:5]<of 16> : no toggles
+    mem_address[0:5]<of 16> : no toggles
+    mem_init: no 1->0 toggles
+  COVER [15 nets 171 bits] untoggled 46 bits (26.90%)
+    1->0 but not 0->1 0 (0.00%) 0->1 but not 1->0 1 (0.58%)
+MODULE: mult_56 (1 instances) [cpu_mixed.v : 1269]:
+  INSTANCE testbench.c1.f1.component1 (181 nets) [cpu_mixed.v : 545]:
+    carry[62:63]: no toggles
+    gcarry[6:7]: no toggles
+    gen[63]: no toggles
+    ggen[7]: no toggles
+    ggt: no toggles
+    gtran[6:7]: no toggles
+    nop[63]: no toggles
+    pc10[8]: no toggles
+    pc11[8]: no toggles
+    pc12[8]: no toggles
+    pc13[8]: no toggles
+    pc14[8]: no toggles
+    pc15[8]: no toggles
+    pc16[8]: no toggles
+    pc17[8]: no toggles
+    pc18[8]: no toggles
+    pc19[8]: no toggles
+    pc20[8]: no toggles
+    pc21[8]: no toggles
+    pc22[8]: no toggles
+    pc23[8]: no toggles
+    pc24[8]: no toggles
+    pc25[8]: no toggles
+    pc26[8]: no toggles
+    pc27[8]: no toggles
+    pc28[8]: no toggles
+    pc29[8]: no toggles
+    pc30[8]: no toggles
+    pc31[8]: no toggles
+    pc32[8]: no toggles
+    pc33[8]: no toggles
+    pc34[8]: no toggles
+    pc35[8]: no toggles
+    pc36[8]: no toggles
+    pc37[8]: no toggles
+    pc38[8]: no toggles
+    pc39[8]: no toggles
+    pc40[8]: no toggles
+    pc41[8]: no toggles
+    pc42[8]: no toggles
+    pc43[8]: no toggles
+    pc44[8]: no toggles
+    pc45[8]: no toggles
+    pc46[8]: no toggles
+    pc47[8]: no toggles
+    pc48[8]: no toggles
+    pc49[8]: no toggles
+    pc50[8]: no toggles
+    pc51[8]: no toggles
+    pc52[8]: no toggles
+    pc53[8]: no toggles
+    pc54[8]: no toggles
+    pc55[8]: no toggles
+    pc56[8]: no toggles
+    pc57[8]: no toggles
+    pc58[8]: no toggles
+    pc59[8]: no toggles
+    pc60[8]: no toggles
+    pc61[8]: no toggles
+    pc62[8]: no toggles
+    pc63[8:63]<all of net> : no toggles
+    pc8[8]: no toggles
+    pc9[8]: no toggles
+    ps10[8]: no toggles
+    ps11[8]: no toggles
+    ps12[8]: no toggles
+    ps13[8]: no toggles
+    ps14[8]: no toggles
+    ps15[8]: no toggles
+    ps16[8]: no toggles
+    ps17[8]: no toggles
+    ps18[8]: no toggles
+    ps19[8]: no toggles
+    ps20[8]: no toggles
+    ps21[8]: no toggles
+    ps22[8]: no toggles
+    ps23[8]: no toggles
+    ps24[8]: no toggles
+    ps25[8]: no toggles
+    ps26[8]: no toggles
+    ps27[8]: no toggles
+    ps28[8]: no toggles
+    ps29[8]: no toggles
+    ps30[8]: no toggles
+    ps31[8]: no toggles
+    ps32[8]: no toggles
+    ps33[8]: no toggles
+    ps34[8]: no toggles
+    ps35[8]: no toggles
+    ps36[8]: no toggles
+    ps37[8]: no toggles
+    ps38[8]: no toggles
+    ps39[8]: no toggles
+    ps40[8]: no toggles
+    ps41[8]: no toggles
+    ps42[8]: no toggles
+    ps43[8]: no toggles
+    ps44[8]: no toggles
+    ps45[8]: no toggles
+    ps46[8]: no toggles
+    ps47[8]: no toggles
+    ps48[8]: no toggles
+    ps49[8]: no toggles
+    ps50[8]: no toggles
+    ps51[8]: no toggles
+    ps52[8]: no toggles
+    ps53[8]: no toggles
+    ps54[8]: no toggles
+    ps55[8]: no toggles
+    ps56[8]: no toggles
+    ps57[8]: no toggles
+    ps58[8]: no toggles
+    ps59[8]: no toggles
+    ps60[8]: no toggles
+    ps61[8]: no toggles
+    ps62[8]: no toggles
+    ps62[63]: no toggles
+    ps63[8:63]<all of net> : no toggles
+    ps8[8]: no toggles
+    ps8[63]: no toggles
+    ps9[8]: no toggles
+    tr[63]: no toggles
+  COVER [181 nets 9827 bits] untoggled 235 bits (2.39%)
+MODULE: op_unit (1 instances) [cpu_mixed.v : 11]:
+  INSTANCE testbench.c1.o1 (40 nets) [cpu_mixed.v : 782]:
+    accumulator[0]: no toggles
+    ccode[2:3]: no toggles
+    fp_opcode[5]: no toggles
+    hex_op[31:8]<of 32> : no toggles
+    hex_op[2]: no toggles
+    i[0:7]<all of net> : no toggles
+    idle: no toggles
+    instruction[5]: no toggles
+    message[128:1]<all of net> : no toggles
+    ms_half_acc[0]: no toggles
+    newbit[8:1]<all of net> : no toggles
+    opcode[5]: no toggles
+    overflow: no toggles
+  COVER [39 nets 595 bits] untoggled 178 bits (29.92%)
+** DESIGN [36854 nets 48580 bits] untoggled 978 bits (2.01%) toggled 47601 (97.98%)
+  1->0 but not 0->1 0 (0.00%) 0->1 but not 1->0 1 (0.00%)
+   83 driven to constant bits (83 entire nets), 0 excluded bits

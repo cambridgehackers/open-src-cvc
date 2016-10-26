@@ -1,0 +1,13 @@
+module	FA1A( ci, a, b, s, co );
+
+input	ci, a, b;
+output	s, co;
+reg	s, co;
+
+always
+	begin
+	#1 s = a != b != ci;
+	co = (a && b) || (a&&ci) || (b&&ci);
+	end
+
+endmodule

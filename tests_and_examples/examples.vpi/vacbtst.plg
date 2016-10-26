@@ -1,0 +1,441 @@
+*** at end of compilation callback ***
+*** entering interactive mode callback ***
+C1 > // remove C[number]> prefixes and output messages from log file
+C1 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 5) time 0
+5	    initial count = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C1 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C2 > ,
+29	        #10;    
+C2 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C3 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 30) time 10
+30	        aa = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C3 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C4 > ,
+31		bb = 0;
+C4 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C5 > $display("---> reset %d times.\n", $reset_count);
+---> reset          0 times.
+
+C6 > if ($reset_count < 3) $reset; else; 
+*** at start of reset callback ***
+*** at end of reset callback ***
+*** entering interactive mode callback ***
+C7 > // remove C[number]> prefixes and output messages from log file
+C7 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 5) time 0
+5	    initial count = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C7 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C8 > ,
+29	        #10;    
+C8 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C9 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 30) time 10
+30	        aa = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C9 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C10 > ,
+31		bb = 0;
+C10 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C11 > $display("---> reset %d times.\n", $reset_count);
+---> reset          1 times.
+
+C12 > if ($reset_count < 3) $reset; else; 
+*** at start of reset callback ***
+*** at end of reset callback ***
+*** entering interactive mode callback ***
+C13 > // remove C[number]> prefixes and output messages from log file
+C13 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 5) time 0
+5	    initial count = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C13 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C14 > ,
+29	        #10;    
+C14 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C15 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 30) time 10
+30	        aa = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C15 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C16 > ,
+31		bb = 0;
+C16 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C17 > $display("---> reset %d times.\n", $reset_count);
+---> reset          2 times.
+
+C18 > if ($reset_count < 3) $reset; else; 
+*** at start of reset callback ***
+*** at end of reset callback ***
+*** entering interactive mode callback ***
+C19 > // remove C[number]> prefixes and output messages from log file
+C19 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 5) time 0
+5	    initial count = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C19 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C20 > ,
+29	        #10;    
+C20 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C21 > ,
+*** exiting interactive mode callback ***
+task10 (task10.v line 30) time 10
+30	        aa = 0;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C21 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C22 > ,
+31		bb = 0;
+C22 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C23 > $display("---> reset %d times.\n", $reset_count);
+---> reset          3 times.
+
+C24 > if ($reset_count < 3) $reset; else; 
+C25 > ,
+*** exiting interactive mode callback ***
+32		x = -1;
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C25 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C26 > ,
+33		y = 1;
+C26 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C27 > ,
+*** exiting interactive mode callback ***
+34		$display($stime," start   x: %x  y: %x  count: %0d", x, y, count);
+*** entering interactive mode callback ***
+*** changing interactive scope to task10 callback ***
+C27 > $remove_all_actions;
+>>> callbacks before $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+>>> callbacks after $remove_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+C28 > ,
+        10 start   x: ffffffff  y: 1  count: 0
+35	        t1(aa, bb, x, y);
+C28 > $reg_all_actions;
+>>> callbacks before $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+>>> callbacks after $reg_all_actions <<<
+  vpi_ callback type cbError registered
+  vpi_ callback type cbEndOfCompile registered
+  vpi_ callback type cbStartOfSimulation registered
+  vpi_ callback type cbStartOfReset registered
+  vpi_ callback type cbEndOfReset registered
+  vpi_ callback type cbEndOfSimulation registered
+  vpi_ callback type cbTchkViolation registered
+  vpi_ callback type cbEnterInteractive registered
+  vpi_ callback type cbExitInteractive registered
+  vpi_ callback type cbInteractiveScopeChange registered
+C29 > .
+*** exiting interactive mode callback ***
+        10 t1 started
+        30 t1 finished
+        30 return  x: 00000000  y: 0  count: 1
+        30 t1 started
+        35 return  x: 00000000  y: 0  count: 1
+        35 t1 started
+        55 t1 finished
+        55 return  x: 00000002  y: 0  count: 2
+*** at end of simulation callback ***

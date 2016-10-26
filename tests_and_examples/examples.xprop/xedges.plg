@@ -1,0 +1,10 @@
+test_scalar
+v=x
+test_scalar_negedge
+v=x
+test_vector
+v=xx
+test_vector_nonx_change
+v=00
+test_vector_negedge c[0]=x
+v=xx

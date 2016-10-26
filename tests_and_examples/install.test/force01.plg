@@ -1,0 +1,13 @@
+d=0,e=0
+C1 >    // also test input from $input();
+C1 >    force d = (a | b | c);
+C2 >    force e = (a | b | c);
+C3 >    #10 $stop;
+C4 >    .
+d=1,e=1
+C4 >    release d;
+C5 >    release e;
+C6 >    c = 0;
+C7 >    #10 $finish;
+C8 >    .
+d=0,e=0

@@ -1,0 +1,30 @@
+/* generate help message for debugger topics */
+$display("\n... printing help topic messages");
+:help debugging
+$write("\n");
+:help compiling
+$write("\n");
+:help tracing
+$write("\n");
+:help differences
+$write("\n");
+:help statements
+$write("\n");
+:help data
+$write("\n");
+:help source
+$write("\n");
+:help scope
+$write("\n");
+:help breakpoints
+$write("\n");
+:help changes
+$write("\n");
+:help history
+$write("\n");
+:help info
+$write("\n");
+:help tasks
+$write("\n");
+:help commands
+$input("helpgen3.inp");

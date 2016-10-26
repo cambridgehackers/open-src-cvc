@@ -1,0 +1,1 @@
+   lfsr500.v -y ../libs/lca100kgate +libext+.v

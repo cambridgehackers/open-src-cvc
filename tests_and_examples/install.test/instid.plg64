@@ -1,0 +1,24 @@
+**instid.v(15) WARN** [602] x1(level1$$1) input port i (line **instid.v(3)) width 32 mismatch with 2 * i width 64
+**instid.v(16) WARN** [602] x2(level1) input port i (line **instid.v(3)) width 32 mismatch with (2 * i) + 1 width 64
+**instid.v(22) WARN** [602] x1(level2) input port i (line **instid.v(12)) width 32 mismatch with 3 * i width 64
+**instid.v(23) WARN** [602] x2(level2) input port i (line **instid.v(12)) width 32 mismatch with (3 * i) + 1 width 64
+**instid.v(29) WARN** [602] x1(level3) input port i (line **instid.v(19)) width 32 mismatch with 4 * i width 64
+**instid.v(30) WARN** [602] x2(level3) input port i (line **instid.v(19)) width 32 mismatch with (4 * i) + 1 width 64
+**instid.v(36) WARN** [602] x1(level4) input port i (line **instid.v(26)) width 32 mismatch with 4 * i width 64
+**instid.v(37) WARN** [602] x2(level4) input port i (line **instid.v(26)) width 32 mismatch with (4 * i) + 1 width 64
+i=0,p1=1,p2=0
+i=1,p1=2,p2=0
+i=2,p1=3,p2=0
+i=3,p1=4,p2=0
+i=6,p1=5,p2=0
+i=7,p1=6,p2=0
+i=8,p1=7,p2=0
+i=9,p1=8,p2=0
+i=24,p1=9,p2=0
+i=25,p1=10,p2=0
+i=26,p1=11,p2=0
+i=27,p1=12,p2=0
+i=30,p1=13,p2=0
+i=31,p1=14,p2=0
+i=32,p1=15,p2=0
+i=33,p1=16,p2=0

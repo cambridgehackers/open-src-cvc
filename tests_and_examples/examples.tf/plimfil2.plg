@@ -1,0 +1,8 @@
+** WARN** [1404] PLI1 - passing memory (array) - to tf_nodeinfo (via $pli_memfil2) is inefficient better to use VPI or DPI instead.
+writing filled memory values:
+1: 0
+2: 1
+3: 1024
+4: 16383
+5: 12345
+

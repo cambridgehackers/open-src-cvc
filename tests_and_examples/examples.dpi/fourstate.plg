@@ -1,0 +1,9 @@
+REG aval=13 bval=0
+ri=        13
+rio=        11
+ASSIGN REG aval=11 bval=0
+after rio=        12
+w=ffffffffaaaaaaaa
+ASSIGNING WIDE
+a0 =aaaaaaaa a1 = ffffffff
+after w=ccccccccbbbbbbbb

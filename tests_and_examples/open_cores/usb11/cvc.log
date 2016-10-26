@@ -1,0 +1,337 @@
+Highest level modules:
+test
+  Begin compiled design load:
+  Begin simulation:
+
+
+
+
+
+*****************************************************
+*** CTRL ep test 1                                ***
+*****************************************************
+
+
+
+Setting Address ...
+
+
+Getting descriptor ...
+RCV Data[0]: 12
+RCV Data[1]: 01
+RCV Data[2]: 00
+RCV Data[3]: 01
+RCV Data[4]: ff
+RCV Data[5]: 00
+RCV Data[6]: ff
+RCV Data[7]: 40
+
+
+Getting descriptor ...
+RCV Data[0]: 09
+RCV Data[1]: 02
+RCV Data[2]: 35
+RCV Data[3]: 00
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 00
+RCV Data[7]: 40
+
+
+Getting descriptor ...
+RCV Data[0]: 09
+RCV Data[1]: 02
+RCV Data[2]: 35
+RCV Data[3]: 00
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 00
+RCV Data[7]: 40
+RCV Data[8]: 00
+RCV Data[9]: 09
+RCV Data[10]: 04
+RCV Data[11]: 00
+RCV Data[12]: 00
+RCV Data[13]: 05
+RCV Data[14]: ff
+RCV Data[15]: 01
+RCV Data[16]: ff
+RCV Data[17]: 00
+RCV Data[18]: 07
+RCV Data[19]: 05
+RCV Data[20]: 81
+RCV Data[21]: 01
+RCV Data[22]: 00
+RCV Data[23]: 01
+RCV Data[24]: 01
+RCV Data[25]: 07
+RCV Data[26]: 05
+RCV Data[27]: 02
+RCV Data[28]: 01
+RCV Data[29]: 00
+RCV Data[30]: 01
+RCV Data[31]: 01
+RCV Data[32]: 07
+RCV Data[33]: 05
+RCV Data[34]: 83
+RCV Data[35]: 02
+RCV Data[36]: 40
+RCV Data[37]: 00
+RCV Data[38]: 01
+RCV Data[39]: 07
+RCV Data[40]: 05
+RCV Data[41]: 04
+RCV Data[42]: 02
+RCV Data[43]: 40
+RCV Data[44]: 00
+RCV Data[45]: 01
+RCV Data[46]: 07
+RCV Data[47]: 05
+RCV Data[48]: 85
+RCV Data[49]: 03
+RCV Data[50]: 40
+RCV Data[51]: 00
+RCV Data[52]: 01
+
+
+Getting descriptor ...
+RCV Data[0]: 01
+RCV Data[1]: 01
+RCV Data[2]: 01
+RCV Data[3]: 01
+
+
+Getting descriptor ...
+RCV Data[0]: 01
+RCV Data[1]: 01
+RCV Data[2]: 01
+RCV Data[3]: 01
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 01
+RCV Data[7]: 01
+RCV Data[8]: 01
+RCV Data[9]: 01
+
+
+Getting descriptor ...
+RCV Data[0]: 01
+RCV Data[1]: 01
+RCV Data[2]: 01
+RCV Data[3]: 01
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 01
+RCV Data[7]: 01
+
+
+Getting descriptor ...
+RCV Data[0]: 01
+RCV Data[1]: 01
+RCV Data[2]: 01
+RCV Data[3]: 01
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 01
+RCV Data[7]: 01
+RCV Data[8]: 01
+RCV Data[9]: 01
+
+
+Getting descriptor ...
+RCV Data[0]: 09
+RCV Data[1]: 02
+RCV Data[2]: 35
+RCV Data[3]: 00
+RCV Data[4]: 01
+RCV Data[5]: 01
+RCV Data[6]: 00
+RCV Data[7]: 40
+RCV Data[8]: 00
+RCV Data[9]: 09
+RCV Data[10]: 04
+RCV Data[11]: 00
+RCV Data[12]: 00
+RCV Data[13]: 05
+RCV Data[14]: ff
+RCV Data[15]: 01
+RCV Data[16]: ff
+RCV Data[17]: 00
+RCV Data[18]: 07
+RCV Data[19]: 05
+RCV Data[20]: 81
+RCV Data[21]: 01
+RCV Data[22]: 00
+RCV Data[23]: 01
+RCV Data[24]: 01
+RCV Data[25]: 07
+RCV Data[26]: 05
+RCV Data[27]: 02
+RCV Data[28]: 01
+RCV Data[29]: 00
+RCV Data[30]: 01
+RCV Data[31]: 01
+RCV Data[32]: 07
+RCV Data[33]: 05
+RCV Data[34]: 83
+RCV Data[35]: 02
+RCV Data[36]: 40
+RCV Data[37]: 00
+RCV Data[38]: 01
+RCV Data[39]: 07
+RCV Data[40]: 05
+RCV Data[41]: 04
+RCV Data[42]: 02
+RCV Data[43]: 40
+RCV Data[44]: 00
+RCV Data[45]: 01
+RCV Data[46]: 07
+RCV Data[47]: 05
+RCV Data[48]: 85
+RCV Data[49]: 03
+RCV Data[50]: 40
+RCV Data[51]: 00
+RCV Data[52]: 01
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+
+
+
+*****************************************************
+*** IN ep test 0                                  ***
+*****************************************************
+
+PL size: 0
+PL size: 1
+PL size: 2
+PL size: 3
+PL size: 4
+PL size: 5
+PL size: 6
+PL size: 7
+PL size: 8
+PL size: 9
+PL size: 10
+PL size: 11
+PL size: 12
+PL size: 13
+PL size: 14
+PL size: 15
+PL size: 16
+PL size: 17
+PL size: 18
+PL size: 19
+PL size: 20
+PL size: 21
+PL size: 22
+PL size: 23
+PL size: 24
+PL size: 25
+PL size: 26
+PL size: 27
+PL size: 28
+PL size: 29
+PL size: 30
+PL size: 31
+PL size: 32
+PL size: 33
+PL size: 34
+PL size: 35
+PL size: 36
+PL size: 37
+PL size: 38
+PL size: 39
+PL size: 40
+PL size: 41
+PL size: 42
+PL size: 43
+PL size: 44
+PL size: 45
+PL size: 46
+PL size: 47
+PL size: 48
+PL size: 49
+PL size: 50
+PL size: 51
+PL size: 52
+PL size: 53
+PL size: 54
+PL size: 55
+PL size: 56
+PL size: 57
+PL size: 58
+PL size: 59
+PL size: 60
+PL size: 61
+PL size: 62
+PL size: 63
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+
+
+
+*****************************************************
+*** OUT ep test 0                                 ***
+*****************************************************
+
+PL size: 0
+PL size: 4
+PL size: 8
+PL size: 12
+PL size: 16
+PL size: 20
+PL size: 24
+PL size: 28
+PL size: 32
+PL size: 36
+PL size: 40
+PL size: 44
+PL size: 48
+PL size: 52
+PL size: 56
+PL size: 60
+PL size: 64
+PL size: 68
+PL size: 72
+PL size: 76
+PL size: 80
+PL size: 84
+PL size: 88
+PL size: 92
+PL size: 96
+PL size: 100
+PL size: 104
+PL size: 108
+PL size: 112
+PL size: 116
+PL size: 120
+PL size: 124
+
+
+     +--------------------+
+     |  Total ERRORS: 0   |
+     +--------------------+
+*****************************************************
+*** Test DONE ...                                 ***
+*****************************************************
+
+
+Halted at location **usb1_funct/bench/verilog/test_bench_top.v(173) time 15813027300 ps from call to $finish.
+  Times (in sec.):  Translate 0.0, load/optimize 0.1, simulation 2.5.
+  There were 0 error(s), 0 warning(s), and 987 inform(s).

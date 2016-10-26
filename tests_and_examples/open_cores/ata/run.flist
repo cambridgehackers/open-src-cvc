@@ -1,0 +1,9 @@
+bench/verilog/ata_device.v
+bench/verilog/test_bench_top.v
+bench/verilog/wb_mast_model.v
+rtl/verilog/ocidec-1/atahost_controller.v
+rtl/verilog/ocidec-1/atahost_pio_tctrl.v
+rtl/verilog/ocidec-1/atahost_top.v
+rtl/verilog/ocidec-1/atahost_wb_slave.v
+rtl/verilog/ocidec-1/ro_cnt.v
+rtl/verilog/ocidec-1/ud_cnt.v

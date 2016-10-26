@@ -1,0 +1,13 @@
+         0 out=x,in=0,w1=x,w2=x
+         2 out=x,in=0,w1=0,w2=x
+         5 out=z,in=0,w1=0,w2=1
+       100 out=z,in=1,w1=0,w2=1
+       101 out=z,in=1,w1=1,w2=1
+       105 out=1,in=1,w1=1,w2=0
+       111 out=0,in=1,w1=1,w2=0
+       200 out=0,in=x,w1=1,w2=0
+       201 out=0,in=x,w1=x,w2=0
+**aspike1.v(8) WARN** now 204 [592] bufif1 gate test.__gate$$3 unstable (edge at 205 replaced by new at 209) - old St0, scheduled StL, new StX
+       204 out=0,in=x,w1=x,w2=x
+       209 out=x,in=x,w1=x,w2=x
+       300 out=x,in=z,w1=x,w2=x

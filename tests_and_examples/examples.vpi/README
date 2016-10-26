@@ -1,0 +1,126 @@
+
+       PLI 2.0 VPI ROUTINE EXAMPLES AND INSTALLATION TEST
+
+This directory contains PLI 2.0 API vpi_ routine examples to illustrate use 
+of PLI 2.0.  To test for correct installation run the inst_pli.sh script that
+compiles vpi_ programs into .so libraries which are dynamically loaded
+using +loadvpi= CVC command line option and run.
+
+
+When compiling a design for use with the PLI you may need to compile with
++acc+[level] command.  This option compiles with the following levels of
+PLI access:
+
+        +acc+1 or +acc
+         Enable all PLI capabilities except value change callbacks and
+         delay annotation.
+        +acc+2
+         All features above plus value change callbacks.
+        +acc+3
+         All features above plus module path delay.
+        +acc+4
+         All features above plus gate delay annotation.
+ 
+We are working on VCS style .tab file for more specific access options to 
+increase peformance when using the PLI.
+
+The PLI routine vpi_put_value cannot be called with the non standard 
+reason flag vpiAddDriver when running in compiled mode.  To use this you need
+to run in interpreted mode (+interp).
+
+To see an example asynchronously driven PLI 2.0 vpi_ model, look
+at async.c (and async.v) test below.  The other tests show various
+PLI 2.0 vpi_ routine capabilities but are not complete models.
+
+To learn more about PLI 2.0 capabilities, read the various examples.  To
+learn how to use a particular vpi_ routine, access method, or to get
+properties from a particular object, run "grep [object or routine name] *.c".
+
+HOW TO RUN THE TEST SCRIPT
+
+1) Run the shell script inst_pli.sh.  Various compiler and Verilog
+   output messages will be printed but there should be no diff command
+   differences printed.  
+
+   By convention makefile.lnx assumes this test is run in release
+   directory tree with include files in pli_incs 2 directory levels up
+   and CVC binary also 2 levels up.
+
+   The commands to run CVC with dynamically loaded user PLI library
+   explicitly access the user .so library in this directory.  For your
+   PLI libraries, it is better to set the LD_LIBRARY_PATH environment
+   variables so explicit "./" is not needed
+
+2) After completing the test, run clean.sh to remove work files.
+   The inst_pli.sh script removes each PLI library .so dynamic library after
+   running the test that uses it so unless something went wrong, you
+   do not need to run clean.sh.  
+
+3) Use makefile.lnx as a template for your vpi_ PLI 2.0 models.
+   Notice to use the PLI1 user defined PLI system/task function interface,
+   you must use +loadpli1= option.  To use newer PLI2 vpi_ user defined PLI
+   system/task function interface you must use +loadvpi=.  You should
+   use the +loadvpi= option for all new PLI code because of the additional
+   capabilities.  +loadpli1= system tasks can't be used with new vpi_
+   system task and function access methods because +loadpli1 system tasks
+   and functions must support old behavior.
+
+---------------------------------------------------------------------------
+
+Tests are:
+
+  1. async.c is asynchronously switching not gate implemented using vpi_.
+
+  2. vhello1.c and vhello2.c are "hello world" tests that also show use
+     of environment determing vpi_ routines.
+
+  3. vhelbad.c is a "hello world" test with some vpi_ errors to illustrate
+     vpi_ error checking.
+
+  4. findcaus.c is test that traverses Verilog design hierarchy.
+
+  5. vcabtsts.c is a test that registers every call back and prints a message
+     when it occurs.
+
+  6. vprtchg.c adds cbValueChange callbacks to every .v file varaibles and
+     prints a message on every change.
+
+  7. vprtchg2.c test also prints every variable change in a design
+     except it uses vpi_get_value and vpi_get_time instead of the built in
+     value change callback values.
+
+  8. vprtchg3.c prints new and old variable values using an on change call
+     back.
+
+  9. vprtdels.c accesses and prints every delay in a design.
+
+  10. vprtdel2.c illustrates vpi_ timscale handling.
+
+  11. vsetdels.c use vpi_ to set delays.
+
+  12. vsetval1.c tests various vpi_put_value uses.
+
+  13. vtimcbs.c illustrates use of various delay callbacks.
+
+  14. vfopen1.c implements $fopen built in system function using PLI 2.0.
+
+  15. vfopen2.c is  variant of the vfopen1.c test using vpi_ system task
+      instead of vpi_ system function.
+
+  16. vconta1.c tests continous assignments and non lvalue expression
+      decomposition.
+
+  17. vchkprt1.c tests most port and vpiHighConn/vpiLowConn one to one
+      and one to many iterators.  It is possible that either the .c model
+      or CVC's interpretation of the LRM are not right because CVC
+      assumes all bit iterators are LSB to MSB in terms of vpi_scan order.
+
+  18. vdrvld1.c tests vpiDriver and vpiLoad iterators for nets.
+
+  19. vdrvld2.c tests vpiDriver and vpiLoad iterators for bits of nets.
+
+  20. dfpsetd.c tests vpi_put_value to defparam and specparam during
+      cbEndOfCompile call back for delay annotation (allows delay annotation
+      to procedural delay controls and continuous assignments).  Test
+      sets same delays and produces same results using vpi_ as dfpsetd.vc
+      in install.test directory that uses 2 SDF delay annotation files.

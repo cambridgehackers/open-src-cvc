@@ -1,0 +1,21 @@
+
+ - Read the 'cvc_quick_start.pdf' on getting started using CVC in the 
+   "doc" directory.
+
+ - OSS CVC contains new X-propagation features to help find RTL X-bugs.  See
+   the CVC X-propagation guide (doc/cvc_xpropagation.pdf) for more 
+   information on how to use +xprop.
+
+ - OSS CVC has new improved instance and net bit specific toggle coverage
+   features with the new simplifed .tgldat cumulative toggle coverage
+   reporting file format.  
+
+ - See the CVC coverage guide (doc/toggle_coverage_manual.txt) for instructons
+   or type cvc -h for brief explanations of the new options.  The
+   '-optconfigfile [file]' option now allows extra control for setting
+   coverage or PLI access levels for each instance tree location and
+   each net bit in the untoggled concise report.
+
+ - For making OSS CVC binaries see the readme in the src directory.
+ 
+Copyright (c) 2001-2014 Tachyon Design Automation

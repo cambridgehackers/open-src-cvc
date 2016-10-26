@@ -1,0 +1,20 @@
+// context here [+<scope>] is ffnand_test
+(DELAYFILE 
+  (SDFVERSION "3.0") 
+  (CELL 
+   (CELLTYPE "ffnand" ) 
+   (INSTANCE ff1)
+    (LABEL (ABSOLUTE (pr 10) (pf 10)))
+  )
+  (CELL 
+   (CELLTYPE "nand" ) 
+   (INSTANCE ff1.q1)
+    // since source has 2 delays (3rd toz computed), need 3 for increment
+    (DELAY (INCREMENT (DEVICE (5) (5))))
+  )
+  (CELL 
+   (CELLTYPE "nand" ) 
+   (INSTANCE ff1.q2)
+    (DELAY (INCREMENT (DEVICE (5) (5))))
+  )
+)

@@ -1,0 +1,10 @@
+**dfpsetd1.sdf(6) WARN** [2304] (LABEL form back annotation to parameter d non standard - will need to change to module scope specparam for Verilog 2000
+                   0 preset=x clear=x q=x qbar=x
+                 100 preset=0 clear=1 q=x qbar=x
+                 110 preset=0 clear=1 q=1 qbar=x
+                 116 preset=0 clear=1 q=1 qbar=0
+                 200 preset=1 clear=1 q=1 qbar=0
+                 300 preset=1 clear=0 q=1 qbar=0
+                 306 preset=1 clear=0 q=1 qbar=1
+                 312 preset=1 clear=0 q=0 qbar=1
+                 400 preset=1 clear=1 q=0 qbar=1

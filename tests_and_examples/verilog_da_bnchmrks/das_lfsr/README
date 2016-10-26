@@ -1,0 +1,57 @@
+--------------------------------------------------------------------
+--
+--      These source files may be used and distributed without
+--      restriction.
+--
+--------------------------------------------------------------------
+--
+--      Author  John Hillawi
+--      Names   lfsr500.v
+--      	lfsr1000.v
+--      	lfsr2000.v
+--      	lfsr4000.v
+--      	lfsr8000.v
+--      	lfsr16000.v
+--      	lfsr32000.v
+--      Purpose This circuit was created for the purpose of
+--		measuring store size parameters for a variety
+		of different sized circuits.
+
+--------------------------------------------------------------------
+--	
+--	The circuit is a linear feedback shift register. 
+--
+--------------------------------------------------------------------
+--
+--      As a guide to running, a typical script (in this case
+--      FrontLine Design Automation) would be:
+--
+--      cver -f lfsr500.vc
+--	
+--      or directly by typing (see below for running with SDF annotation):
+--
+--	cver lfsr500.v -y ../libs/lca100kgate +libext+.v
+--
+
+** ADDED TACHYON DA
+--
+--      The new version of lfsr500.v called lfsr500udp.v has the udp library
+--      cells inside the lfsr500udp.v file so no library is needed.  To run
+--      this new test type:
+--
+--      cvc64 lfsr500_udp.v
+--
+--      To see size of any of these benchmarks circuits, run CVC with the
+--      +printstats (or for more detailed output +printallstats) option.
+--      Also use the +verbose option to have CVC print memory use estimates.
+--
+--      A small SDF file has been added that is optional but currently used
+--      by default if the -f include versins is run.  To run with SDF
+--      annotation for lfsr500.v type: 
+--
+--	cvc64 lfsr500.v +sdfannotate lfsr.sdf -y ../libs/lca100kgate +libext+.v
+--
+--      or add a call to $sdf_annotate system task to lfsr500.v or other
+--      circuit size source.
+--
+--------------------------------------------------------------------

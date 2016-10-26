@@ -1,0 +1,43 @@
+Loading toggle circuit
+Loading element 1, type DEdgeFF, with initial value 1(00000000_01000000)
+Loading element 2, type DEdgeFF, with initial value 1(00000000_01000000)
+Loading element 3, type Nand, with initial value 0(01000000_00000000)
+Loading element 4, type DEdgeFF, with initial value 1(00000000_01000000)
+Applying 2 clocks to input element 1
+At 1,0 Element 1, type DEdgeFF, changes to 0(01000000_00000000)
+At 2,0 Element 1, type DEdgeFF, changes to 1(00000000_01000000)
+At 2,1 Element 4, type DEdgeFF, changes to 0(01000000_00000000)
+At 2,2 Element 3, type Nand, changes to 1(00000000_01000000)
+At 3,0 Element 1, type DEdgeFF, changes to 0(01000000_00000000)
+At 4,0 Element 1, type DEdgeFF, changes to 1(00000000_01000000)
+At 4,1 Element 4, type DEdgeFF, changes to 1(00000000_01000000)
+At 4,2 Element 3, type Nand, changes to 0(01000000_00000000)
+Changing element 2 to value 0 and applying 1 clock
+At 5,0 Element 1, type DEdgeFF, changes to 0(01000000_00000000)
+At 5,0 Element 2, type DEdgeFF, changes to 0(01000000_00000000)
+At 5,1 Element 3, type Nand, changes to 1(00000000_01000000)
+At 6,0 Element 1, type DEdgeFF, changes to 1(00000000_01000000)
+
+Loading open-collector and pullup circuit
+Loading element 1, type DEdgeFF, with initial value 1(00000000_01000000)
+Loading element 2, type DEdgeFF, with initial value 0(01000000_00000000)
+Loading element 3, type Nand, with initial value 0(01000000_00000000)
+Loading element 4, type Nand, with initial value Z(00000000_00000001)
+Loading element 5, type Wire, with initial value 0(01000000_00000000)
+Loading element 6, type DEdgeFF, with initial value 1(00000000_00100000)
+Loading element 7, type Wire, with initial value 0(01000000_00000000)
+Changing element 1 to value 0
+At 7,0 Element 1, type DEdgeFF, changes to 0(01000000_00000000)
+At 7,1 Element 3, type Nand, changes to Z(00000000_00000001)
+At 7,2 Element 5, type Wire, changes to Z(00000000_00000001)
+At 7,3 Element 7, type Wire, changes to 1(00000000_00100000)
+Changing element 2 to value 1
+At 8,0 Element 2, type DEdgeFF, changes to 1(00000000_01000000)
+At 8,1 Element 4, type Nand, changes to 0(01000000_00000000)
+At 8,2 Element 5, type Wire, changes to 0(01000000_00000000)
+At 8,3 Element 7, type Wire, changes to 0(01000000_00000000)
+Changing element 2 to value X
+At 9,0 Element 2, type DEdgeFF, changes to X(01111111_01111111)
+At 9,1 Element 4, type Nand, changes to X(01111111_00000001)
+At 9,2 Element 5, type Wire, changes to X(01111111_00000001)
+At 9,3 Element 7, type Wire, changes to X(01111111_00111111)

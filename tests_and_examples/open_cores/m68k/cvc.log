@@ -1,0 +1,9 @@
+Highest level modules:
+bench
+  Begin compiled design load:
+  Begin simulation:
+
+
+Halted at location **bench/bench.v(58) time 100000040000 ps from call to $finish.
+  Times (in sec.):  Translate 0.0, load/optimize 0.1, simulation 10.3.
+  There were 0 error(s), 0 warning(s), and 265 inform(s).

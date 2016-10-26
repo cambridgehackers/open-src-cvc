@@ -1,0 +1,13 @@
+array[0] = 0
+array[1] = 10
+array[2] = 20
+array[3] = 30
+array[4] = 40
+array[5] = 50
+array[6] = 60
+array[7] = 70
+array[8] = 80
+array[9] = 90
+data[0] = aaaaaaaa data[1] = ffffffff
+data[1] = cccccccc data[1] = bbbbbbbb
+array[0] = eeeeeeee11111111 array[1] = 22222222dddddddd

@@ -1,0 +1,320 @@
+**pchg_fdsp.v(106) WARN** [653] $period timing check min:typ:max limit expression needs parentheses under 1364 - unportable
+... setting up vcls for instance test
+... vcls for wires
+Adding vcl for test.t_clr0 type accNet (fulltype accWire)
+Adding vcl for test.t_clr1 type accNet (fulltype accWire)
+Adding vcl for test.t_d0 type accNet (fulltype accWire)
+Adding vcl for test.t_d1 type accNet (fulltype accWire)
+Adding vcl for test.t_q type accNet (fulltype accWire)
+Adding vcl for test.t_q0 type accNet (fulltype accWire)
+Adding vcl for test.t_q1 type accNet (fulltype accWire)
+Adding vcl for test.t_set0 type accNet (fulltype accWire)
+Adding vcl for test.t_set1 type accNet (fulltype accWire)
+... vcls for variables
+Adding vcl for test.t_clk type accReg (fulltype accReg)
+Adding vcl for test.t_clk0 type accReg (fulltype accReg)
+Adding vcl for test.t_clk1 type accReg (fulltype accReg)
+Adding vcl for test.t_clk2 type accReg (fulltype accReg)
+Adding vcl for test.t_clr type accReg (fulltype accReg)
+Adding vcl for test.t_d type accReg (fulltype accReg)
+Adding vcl for test.t_set type accReg (fulltype accReg)
+... vcls for primitive terminals
+... vcls for ports
+... setting up vcls for instance test.i1
+... vcls for wires
+Adding vcl for test.i1.clk type accNet (fulltype accWire)
+Adding vcl for test.i1.clk1 type accNet (fulltype accWire)
+Adding vcl for test.i1.clr type accNet (fulltype accWire)
+Adding vcl for test.i1.d type accNet (fulltype accWire)
+Adding vcl for test.i1.q type accNet (fulltype accWire)
+Adding vcl for test.i1.set type accNet (fulltype accWire)
+... vcls for variables
+... vcls for primitive terminals
+Adding vcl for **terminal** type accTerminal (fulltype accOutputTerminal)
+... vcls for ports
+Adding vcl for test.i1.q type accPort (fulltype accScalarPort)
+Adding vcl for test.i1.clk type accPort (fulltype accScalarPort)
+Adding vcl for test.i1.clk1 type accPort (fulltype accScalarPort)
+Adding vcl for test.i1.d type accPort (fulltype accScalarPort)
+Adding vcl for test.i1.clr type accPort (fulltype accScalarPort)
+Adding vcl for test.i1.set type accPort (fulltype accScalarPort)
+... setting up vcls for instance test.i2
+... vcls for wires
+Adding vcl for test.i2.clk type accNet (fulltype accWire)
+Adding vcl for test.i2.clk1 type accNet (fulltype accWire)
+Adding vcl for test.i2.clr type accNet (fulltype accWire)
+Adding vcl for test.i2.d type accNet (fulltype accWire)
+Adding vcl for test.i2.q type accNet (fulltype accWire)
+Adding vcl for test.i2.set type accNet (fulltype accWire)
+... vcls for variables
+... vcls for primitive terminals
+Adding vcl for **terminal** type accTerminal (fulltype accOutputTerminal)
+... vcls for ports
+Adding vcl for test.i2.q type accPort (fulltype accScalarPort)
+Adding vcl for test.i2.clk type accPort (fulltype accScalarPort)
+Adding vcl for test.i2.clk1 type accPort (fulltype accScalarPort)
+Adding vcl for test.i2.d type accPort (fulltype accScalarPort)
+Adding vcl for test.i2.clr type accPort (fulltype accScalarPort)
+Adding vcl for test.i2.set type accPort (fulltype accScalarPort)
+... setting up vcls for instance test.i3
+... vcls for wires
+Adding vcl for test.i3.clk type accNet (fulltype accWire)
+Adding vcl for test.i3.clk1 type accNet (fulltype accWire)
+Adding vcl for test.i3.clr type accNet (fulltype accWire)
+Adding vcl for test.i3.d type accNet (fulltype accWire)
+Adding vcl for test.i3.q type accNet (fulltype accWire)
+Adding vcl for test.i3.set type accNet (fulltype accWire)
+... vcls for variables
+... vcls for primitive terminals
+Adding vcl for **terminal** type accTerminal (fulltype accOutputTerminal)
+... vcls for ports
+Adding vcl for test.i3.q type accPort (fulltype accScalarPort)
+Adding vcl for test.i3.clk type accPort (fulltype accScalarPort)
+Adding vcl for test.i3.clk1 type accPort (fulltype accScalarPort)
+Adding vcl for test.i3.d type accPort (fulltype accScalarPort)
+Adding vcl for test.i3.clr type accPort (fulltype accScalarPort)
+Adding vcl for test.i3.set type accPort (fulltype accScalarPort)
+  >>> All instances processed
+         0 q=x, clk=x, data=x, clr=x, set=x
+testing set/clear logic
+--> now 2000 (chg time 2000): test.i3.set=sr-scalar=0(obj=accPort)
+--> now 2000 (chg time 2000): test.t_set=sr-scalar=0(0)
+--> now 2000 (chg time 2000): test.i3.set=St0(<6, 6>=0)
+--> now 2000 (chg time 2000): **terminal**=scalar=1(obj=accTerminal)
+      2000 q=x, clk=x, data=x, clr=x, set=0
+--> now 2040 (chg time 2040): test.i3.q=scalar=1(obj=accPort)
+--> now 2040 (chg time 2040): test.i3.q=St1(<6, 6>=1)
+--> now 2040 (chg time 2040): test.t_q=St1(<6, 6>=1)
+      2040 q=1, clk=x, data=x, clr=x, set=0
+--> now 3000 (chg time 3000): test.i3.clr=sr-scalar=0(obj=accPort)
+--> now 3000 (chg time 3000): test.t_clr=sr-scalar=0(0)
+--> now 3000 (chg time 3000): test.i3.clr=St0(<6, 6>=0)
+      3000 q=1, clk=x, data=x, clr=0, set=0
+--> now 4000 (chg time 4000): test.i3.set=sr-scalar=1(obj=accPort)
+--> now 4000 (chg time 4000): test.t_set=sr-scalar=1(1)
+--> now 4000 (chg time 4000): test.i3.set=St1(<6, 6>=1)
+--> now 4000 (chg time 4000): **terminal**=scalar=0(obj=accTerminal)
+      4000 q=1, clk=x, data=x, clr=0, set=1
+--> now 4050 (chg time 4050): test.i3.q=scalar=0(obj=accPort)
+--> now 4050 (chg time 4050): test.i3.q=St0(<6, 6>=0)
+--> now 4050 (chg time 4050): test.t_q=St0(<6, 6>=0)
+      4050 q=0, clk=x, data=x, clr=0, set=1
+--> now 5000 (chg time 5000): test.i3.set=sr-scalar=0(obj=accPort)
+--> now 5000 (chg time 5000): test.t_set=sr-scalar=0(0)
+--> now 5000 (chg time 5000): test.i3.set=St0(<6, 6>=0)
+--> now 5000 (chg time 5000): **terminal**=scalar=1(obj=accTerminal)
+      5000 q=0, clk=x, data=x, clr=0, set=0
+--> now 5040 (chg time 5040): test.i3.q=scalar=1(obj=accPort)
+--> now 5040 (chg time 5040): test.i3.q=St1(<6, 6>=1)
+--> now 5040 (chg time 5040): test.t_q=St1(<6, 6>=1)
+      5040 q=1, clk=x, data=x, clr=0, set=0
+--> now 6000 (chg time 6000): test.i3.set=sr-scalar=1(obj=accPort)
+--> now 6000 (chg time 6000): test.t_set=sr-scalar=1(1)
+--> now 6000 (chg time 6000): test.i3.set=St1(<6, 6>=1)
+--> now 6000 (chg time 6000): **terminal**=scalar=0(obj=accTerminal)
+      6000 q=1, clk=x, data=x, clr=0, set=1
+--> now 6050 (chg time 6050): test.i3.q=scalar=0(obj=accPort)
+--> now 6050 (chg time 6050): test.i3.q=St0(<6, 6>=0)
+--> now 6050 (chg time 6050): test.t_q=St0(<6, 6>=0)
+      6050 q=0, clk=x, data=x, clr=0, set=1
+--> now 7000 (chg time 7000): test.i3.clr=sr-scalar=2(obj=accPort)
+--> now 7000 (chg time 7000): test.t_clr=sr-scalar=2(x)
+--> now 7000 (chg time 7000): test.i3.clr=StX(<6, 6>=2)
+--> now 7000 (chg time 7000): **terminal**=scalar=2(obj=accTerminal)
+      7000 q=0, clk=x, data=x, clr=x, set=1
+--> now 7040 (chg time 7040): test.i3.q=scalar=2(obj=accPort)
+--> now 7040 (chg time 7040): test.i3.q=StX(<6, 6>=2)
+--> now 7040 (chg time 7040): test.t_q=StX(<6, 6>=2)
+      7040 q=x, clk=x, data=x, clr=x, set=1
+testing normal logic
+--> now 8000 (chg time 8000): test.i3.clr=sr-scalar=1(obj=accPort)
+--> now 8000 (chg time 8000): test.t_clr=sr-scalar=1(1)
+--> now 8000 (chg time 8000): test.i3.d=sr-scalar=0(obj=accPort)
+--> now 8000 (chg time 8000): test.t_d=sr-scalar=0(0)
+--> now 8000 (chg time 8000): test.i3.clr=St1(<6, 6>=1)
+--> now 8000 (chg time 8000): test.i3.d=St0(<6, 6>=0)
+      8000 q=x, clk=x, data=0, clr=1, set=1
+--> now 9000 (chg time 9000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 9000 (chg time 9000): test.t_clk=sr-scalar=1(1)
+--> now 9000 (chg time 9000): test.i3.clk=St1(<6, 6>=1)
+      9000 q=x, clk=1, data=0, clr=1, set=1
+--> now 10000 (chg time 10000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 10000 (chg time 10000): test.t_clk=sr-scalar=0(0)
+--> now 10000 (chg time 10000): test.i3.clk=St0(<6, 6>=0)
+     10000 q=x, clk=0, data=0, clr=1, set=1
+--> now 11000 (chg time 11000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 11000 (chg time 11000): test.t_clk=sr-scalar=1(1)
+--> now 11000 (chg time 11000): test.i3.clk=St1(<6, 6>=1)
+--> now 11000 (chg time 11000): **terminal**=scalar=0(obj=accTerminal)
+     11000 q=x, clk=1, data=0, clr=1, set=1
+--> now 11250 (chg time 11250): test.i3.q=scalar=0(obj=accPort)
+--> now 11250 (chg time 11250): test.i3.q=St0(<6, 6>=0)
+--> now 11250 (chg time 11250): test.t_q=St0(<6, 6>=0)
+     11250 q=0, clk=1, data=0, clr=1, set=1
+--> now 12000 (chg time 12000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 12000 (chg time 12000): test.t_clk=sr-scalar=0(0)
+--> now 12000 (chg time 12000): test.i3.clk=St0(<6, 6>=0)
+     12000 q=0, clk=0, data=0, clr=1, set=1
+--> now 13000 (chg time 13000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 13000 (chg time 13000): test.t_clk=sr-scalar=1(1)
+--> now 13000 (chg time 13000): test.i3.clk=St1(<6, 6>=1)
+     13000 q=0, clk=1, data=0, clr=1, set=1
+--> now 14000 (chg time 14000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 14000 (chg time 14000): test.t_clk=sr-scalar=0(0)
+--> now 14000 (chg time 14000): test.i3.clk=St0(<6, 6>=0)
+     14000 q=0, clk=0, data=0, clr=1, set=1
+--> now 15000 (chg time 15000): test.i3.clk=sr-scalar=2(obj=accPort)
+--> now 15000 (chg time 15000): test.t_clk=sr-scalar=2(x)
+--> now 15000 (chg time 15000): test.i3.clk=StX(<6, 6>=2)
+     15000 q=0, clk=x, data=0, clr=1, set=1
+--> now 16000 (chg time 16000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 16000 (chg time 16000): test.t_clk=sr-scalar=0(0)
+--> now 16000 (chg time 16000): test.i3.clk=St0(<6, 6>=0)
+     16000 q=0, clk=0, data=0, clr=1, set=1
+--> now 17000 (chg time 17000): test.i3.clk=sr-scalar=3(obj=accPort)
+--> now 17000 (chg time 17000): test.t_clk=sr-scalar=3(z)
+--> now 17000 (chg time 17000): test.i3.clk=HiZ(<6, 6>=3)
+     17000 q=0, clk=z, data=0, clr=1, set=1
+--> now 18000 (chg time 18000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 18000 (chg time 18000): test.t_clk=sr-scalar=0(0)
+--> now 18000 (chg time 18000): test.i3.clk=St0(<6, 6>=0)
+     18000 q=0, clk=0, data=0, clr=1, set=1
+--> now 19000 (chg time 19000): test.i3.clk=sr-scalar=2(obj=accPort)
+--> now 19000 (chg time 19000): test.t_clk=sr-scalar=2(x)
+--> now 19000 (chg time 19000): test.i3.clk=StX(<6, 6>=2)
+     19000 q=0, clk=x, data=0, clr=1, set=1
+--> now 20000 (chg time 20000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 20000 (chg time 20000): test.t_clk=sr-scalar=1(1)
+--> now 20000 (chg time 20000): test.i3.clk=St1(<6, 6>=1)
+**pchg_fdsp.v(106) WARN** now 20000 [566] timing violation in test.i3 (diff. 1000)
+ $period((posedge clk):19000, (posedge clk):20000, 1200);
+     20000 q=0, clk=1, data=0, clr=1, set=1
+--> now 21000 (chg time 21000): test.i3.d=sr-scalar=1(obj=accPort)
+--> now 21000 (chg time 21000): test.t_d=sr-scalar=1(1)
+--> now 21000 (chg time 21000): test.i3.d=St1(<6, 6>=1)
+     21000 q=0, clk=1, data=1, clr=1, set=1
+--> now 22000 (chg time 22000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 22000 (chg time 22000): test.t_clk=sr-scalar=0(0)
+--> now 22000 (chg time 22000): test.i3.clk=St0(<6, 6>=0)
+     22000 q=0, clk=0, data=1, clr=1, set=1
+--> now 23000 (chg time 23000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 23000 (chg time 23000): test.t_clk=sr-scalar=1(1)
+--> now 23000 (chg time 23000): test.i3.clk=St1(<6, 6>=1)
+--> now 23000 (chg time 23000): **terminal**=scalar=1(obj=accTerminal)
+     23000 q=0, clk=1, data=1, clr=1, set=1
+--> now 23140 (chg time 23140): test.i3.q=scalar=1(obj=accPort)
+--> now 23140 (chg time 23140): test.i3.q=St1(<6, 6>=1)
+--> now 23140 (chg time 23140): test.t_q=St1(<6, 6>=1)
+     23140 q=1, clk=1, data=1, clr=1, set=1
+--> now 24000 (chg time 24000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 24000 (chg time 24000): test.t_clk=sr-scalar=0(0)
+--> now 24000 (chg time 24000): test.i3.clk=St0(<6, 6>=0)
+     24000 q=1, clk=0, data=1, clr=1, set=1
+--> now 25000 (chg time 25000): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 25000 (chg time 25000): test.t_clk=sr-scalar=1(1)
+--> now 25000 (chg time 25000): test.i3.clk=St1(<6, 6>=1)
+     25000 q=1, clk=1, data=1, clr=1, set=1
+--> now 26000 (chg time 26000): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 26000 (chg time 26000): test.t_clk=sr-scalar=0(0)
+--> now 26000 (chg time 26000): test.i3.clk=St0(<6, 6>=0)
+     26000 q=1, clk=0, data=1, clr=1, set=1
+--> now 26100 (chg time 26100): test.i3.clk=sr-scalar=2(obj=accPort)
+--> now 26100 (chg time 26100): test.t_clk=sr-scalar=2(x)
+--> now 26100 (chg time 26100): test.i3.clk=StX(<6, 6>=2)
+**pchg_fdsp.v(106) WARN** now 26100 [566] timing violation in test.i3 (diff. 1100)
+ $period((posedge clk):25000, (posedge clk):26100, 1200);
+**pchg_fdsp.v(105) WARN** now 26100 [566] timing violation in test.i3 (diff. 100)
+ $width((negedge clk):26000, (posedge clk):26100, 500);
+     26100 q=1, clk=x, data=1, clr=1, set=1
+--> now 27100 (chg time 27100): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 27100 (chg time 27100): test.t_clk=sr-scalar=0(0)
+--> now 27100 (chg time 27100): test.i3.clk=St0(<6, 6>=0)
+     27100 q=1, clk=0, data=1, clr=1, set=1
+--> now 28100 (chg time 28100): test.i3.clk=sr-scalar=3(obj=accPort)
+--> now 28100 (chg time 28100): test.t_clk=sr-scalar=3(z)
+--> now 28100 (chg time 28100): test.i3.clk=HiZ(<6, 6>=3)
+     28100 q=1, clk=z, data=1, clr=1, set=1
+--> now 29100 (chg time 29100): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 29100 (chg time 29100): test.t_clk=sr-scalar=0(0)
+--> now 29100 (chg time 29100): test.i3.clk=St0(<6, 6>=0)
+     29100 q=1, clk=0, data=1, clr=1, set=1
+--> now 30100 (chg time 30100): test.i3.clk=sr-scalar=2(obj=accPort)
+--> now 30100 (chg time 30100): test.t_clk=sr-scalar=2(x)
+--> now 30100 (chg time 30100): test.i3.clk=StX(<6, 6>=2)
+     30100 q=1, clk=x, data=1, clr=1, set=1
+--> now 31100 (chg time 31100): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 31100 (chg time 31100): test.t_clk=sr-scalar=1(1)
+--> now 31100 (chg time 31100): test.i3.clk=St1(<6, 6>=1)
+**pchg_fdsp.v(106) WARN** now 31100 [566] timing violation in test.i3 (diff. 1000)
+ $period((posedge clk):30100, (posedge clk):31100, 1200);
+     31100 q=1, clk=1, data=1, clr=1, set=1
+--> now 31130 (chg time 31130): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 31130 (chg time 31130): test.t_clk=sr-scalar=0(0)
+--> now 31130 (chg time 31130): test.i3.clk=St0(<6, 6>=0)
+**pchg_fdsp.v(104) WARN** now 31130 [566] timing violation in test.i3 (diff. 30)
+ $width((posedge clk):31100, (negedge clk):31130, 600);
+     31130 q=1, clk=0, data=1, clr=1, set=1
+--> now 31190 (chg time 31190): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 31190 (chg time 31190): test.t_clk=sr-scalar=1(1)
+--> now 31190 (chg time 31190): test.i3.clk=St1(<6, 6>=1)
+**pchg_fdsp.v(106) WARN** now 31190 [566] timing violation in test.i3 (diff. 90)
+ $period((posedge clk):31100, (posedge clk):31190, 1200);
+**pchg_fdsp.v(105) WARN** now 31190 [566] timing violation in test.i3 (diff. 60)
+ $width((negedge clk):31130, (posedge clk):31190, 500);
+     31190 q=1, clk=1, data=1, clr=1, set=1
+--> now 31220 (chg time 31220): test.i3.d=sr-scalar=0(obj=accPort)
+--> now 31220 (chg time 31220): test.t_d=sr-scalar=0(0)
+--> now 31220 (chg time 31220): test.i3.d=St0(<6, 6>=0)
+**pchg_fdsp.v(102) WARN** now 31220 [566] timing violation in test.i3 (diff. 30)
+ hold(of setuphold)((posedge clk):31190, d:31220, 50);
+     31220 q=1, clk=1, data=0, clr=1, set=1
+--> now 31250 (chg time 31250): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 31250 (chg time 31250): test.t_clk=sr-scalar=0(0)
+--> now 31250 (chg time 31250): test.i3.clk=St0(<6, 6>=0)
+**pchg_fdsp.v(104) WARN** now 31250 [566] timing violation in test.i3 (diff. 60)
+ $width((posedge clk):31190, (negedge clk):31250, 600);
+     31250 q=1, clk=0, data=0, clr=1, set=1
+--> now 31280 (chg time 31280): test.i3.d=sr-scalar=1(obj=accPort)
+--> now 31280 (chg time 31280): test.t_d=sr-scalar=1(1)
+--> now 31280 (chg time 31280): test.i3.d=St1(<6, 6>=1)
+     31280 q=1, clk=0, data=1, clr=1, set=1
+--> now 31310 (chg time 31310): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 31310 (chg time 31310): test.t_clk=sr-scalar=1(1)
+--> now 31310 (chg time 31310): test.i3.d=sr-scalar=0(obj=accPort)
+--> now 31310 (chg time 31310): test.t_d=sr-scalar=0(0)
+--> now 31310 (chg time 31310): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 31310 (chg time 31310): test.t_clk=sr-scalar=0(0)
+--> now 31310 (chg time 31310): test.i3.d=sr-scalar=1(obj=accPort)
+--> now 31310 (chg time 31310): test.t_d=sr-scalar=1(1)
+--> now 31310 (chg time 31310): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 31310 (chg time 31310): test.t_clk=sr-scalar=1(1)
+--> now 31310 (chg time 31310): test.i3.clk=St1(<6, 6>=1)
+**pchg_fdsp.v(108) WARN** now 31310 [566] timing violation in test.i3 (diff. 30)
+ $recovery((posedge d):31280, clk:31310, 200);
+**pchg_fdsp.v(106) WARN** now 31310 [566] timing violation in test.i3 (diff. 120)
+ $period((posedge clk):31190, (posedge clk):31310, 1200);
+**pchg_fdsp.v(105) WARN** now 31310 [566] timing violation in test.i3 (diff. 60)
+ $width((negedge clk):31250, (posedge clk):31310, 500);
+**pchg_fdsp.v(102) WARN** now 31310 [566] timing violation in test.i3 (diff. 30)
+ setup(of setuphold)(d:31280, (posedge clk):31310, 70);
+     31310 q=1, clk=1, data=1, clr=1, set=1
+--> now 31410 (chg time 31410): test.i3.clk=sr-scalar=0(obj=accPort)
+--> now 31410 (chg time 31410): test.t_clk=sr-scalar=0(0)
+--> now 31410 (chg time 31410): test.i3.clk1=sr-scalar=0(obj=accPort)
+--> now 31410 (chg time 31410): test.t_clk1=sr-scalar=0(0)
+--> now 31410 (chg time 31410): test.i3.clk=St0(<6, 6>=0)
+--> now 31410 (chg time 31410): test.i3.clk1=St0(<6, 6>=0)
+**pchg_fdsp.v(108) WARN** now 31410 [566] timing violation in test.i3 (diff. 130)
+ $recovery((posedge d):31280, clk:31410, 200);
+**pchg_fdsp.v(104) WARN** now 31410 [566] timing violation in test.i3 (diff. 100)
+ $width((posedge clk):31310, (negedge clk):31410, 600);
+     31410 q=1, clk=0, data=1, clr=1, set=1
+--> now 31510 (chg time 31510): test.i3.clk1=sr-scalar=1(obj=accPort)
+--> now 31510 (chg time 31510): test.t_clk1=sr-scalar=1(1)
+--> now 31510 (chg time 31510): test.i3.clk1=St1(<6, 6>=1)
+--> now 33510 (chg time 33510): test.i3.clk=sr-scalar=1(obj=accPort)
+--> now 33510 (chg time 33510): test.t_clk=sr-scalar=1(1)
+--> now 33510 (chg time 33510): test.i3.clk=St1(<6, 6>=1)
+**pchg_fdsp.v(107) WARN** now 33510 [566] timing violation in test.i3 (diff. 2000)
+ $skew((posedge clk1):31510, (posedge clk):33510, 50);
+     33510 q=1, clk=1, data=1, clr=1, set=1

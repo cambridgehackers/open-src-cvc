@@ -1,0 +1,5 @@
+  lfsr8000.v +sdfannotate lfsr.sdf -y ../libs/lca100kgate +libext+.v
+-toggle
+-mark_driven_const_wires_toggled
+-driven_const_report_concise
+-untoggled_report_concise

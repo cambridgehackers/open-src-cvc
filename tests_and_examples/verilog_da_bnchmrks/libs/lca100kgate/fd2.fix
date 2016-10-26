@@ -1,0 +1,20 @@
+module dflop (d, cp, cd, q); 
+
+  input d, cp, cd;
+  output q, qn;
+
+	nand	n1(a, d, cp),
+		n2(b, cp, cd),
+		n3(c, d, cd);
+
+
+	nand	n4(e, d, cp),
+		n5(f, cp, cd),
+		n6(g, d, cd);
+
+	nand	n7(h, a, b, c),
+		n8(g, e, f, g);
+
+	not	n9(q, h);
+
+endmodule  

@@ -1,0 +1,37 @@
+
+# could add to CFLAGS to turn on warnings if you are using gcc
+WARNS=-Wall
+
+# change path if not running test from installed directory location
+INCS=-I../../pli_incs
+# maybe want -O<something> and/or -g, if you use -O use -m486
+CFLAGS= -fPIC -Wall $(INCS) 
+LFLAGS= -G -shared -export-dynamic
+
+# change to your compiler
+CC=gcc
+
+acc_probe.o:	acc_probe.c 
+	$(CC) $(CFLAGS) -c acc_probe.c
+
+acc_nxtchld.o:	acc_nxtchld.c 
+	$(CC) $(CFLAGS) -c acc_nxtchld.c
+
+accxl_drvld.o:	accxl_drvld.c 
+	$(CC) $(CFLAGS) -c accxl_drvld.c
+
+acc_prtchg.o:	acc_prtchg.c 
+	$(CC) $(CFLAGS) -c acc_prtchg.c
+
+# make rules for dynamic libraries
+acc_probe.so:	acc_probe.o
+	$(LD) $(LFLAGS) acc_probe.o -o acc_probe.so
+
+acc_nxtchld.so:	acc_nxtchld.o
+	$(LD) $(LFLAGS) acc_nxtchld.o -o acc_nxtchld.so
+
+accxl_drvld.so:	accxl_drvld.o
+	$(LD) $(LFLAGS) accxl_drvld.o -o accxl_drvld.so
+
+acc_prtchg.so:	acc_prtchg.o
+	$(LD) $(LFLAGS) acc_prtchg.o -o acc_prtchg.so

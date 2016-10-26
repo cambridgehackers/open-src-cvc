@@ -1,0 +1,20 @@
+// remove C[number]> prefixes and output messages from log file
+,
+$remove_all_actions;
+,
+$reg_all_actions;
+,
+$remove_all_actions;
+,
+$reg_all_actions;
+$display("---> reset %d times.\n", $reset_count);
+if ($reset_count < 3) $reset; else; 
+,
+$remove_all_actions;
+,
+$reg_all_actions;
+,
+$remove_all_actions;
+,
+$reg_all_actions;
+.

@@ -1,0 +1,263 @@
+... processing instance test.
+ ... processing drivers for test.t_clr0:
+net t_clr0 has 0 inside drivers.
+ ... processing loads for test.t_clr0:
+ +++ prim test.i1.i0 port 3 is inside load of test.t_clr0 in test.
+net t_clr0 has 0 outside loads.
+ ... processing cell loads for test.t_clr0:
+ +++ prim test.i1.i0 port 3 is inside load of test.t_clr0 in test.
+net t_clr0 has 1 inside cell loads.
+ ... processing drivers for test.t_clr1:
+net t_clr1 has 0 inside drivers.
+ ... processing loads for test.t_clr1:
+ +++ prim test.i2.i0 port 3 is inside load of test.t_clr1 in test.
+net t_clr1 has 0 outside loads.
+ ... processing cell loads for test.t_clr1:
+ +++ prim test.i2.i0 port 3 is inside load of test.t_clr1 in test.
+net t_clr1 has 1 inside cell loads.
+ ... processing drivers for test.t_d0:
+net t_d0 has 0 inside drivers.
+ ... processing loads for test.t_d0:
+ +++ prim test.i1.i0 port 1 is inside load of test.t_d0 in test.
+net t_d0 has 0 outside loads.
+ ... processing cell loads for test.t_d0:
+ +++ prim test.i1.i0 port 1 is inside load of test.t_d0 in test.
+net t_d0 has 1 inside cell loads.
+ ... processing drivers for test.t_d1:
+net t_d1 has 0 inside drivers.
+ ... processing loads for test.t_d1:
+ +++ prim test.i2.i0 port 1 is inside load of test.t_d1 in test.
+net t_d1 has 0 outside loads.
+ ... processing cell loads for test.t_d1:
+ +++ prim test.i2.i0 port 1 is inside load of test.t_d1 in test.
+net t_d1 has 1 inside cell loads.
+ ... processing drivers for test.t_q:
+ +++ prim test.i3.i1 port 0 is inside driver of test.t_q in test.
+net t_q has 1 inside drivers.
+ ... processing loads for test.t_q:
+net t_q has 0 outside loads.
+ ... processing cell loads for test.t_q:
+net t_q has 0 inside cell loads.
+ ... processing drivers for test.t_q0:
+ +++ prim test.i1.i1 port 0 is inside driver of test.t_q0 in test.
+net t_q0 has 1 inside drivers.
+ ... processing loads for test.t_q0:
+net t_q0 has 0 outside loads.
+ ... processing cell loads for test.t_q0:
+net t_q0 has 0 inside cell loads.
+ ... processing drivers for test.t_q1:
+ +++ prim test.i2.i1 port 0 is inside driver of test.t_q1 in test.
+net t_q1 has 1 inside drivers.
+ ... processing loads for test.t_q1:
+net t_q1 has 0 outside loads.
+ ... processing cell loads for test.t_q1:
+net t_q1 has 0 inside cell loads.
+ ... processing drivers for test.t_set0:
+net t_set0 has 0 inside drivers.
+ ... processing loads for test.t_set0:
+ +++ prim test.i1.i0 port 4 is inside load of test.t_set0 in test.
+net t_set0 has 0 outside loads.
+ ... processing cell loads for test.t_set0:
+ +++ prim test.i1.i0 port 4 is inside load of test.t_set0 in test.
+net t_set0 has 1 inside cell loads.
+ ... processing drivers for test.t_set1:
+net t_set1 has 0 inside drivers.
+ ... processing loads for test.t_set1:
+ +++ prim test.i2.i0 port 4 is inside load of test.t_set1 in test.
+net t_set1 has 0 outside loads.
+ ... processing cell loads for test.t_set1:
+ +++ prim test.i2.i0 port 4 is inside load of test.t_set1 in test.
+net t_set1 has 1 inside cell loads.
+... processing instance test.i1.
+ ... processing drivers for test.i1.clk:
+net clk has 0 inside drivers.
+ ... processing loads for test.i1.clk:
+ +++ prim test.i1.i0 port 2 is inside load of test.i1.clk in test.i1.
+net clk has 0 outside loads.
+ ... processing cell loads for test.i1.clk:
+ +++ prim test.i1.i0 port 2 is inside load of test.i1.clk in test.i1.
+net clk has 1 inside cell loads.
+ ... processing drivers for test.i1.clk1:
+net clk1 has 0 inside drivers.
+ ... processing loads for test.i1.clk1:
+net clk1 has 0 outside loads.
+ ... processing cell loads for test.i1.clk1:
+net clk1 has 0 inside cell loads.
+ ... processing drivers for test.i1.clr:
+net clr has 0 inside drivers.
+ ... processing loads for test.i1.clr:
+ +++ prim test.i1.i0 port 3 is inside load of test.i1.clr in test.i1.
+net clr has 0 outside loads.
+ ... processing cell loads for test.i1.clr:
+ +++ prim test.i1.i0 port 3 is inside load of test.i1.clr in test.i1.
+net clr has 1 inside cell loads.
+ ... processing drivers for test.i1.d:
+net d has 0 inside drivers.
+ ... processing loads for test.i1.d:
+ +++ prim test.i1.i0 port 1 is inside load of test.i1.d in test.i1.
+net d has 0 outside loads.
+ ... processing cell loads for test.i1.d:
+ +++ prim test.i1.i0 port 1 is inside load of test.i1.d in test.i1.
+net d has 1 inside cell loads.
+ ... processing drivers for test.i1.q:
+ +++ prim test.i1.i1 port 0 is inside driver of test.i1.q in test.i1.
+net q has 1 inside drivers.
+ ... processing loads for test.i1.q:
+net q has 0 outside loads.
+ ... processing cell loads for test.i1.q:
+net q has 0 inside cell loads.
+ ... processing drivers for test.i1.qn:
+ +++ prim test.i1.i2 port 0 is inside driver of test.i1.qn in test.i1.
+net qn has 1 inside drivers.
+ ... processing loads for test.i1.qn:
+net qn has 0 outside loads.
+ ... processing cell loads for test.i1.qn:
+net qn has 0 inside cell loads.
+ ... processing drivers for test.i1.set:
+net set has 0 inside drivers.
+ ... processing loads for test.i1.set:
+ +++ prim test.i1.i0 port 4 is inside load of test.i1.set in test.i1.
+net set has 0 outside loads.
+ ... processing cell loads for test.i1.set:
+ +++ prim test.i1.i0 port 4 is inside load of test.i1.set in test.i1.
+net set has 1 inside cell loads.
+ ... processing drivers for test.i1.xxx:
+ +++ prim test.i1.i0 port 0 is inside driver of test.i1.xxx in test.i1.
+net xxx has 1 inside drivers.
+ ... processing loads for test.i1.xxx:
+ +++ prim test.i1.i2 port 1 is inside load of test.i1.xxx in test.i1.
+ +++ prim test.i1.i1 port 1 is inside load of test.i1.xxx in test.i1.
+net xxx has 0 outside loads.
+ ... processing cell loads for test.i1.xxx:
+ +++ prim test.i1.i2 port 1 is inside load of test.i1.xxx in test.i1.
+ +++ prim test.i1.i1 port 1 is inside load of test.i1.xxx in test.i1.
+net xxx has 2 inside cell loads.
+... processing instance test.i2.
+ ... processing drivers for test.i2.clk:
+net clk has 0 inside drivers.
+ ... processing loads for test.i2.clk:
+ +++ prim test.i2.i0 port 2 is inside load of test.i2.clk in test.i2.
+net clk has 0 outside loads.
+ ... processing cell loads for test.i2.clk:
+ +++ prim test.i2.i0 port 2 is inside load of test.i2.clk in test.i2.
+net clk has 1 inside cell loads.
+ ... processing drivers for test.i2.clk1:
+net clk1 has 0 inside drivers.
+ ... processing loads for test.i2.clk1:
+net clk1 has 0 outside loads.
+ ... processing cell loads for test.i2.clk1:
+net clk1 has 0 inside cell loads.
+ ... processing drivers for test.i2.clr:
+net clr has 0 inside drivers.
+ ... processing loads for test.i2.clr:
+ +++ prim test.i2.i0 port 3 is inside load of test.i2.clr in test.i2.
+net clr has 0 outside loads.
+ ... processing cell loads for test.i2.clr:
+ +++ prim test.i2.i0 port 3 is inside load of test.i2.clr in test.i2.
+net clr has 1 inside cell loads.
+ ... processing drivers for test.i2.d:
+net d has 0 inside drivers.
+ ... processing loads for test.i2.d:
+ +++ prim test.i2.i0 port 1 is inside load of test.i2.d in test.i2.
+net d has 0 outside loads.
+ ... processing cell loads for test.i2.d:
+ +++ prim test.i2.i0 port 1 is inside load of test.i2.d in test.i2.
+net d has 1 inside cell loads.
+ ... processing drivers for test.i2.q:
+ +++ prim test.i2.i1 port 0 is inside driver of test.i2.q in test.i2.
+net q has 1 inside drivers.
+ ... processing loads for test.i2.q:
+net q has 0 outside loads.
+ ... processing cell loads for test.i2.q:
+net q has 0 inside cell loads.
+ ... processing drivers for test.i2.qn:
+ +++ prim test.i2.i2 port 0 is inside driver of test.i2.qn in test.i2.
+net qn has 1 inside drivers.
+ ... processing loads for test.i2.qn:
+net qn has 0 outside loads.
+ ... processing cell loads for test.i2.qn:
+net qn has 0 inside cell loads.
+ ... processing drivers for test.i2.set:
+net set has 0 inside drivers.
+ ... processing loads for test.i2.set:
+ +++ prim test.i2.i0 port 4 is inside load of test.i2.set in test.i2.
+net set has 0 outside loads.
+ ... processing cell loads for test.i2.set:
+ +++ prim test.i2.i0 port 4 is inside load of test.i2.set in test.i2.
+net set has 1 inside cell loads.
+ ... processing drivers for test.i2.xxx:
+ +++ prim test.i2.i0 port 0 is inside driver of test.i2.xxx in test.i2.
+net xxx has 1 inside drivers.
+ ... processing loads for test.i2.xxx:
+ +++ prim test.i2.i2 port 1 is inside load of test.i2.xxx in test.i2.
+ +++ prim test.i2.i1 port 1 is inside load of test.i2.xxx in test.i2.
+net xxx has 0 outside loads.
+ ... processing cell loads for test.i2.xxx:
+ +++ prim test.i2.i2 port 1 is inside load of test.i2.xxx in test.i2.
+ +++ prim test.i2.i1 port 1 is inside load of test.i2.xxx in test.i2.
+net xxx has 2 inside cell loads.
+... processing instance test.i3.
+ ... processing drivers for test.i3.clk:
+net clk has 0 inside drivers.
+ ... processing loads for test.i3.clk:
+ +++ prim test.i3.i0 port 2 is inside load of test.i3.clk in test.i3.
+net clk has 0 outside loads.
+ ... processing cell loads for test.i3.clk:
+ +++ prim test.i3.i0 port 2 is inside load of test.i3.clk in test.i3.
+net clk has 1 inside cell loads.
+ ... processing drivers for test.i3.clk1:
+net clk1 has 0 inside drivers.
+ ... processing loads for test.i3.clk1:
+net clk1 has 0 outside loads.
+ ... processing cell loads for test.i3.clk1:
+net clk1 has 0 inside cell loads.
+ ... processing drivers for test.i3.clr:
+net clr has 0 inside drivers.
+ ... processing loads for test.i3.clr:
+ +++ prim test.i3.i0 port 3 is inside load of test.i3.clr in test.i3.
+net clr has 0 outside loads.
+ ... processing cell loads for test.i3.clr:
+ +++ prim test.i3.i0 port 3 is inside load of test.i3.clr in test.i3.
+net clr has 1 inside cell loads.
+ ... processing drivers for test.i3.d:
+net d has 0 inside drivers.
+ ... processing loads for test.i3.d:
+ +++ prim test.i3.i0 port 1 is inside load of test.i3.d in test.i3.
+net d has 0 outside loads.
+ ... processing cell loads for test.i3.d:
+ +++ prim test.i3.i0 port 1 is inside load of test.i3.d in test.i3.
+net d has 1 inside cell loads.
+ ... processing drivers for test.i3.q:
+ +++ prim test.i3.i1 port 0 is inside driver of test.i3.q in test.i3.
+net q has 1 inside drivers.
+ ... processing loads for test.i3.q:
+net q has 0 outside loads.
+ ... processing cell loads for test.i3.q:
+net q has 0 inside cell loads.
+ ... processing drivers for test.i3.qn:
+ +++ prim test.i3.i2 port 0 is inside driver of test.i3.qn in test.i3.
+net qn has 1 inside drivers.
+ ... processing loads for test.i3.qn:
+net qn has 0 outside loads.
+ ... processing cell loads for test.i3.qn:
+net qn has 0 inside cell loads.
+ ... processing drivers for test.i3.set:
+net set has 0 inside drivers.
+ ... processing loads for test.i3.set:
+ +++ prim test.i3.i0 port 4 is inside load of test.i3.set in test.i3.
+net set has 0 outside loads.
+ ... processing cell loads for test.i3.set:
+ +++ prim test.i3.i0 port 4 is inside load of test.i3.set in test.i3.
+net set has 1 inside cell loads.
+ ... processing drivers for test.i3.xxx:
+ +++ prim test.i3.i0 port 0 is inside driver of test.i3.xxx in test.i3.
+net xxx has 1 inside drivers.
+ ... processing loads for test.i3.xxx:
+ +++ prim test.i3.i2 port 1 is inside load of test.i3.xxx in test.i3.
+ +++ prim test.i3.i1 port 1 is inside load of test.i3.xxx in test.i3.
+net xxx has 0 outside loads.
+ ... processing cell loads for test.i3.xxx:
+ +++ prim test.i3.i2 port 1 is inside load of test.i3.xxx in test.i3.
+ +++ prim test.i3.i1 port 1 is inside load of test.i3.xxx in test.i3.
+net xxx has 2 inside cell loads.
+  >>> All instances net drivers processed by acc_.

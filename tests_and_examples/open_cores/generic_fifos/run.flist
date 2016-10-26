@@ -1,0 +1,5 @@
+bench/verilog/test_bench_top.v
+rtl/verilog/generic_fifo_dc.v
+rtl/verilog/generic_fifo_sc_b.v
+rtl/verilog/timescale.v
+generic_dpram.v

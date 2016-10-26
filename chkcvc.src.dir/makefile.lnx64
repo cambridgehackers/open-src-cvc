@@ -1,0 +1,6 @@
+CC=gcc
+LIBS= -ldl
+CFLAGS=-O2 -D__X86_64__ 
+
+all:
+	$(CC) $(CFLAGS) $(LIBS) chkcvc64.c -o checkcvc64

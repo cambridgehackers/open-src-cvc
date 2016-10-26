@@ -1,0 +1,5 @@
+data[0].aval = 12
+data[1].aval = 13
+data[0].aval[0] = aaaaaaaa data[1].aval[1] = ffffffff
+data[1].aval[0] = cccccccc data[1].aval[1] = bbbbbbbb
+array[0] = 0000000c array[1] = 0000000d

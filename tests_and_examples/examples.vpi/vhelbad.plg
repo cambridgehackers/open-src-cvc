@@ -1,0 +1,8 @@
+... executing vpi_ systf compiletf routine.
+... executing EndOfCompile callback for checking.
+** ERR: $hello PLI 2.0 can not access systf call handle
+1840: vpiPLI error (level 3) at ***none*(0):
+  vpi_handle with vpiSysTfCall not called from inside vpi_ systf callback
+** ERR: vpi_iterate error:
+1854: vpiPLI error (level 3) at ***none*(0):
+  vpi_iterate type vpiArgument passed illegal NULL handle

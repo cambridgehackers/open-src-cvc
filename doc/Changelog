@@ -1,0 +1,9 @@
+
+Mon Jun 9 11:14:22 PDT 2014
+RELEASE 7.00b 
+1. Initial OSS CVC release.
+
+Thu Jul 31 12:12:57 PDT 2014
+RELEASE 7.00c 
+1. Added latest Gtkwave library calls and interface from Tony Bybell
+2. Removed old wrong quick start pdf file from doc directory.

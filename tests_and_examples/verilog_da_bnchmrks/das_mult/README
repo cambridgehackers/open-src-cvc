@@ -1,0 +1,45 @@
+--------------------------------------------------------------------
+--
+--      These source files may be used and distributed without
+--      restriction.
+--
+--------------------------------------------------------------------
+--
+--      Author  John Hillawi
+--      Names   mult_gate.v
+--		ref_in
+		ref_out
+--      Purpose This circuit was created for the purpose of
+--              comparing simulation performance at Gate
+--              Level. It has been placed in the
+--              public domain to act as an ongoing metric
+--              for comparing performance.
+--
+--------------------------------------------------------------------
+--	
+--	This circuit is a gate level model of a 56 x 56 bit 
+--	multiplier matrix. The gate count is approximately 
+--	25,000 gates. 
+--
+--------------------------------------------------------------------
+--
+--      As a guide to running, a typical script (in this case
+--      Pragmatic C Software Cver) would be:
+--	
+--      cver -f mult_gate.vc
+--
+--      To directly execute mult_gate.v, type this:
+--
+--	cver mult_gate.v -y ../libs/lca100kgate +libext+.v
+--	
+--------------------------------------------------------------------
+--
+--      The simulation testbench reads pairs of 56 bit floating
+--      point numbers from a file (ref_in) and presents them
+--      to the multiplier matrix. The output is sampled and compared
+--      with reference outputs in the file ref_out. The file supplied is 
+--	sufficient to run for 774100 ns.
+--
+--------------------------------------------------------------------
+
+

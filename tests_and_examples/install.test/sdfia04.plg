@@ -1,0 +1,11 @@
+                   0 preset[1]=x clear[1]=x q[18]=x qbar[18]=x
+                  10 preset[1]=0 clear[1]=1 q[18]=x qbar[18]=x
+                  13 preset[1]=0 clear[1]=1 q[18]=1 qbar[18]=x
+                  16 preset[1]=0 clear[1]=1 q[18]=1 qbar[18]=0
+                  20 preset[1]=1 clear[1]=1 q[18]=1 qbar[18]=0
+                  30 preset[1]=1 clear[1]=0 q[18]=1 qbar[18]=0
+                  31 preset[1]=1 clear[1]=0 q[18]=1 qbar[18]=x
+                  32 preset[1]=1 clear[1]=0 q[18]=x qbar[18]=x
+                  33 preset[1]=1 clear[1]=0 q[18]=x qbar[18]=1
+                  36 preset[1]=1 clear[1]=0 q[18]=0 qbar[18]=1
+                  40 preset[1]=1 clear[1]=1 q[18]=0 qbar[18]=1

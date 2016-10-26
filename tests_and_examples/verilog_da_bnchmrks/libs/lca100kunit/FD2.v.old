@@ -1,0 +1,18 @@
+module FD2 (D, CP, CD, Q, QN);
+
+
+input	D, CP, CD;
+output	Q, QN;
+
+reg	Q;
+
+always @(posedge CP or negedge CD)
+
+	if (!CD)
+		Q = #1 0;
+	else
+		Q = #1 D;
+
+assign QN = ~Q;
+
+endmodule

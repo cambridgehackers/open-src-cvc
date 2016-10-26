@@ -1,0 +1,16 @@
+
+  The CVC binaries are now released as a separate directory because the
+major release files usually change much less frequently than the CVC
+binaries.  To run the install_test you must copy the version of cvc and cvc64
+that corresponds to your RHEL operating system version to somewhere on
+your OS executable PATH environment.
+
+  The binaries alon with the Changlog will be in directory
+
+    <minor version>-cvc-binaries-<date>.dir
+
+  The binaries will be named cvc.<versions>.<EL library version>.<date>
+or cvc64.<versions>.<EL library version>.<date> for cvc64. 
+
+  If you use the PLI, the pli_incs directory in the files-release directory
+must be copied to somewher on your gcc include (-I?) path.

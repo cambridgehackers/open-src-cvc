@@ -1,0 +1,10 @@
+   // also test input from $input();
+   force d = (a | b | c);
+   force e = (a | b | c);
+   #10 $stop;
+   .
+   release d;
+   release e;
+   c = 0;
+   #10 $finish;
+   .

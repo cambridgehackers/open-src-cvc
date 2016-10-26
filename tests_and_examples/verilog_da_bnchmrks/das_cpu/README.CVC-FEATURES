@@ -1,0 +1,88 @@
+
+  A good way to learn how to use CVC's features is to use the das_cpu
+cpu model to run various CVC features.  das_cpu is complicated enough to
+show the various CVC features.  Examples use cvc64 but everything is the
+same if cvc 32 bit is run.  A number of .vc Verilog command files have been
+added to this directory:
+
+1) run_fst_dumpvars.vc 
+
+   Test runs the option for generating dumpvars changes for all variables
+   in das_cpu.  It uses the +fst+parallel2=on option to speed up dumpvars.
+   The output verilog.fst file can be loaded with gtkwave. 
+   First run "cvc64 -f run_fst_dumpvars.vc" then run cvcsim, then run
+   "gtkwave verilog.fst" to view simulation progress wave forms.
+
+2) run_all_toggle.vc
+
+   Test to record and report on net toggles for an entire design.  This
+   is probably best way to start running the new -toggle feature on a design.
+   The first part of the cvc.toggle report file lists all wires tied to
+   constants (usually logic 0 or 1 or supply nets).  The
+   -mark_driven_const_wires_toggled is needed for the report and causes
+   all wires either directly or through chains of tied tos to be omitted
+   from the concise untoggled report since no test can cause them to toggle.
+   The last line of the toggle file gives the net toggle coverage statistics
+   for the entire design.
+
+   The -write_toggle_data_file all-dascpu.tgldat line writes entries for nets
+   (per inst using fully qualified hierarchical names) for which any bits
+   toggle.  Once the "all-dascpu.tgldat" is written.  It can be read with
+   "-set_toggled_from_file all-dascpu.tgldat" to initialize toggle state
+   for another run.  The next run's concise toggle report will assume all
+   nets toggled in the previous are toggled and will not include them in
+   the untoggled concise report even if they are not toggled in the current
+   run.
+
+   The expected new format report output is in file "expected.run_all_toggle".
+
+   Maybe run the helper "chk_tgldat all-dascpu.tgldat" program to make sure
+   the output .tgldat file has legal format.
+
+3) gen_untoggled_report_from_tgldat.vc
+
+   Example of using cvc64 in +interp mode to generate untoggled concise
+   report from .tgldat files.
+
+   At this point you can run the helper difference finding program by typing:
+
+     tgldat_merge -diff -verbose all-dascpu.tgldat all-dascpu2.tgldat
+
+   To see the few differences from the extra 2nd run's toggles.
+
+   Notice that the first file was made by CVC when run with the
+   -mark_driven_const_wires_toggled flag but the second all-dascpu2 file
+   was made without that option.  Therefore the differences show some
+   driven constant and some not.  This is a bug in the scripts.  When
+   diffing files, it is important that all files be run with the same
+   -mark_driven_const_wires_toggle options (all use it or all do not use it).
+
+4) run_optcfg_tree.vc
+
+   Runs toggle coverage without the -toggle option but instead includes
+   the cpu part of the design with a tree include {cover_toggle} statement.
+   Then excludes man instances in component1.
+
+5) run_optcfg_bits_exclude.vc
+
+   Example of using optconfigfile exclude net bits of one instance to
+   implement a constraint when it is know some bits of the cpu opcode are
+   not used but are connected.  They do not need to have toggle coverage. 
+
+6) run_tgl_on_off.vc
+
+   Test uses -toggle so that entire design has toggle coverage reeported.
+   Except the +define+ option turn on exclude first for the intializae
+   phase until the first clock edge and second the negedge triggered
+   low clock phase.  Normally, only one or the other would be used.
+   Running the diff command with -toggle and both +define+
+   options commented out, will show the few signals not toggled.
+
+
+6) run_xprop.vc 
+
+   Test runs the cpu mixed das_cpu model (mixed gates and RTL) with the
+   +xprop mode.  This is an old design that will not run with +xprop because
+   the CPU does not initialize correctly.  Fixing the +xprop problem might
+   be a good exercise.  This shows that the original Verilog X semantics
+   may be too optimistic.

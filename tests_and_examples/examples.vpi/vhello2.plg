@@ -1,0 +1,7 @@
+--------------------------------------------------------------
+vpi_ system task $hello registered.
+vpi_ system function $realfhello (ret. type 2) registered.
+--------------------------------------------------------------
+hello world
+hello world
+done with PLI 2.0 calls returned i=0 and r=19

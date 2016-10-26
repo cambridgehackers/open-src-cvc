@@ -1,0 +1,47 @@
+
+  This directory contains some Verilog designs from the open cores project
+that have been modified to run out of the box with a fixed simple .vc
+file list organization.
+
+I. Running simulations
+
+   Running the simulations is easy.  cd into the open core directory and then
+run "cvc64 [maybe some options especially +verbose) -f run.flist"  See
+the file cvc-open-core-sim-times.pdf for more details and links to the
+original www.opencores.com designs.
+  
+II. USE BY DESIGNERS 
+
+  For designers, running and studying these designs to learning which options
+to use to speed up your simulations.  Basically if your design can use
+2 state simulation everywhere, the +2state option will at least double
+simulation speed (no need for x/z processing).  There are other options
+is for your design is not pure 2 state.  See the cvc_help.txt description
+of other 2 state options to learn more.
+
+  For designs that are debugged, using the +nbaopt speeds up simulation by
+changing all non blocking assign delays to 0.  This is almost always possible;
+To find out if your design uses non blocking assigns (<=) for procedural
+delays try running with both and comparing simulation results.  
+
+  The open core designs do not use accurate SDF delay annotation simulation
+using module input port delays (MIPDs).  For gate level designs, the
++mipdopt option speeds up simulation if your delay paths are pure and do
+not sometimes change from gate delay paths through a library element
+(usually true for debugged designs).  Again to find out if you can use
+the +mipdopt option, run simulations and compare results.
+
+  The -O option is somewhat questonable, but sometimes can make a large
+improvement in simulation speed.  You need to decide if the extra OSS CVC
+compile time is worth the speed up.  -O trades space for time so for very
+large designs, it may not be useable, but is needed for competitive
+benchmarks especially the small open cores.
+
+III. USE BY EDA TOOL DEVELOPERS
+
+  For simulator code developers, use these open cores as performance tests.
+It is very easy to inadvertently lose simulation performance especially
+if machine code sequences are changed.  Use this option to see if such
+changes caused problems either in simulation results or speed. 
+  
+Copyright (c) Tachyon Design Automation 2008-2014

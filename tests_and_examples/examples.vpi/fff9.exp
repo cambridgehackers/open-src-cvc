@@ -1,0 +1,118 @@
+  There are 1 top level modules.
+  There are 1 instances in test.
+  Processing port test.Mux554.Select (index 0):
+Port 0 bit 0 vpiLowConn test.Mux554.Select[1] connects to vpiHighConn test.net_31[3].
+Port 0 bit 1 vpiLowConn test.Mux554.Select[0] connects to vpiHighConn test.net_31[2].
+  Processing port test.Mux554.Output (index 1):
+Port 1 bit 0 vpiLowConn test.Mux554.Output[31] connects to vpiHighConn test.net_44[31].
+Port 1 bit 1 vpiLowConn test.Mux554.Output[30] connects to vpiHighConn test.net_44[30].
+Port 1 bit 2 vpiLowConn test.Mux554.Output[29] connects to vpiHighConn test.net_44[29].
+Port 1 bit 3 vpiLowConn test.Mux554.Output[28] connects to vpiHighConn test.net_44[28].
+Port 1 bit 4 vpiLowConn test.Mux554.Output[27] connects to vpiHighConn test.net_44[27].
+Port 1 bit 5 vpiLowConn test.Mux554.Output[26] connects to vpiHighConn test.net_44[26].
+Port 1 bit 6 vpiLowConn test.Mux554.Output[25] connects to vpiHighConn test.net_44[25].
+Port 1 bit 7 vpiLowConn test.Mux554.Output[24] connects to vpiHighConn test.net_44[24].
+Port 1 bit 8 vpiLowConn test.Mux554.Output[23] connects to vpiHighConn test.net_44[23].
+Port 1 bit 9 vpiLowConn test.Mux554.Output[22] connects to vpiHighConn test.net_44[22].
+Port 1 bit 10 vpiLowConn test.Mux554.Output[21] connects to vpiHighConn test.net_44[21].
+Port 1 bit 11 vpiLowConn test.Mux554.Output[20] connects to vpiHighConn test.net_44[20].
+Port 1 bit 12 vpiLowConn test.Mux554.Output[19] connects to vpiHighConn test.net_44[19].
+Port 1 bit 13 vpiLowConn test.Mux554.Output[18] connects to vpiHighConn test.net_44[18].
+Port 1 bit 14 vpiLowConn test.Mux554.Output[17] connects to vpiHighConn test.net_44[17].
+Port 1 bit 15 vpiLowConn test.Mux554.Output[16] connects to vpiHighConn test.net_44[16].
+Port 1 bit 16 vpiLowConn test.Mux554.Output[15] connects to vpiHighConn test.net_44[15].
+Port 1 bit 17 vpiLowConn test.Mux554.Output[14] connects to vpiHighConn test.net_44[14].
+Port 1 bit 18 vpiLowConn test.Mux554.Output[13] connects to vpiHighConn test.net_44[13].
+Port 1 bit 19 vpiLowConn test.Mux554.Output[12] connects to vpiHighConn test.net_44[12].
+Port 1 bit 20 vpiLowConn test.Mux554.Output[11] connects to vpiHighConn test.net_44[11].
+Port 1 bit 21 vpiLowConn test.Mux554.Output[10] connects to vpiHighConn test.net_44[10].
+Port 1 bit 22 vpiLowConn test.Mux554.Output[9] connects to vpiHighConn test.net_44[9].
+Port 1 bit 23 vpiLowConn test.Mux554.Output[8] connects to vpiHighConn test.net_44[8].
+Port 1 bit 24 vpiLowConn test.Mux554.Output[7] connects to vpiHighConn test.net_44[7].
+Port 1 bit 25 vpiLowConn test.Mux554.Output[6] connects to vpiHighConn test.net_44[6].
+Port 1 bit 26 vpiLowConn test.Mux554.Output[5] connects to vpiHighConn test.net_44[5].
+Port 1 bit 27 vpiLowConn test.Mux554.Output[4] connects to vpiHighConn test.net_44[4].
+Port 1 bit 28 vpiLowConn test.Mux554.Output[3] connects to vpiHighConn test.net_44[3].
+Port 1 bit 29 vpiLowConn test.Mux554.Output[2] connects to vpiHighConn test.net_44[2].
+Port 1 bit 30 vpiLowConn test.Mux554.Output[1] connects to vpiHighConn test.net_44[1].
+Port 1 bit 31 vpiLowConn test.Mux554.Output[0] connects to vpiHighConn test.net_44[0].
+  Processing port test.Mux554.In0 (index 2):
+Also port test.Mux554.In3 is a vpiPortInst.
+Also port test.Mux554.In2 is a vpiPortInst.
+Also port test.Mux554.In1 is a vpiPortInst.
+Port 2 bit 0 vpiLowConn test.Mux554.In0[31] connects to vpiHighConn test.Data_In[127].
+Port 2 bit 1 vpiLowConn test.Mux554.In0[30] connects to vpiHighConn test.Data_In[126].
+Port 2 bit 2 vpiLowConn test.Mux554.In0[29] connects to vpiHighConn test.Data_In[125].
+Port 2 bit 3 vpiLowConn test.Mux554.In0[28] connects to vpiHighConn test.Data_In[124].
+Port 2 bit 4 vpiLowConn test.Mux554.In0[27] connects to vpiHighConn test.Data_In[123].
+Port 2 bit 5 vpiLowConn test.Mux554.In0[26] connects to vpiHighConn test.Data_In[122].
+Port 2 bit 6 vpiLowConn test.Mux554.In0[25] connects to vpiHighConn test.Data_In[121].
+Port 2 bit 7 vpiLowConn test.Mux554.In0[24] connects to vpiHighConn test.Data_In[120].
+Port 2 bit 8 vpiLowConn test.Mux554.In0[23] connects to vpiHighConn test.Data_In[119].
+Port 2 bit 9 vpiLowConn test.Mux554.In0[22] connects to vpiHighConn test.Data_In[118].
+Port 2 bit 10 vpiLowConn test.Mux554.In0[21] connects to vpiHighConn test.Data_In[117].
+Port 2 bit 11 vpiLowConn test.Mux554.In0[20] connects to vpiHighConn test.Data_In[116].
+Port 2 bit 12 vpiLowConn test.Mux554.In0[19] connects to vpiHighConn test.Data_In[115].
+Port 2 bit 13 vpiLowConn test.Mux554.In0[18] connects to vpiHighConn test.Data_In[114].
+Port 2 bit 14 vpiLowConn test.Mux554.In0[17] connects to vpiHighConn test.Data_In[113].
+Port 2 bit 15 vpiLowConn test.Mux554.In0[16] connects to vpiHighConn test.Data_In[112].
+Port 2 bit 16 vpiLowConn test.Mux554.In0[15] connects to vpiHighConn test.Data_In[111].
+Port 2 bit 17 vpiLowConn test.Mux554.In0[14] connects to vpiHighConn test.Data_In[110].
+Port 2 bit 18 vpiLowConn test.Mux554.In0[13] connects to vpiHighConn test.Data_In[109].
+Port 2 bit 19 vpiLowConn test.Mux554.In0[12] connects to vpiHighConn test.Data_In[108].
+Port 2 bit 20 vpiLowConn test.Mux554.In0[11] connects to vpiHighConn test.Data_In[107].
+Port 2 bit 21 vpiLowConn test.Mux554.In0[10] connects to vpiHighConn test.Data_In[106].
+Port 2 bit 22 vpiLowConn test.Mux554.In0[9] connects to vpiHighConn test.Data_In[105].
+Port 2 bit 23 vpiLowConn test.Mux554.In0[8] connects to vpiHighConn test.Data_In[104].
+Port 2 bit 24 vpiLowConn test.Mux554.In0[7] connects to vpiHighConn test.Data_In[103].
+Port 2 bit 25 vpiLowConn test.Mux554.In0[6] connects to vpiHighConn test.Data_In[102].
+Port 2 bit 26 vpiLowConn test.Mux554.In0[5] connects to vpiHighConn test.Data_In[101].
+Port 2 bit 27 vpiLowConn test.Mux554.In0[4] connects to vpiHighConn test.Data_In[100].
+Port 2 bit 28 vpiLowConn test.Mux554.In0[3] connects to vpiHighConn test.Data_In[99].
+Port 2 bit 29 vpiLowConn test.Mux554.In0[2] connects to vpiHighConn test.Data_In[98].
+Port 2 bit 30 vpiLowConn test.Mux554.In0[1] connects to vpiHighConn test.Data_In[97].
+Port 2 bit 31 vpiLowConn test.Mux554.In0[0] connects to vpiHighConn test.Data_In[96].
+  Processing port test.Mux554.In1 (index 3):
+--WARN: port In1 (index 3) width 32 but connection width 1.
+Also port test.Mux554.In3 is a vpiPortInst.
+Also port test.Mux554.In2 is a vpiPortInst.
+Also port test.Mux554.In0 is a vpiPortInst.
+Port 3 bit 31 vpiLowConn test.Mux554.In1[0] connects to vpiHighConn test.Data_In[96].
+  Processing port test.Mux554.In2 (index 4):
+--WARN: port In2 (index 4) width 32 but connection width 1.
+Also port test.Mux554.In3 is a vpiPortInst.
+Also port test.Mux554.In1 is a vpiPortInst.
+Also port test.Mux554.In0 is a vpiPortInst.
+Port 4 bit 31 vpiLowConn test.Mux554.In2[0] connects to vpiHighConn test.Data_In[96].
+  Processing port test.Mux554.In3 (index 5):
+--WARN: port In3 (index 5) width 32 but connection width 1.
+Also port test.Mux554.In2 is a vpiPortInst.
+Also port test.Mux554.In1 is a vpiPortInst.
+Also port test.Mux554.In0 is a vpiPortInst.
+Port 5 bit 31 vpiLowConn test.Mux554.In3[0] connects to vpiHighConn test.Data_In[96].
+  Processing port test.Mux554.In4 (index 6):
+++INFORM: port In4 (index 6) connection not simple lvalue.
+  Processing port test.Mux554.In5 (index 7):
+++INFORM: port In5 (index 7) connection not simple lvalue.
+  Processing port test.Mux554.In6 (index 8):
+++INFORM: port In6 (index 8) connection not simple lvalue.
+  Processing port test.Mux554.In7 (index 9):
+++INFORM: port In7 (index 9) connection not simple lvalue.
+  Processing port test.Mux554.In8 (index 10):
+++INFORM: port In8 (index 10) connection not simple lvalue.
+  Processing port test.Mux554.In9 (index 11):
+++INFORM: port In9 (index 11) connection not simple lvalue.
+  Processing port test.Mux554.In10 (index 12):
+++INFORM: port In10 (index 12) connection not simple lvalue.
+  Processing port test.Mux554.In11 (index 13):
+++INFORM: port In11 (index 13) connection not simple lvalue.
+  Processing port test.Mux554.In12 (index 14):
+++INFORM: port In12 (index 14) connection not simple lvalue.
+  Processing port test.Mux554.In13 (index 15):
+++INFORM: port In13 (index 15) connection not simple lvalue.
+  Processing port test.Mux554.In14 (index 16):
+++INFORM: port In14 (index 16) connection not simple lvalue.
+  Processing port test.Mux554.In15 (index 17):
+++INFORM: port In15 (index 17) connection not simple lvalue.
+name of extra output file is [fff9].
+  >>> All instances processed - done - using CVC PLI only for checking.

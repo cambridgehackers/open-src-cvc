@@ -1,0 +1,13 @@
+(DELAYFILE 
+  (SDFVERSION "3.0") 
+  (CELL 
+   (CELLTYPE "and" ) 
+   (INSTANCE q1[18]) 
+   (DELAY (INCREMENT (DEVICE (:2:1))))
+  )
+  (CELL 
+   (CELLTYPE "and" ) 
+   (INSTANCE q2[18]) 
+   (DELAY (INCREMENT (DEVICE (1:2:))))
+  )
+)

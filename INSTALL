@@ -1,0 +1,115 @@
+
+            INSTRUCTIONS FOR BUILDING AND TESTING CVC
+
+
+  To install OSS CVC, you need to either copy cvc and cvc64 binaries
+to the bin directory in this release directory if you are a enterprise
+OSS CVC customer.  Other make the cvc64 (and probably cvc) binaries and
+install them in the bin directory in this release.
+
+A.  UNDERSTAND AND AGREE TO THE "OSS CVC DUAL LICENSING MODIFIED ARTISTIC
+OPEN SOURCE SOFTWARE LICENSE"
+
+PLEASE READ THE OSS CVC DUAL LICENSING MODIFIED ARTISTIC OPEN SOURCE SOFTWARE
+LICENSE CAREFULLY BEFORE INSTALLING OR USING OSS CVC.  A COPY OF THE
+LICENSE IS IN THIS DIRECTORY AND AT THE TOP OF EACH SOURCE FILE.
+IF YOU DO NOT AGREE TO THE TERMS OF THE OSS CVC LICENSE, DO NOT USE THE
+SOFTWARE.
+
+Read the CVC OSS open source licensing faq if you have questions.  Installing
+and Using the OSS CVC Package for simulation either commercial or non
+commercial Verilog simulation is fine and follows the normal open source
+pattern.
+
+B. CHECKING YOUR SYSTEM CONFIGURATION
+
+  Prior to running CVC, make sure your system configuration is correct by 
+  running the 'checkcvc' in the bin directory of the OSS CVC release
+  directory.
+
+  You should see the following message:
+
+   "System configuration is fine for CVC compilation."
+
+  If you receive anything other than this please and you are an enterprise
+  OSS CVC customer, contact us for help on making adjustments to your system
+  configuration (for example gcc packages must be installed).
+
+  If you have a 64-bit system and would like to run 32-bit version also
+  run 'checkcvc32'.  The 32-bit version uses less RAM for large designs and
+  is faster on older X86 hardware but will not work for simulations with
+  more than 2**31 ticks.
+
+C. Where to put CVC files
+
+  OSS CVC expects binaries to be in the bin directory in this release OSS 
+CVC directory.   If you are an enterprise OSS CVC customer copy the
+supplied binary files into the bin directory.  Otherwise make and install
+the OSS CVC binaries in the bin directory.
+
+  The installation tests assume that cvc64 (and cvc) are in the bin directory
+or the /tmp directory (for testing development versions) and that the
+pli_incs directory is in the OSS CvC release top level directory.
+
+  Once CVC is ready for use in Verilog development, you probably want
+to copy cvc64 (and cvc) to /usr/local/bin if you have system admin
+privledges.  You also need to decide where to put the pli_incs directory
+of IEEE 1364 standard c/c++ include files.  
+
+  If you are using OSS CVC PLI, you will need to do some thinking about
+where you want your .so libraries to go.
+
+D. RUNNING INSTALLATION TESTS
+
+  We recommend that you next run the various installation tests in the
+  "tests_and_examples" directory.   You should always run the basic
+  functionality test in the install.test directory by executing the
+  "inst_test.sh" script.  There should be no diff output messages printed.
+  See the README file in the install.test directory for more information.
+
+  Before running inst_test.sh (or other installation tests) you need to
+  copy CVC to some directory that is on you Linux executable PATH environment.
+  The installation shell scripts assume that cvc (or cvc64 if you use the
+  cvc64 flag as an argument to the scripts) can be executed without giving
+  a explicit path to the binary.  If you do not want to install CVC, you can
+  copy cvc (or cvc64 or both) to /tmp.  The installation shell scripts will
+  look for a cvc/cvc634 in /tmp, if there is no cvc on your Linux executable
+  PATH.
+
+  The PLI tests need only be run if you are going to use CVC with the PLI
+  or use the dpi_ interface.
+
+  See the README files in each of the "tests_and_examples" sub-directories 
+  for detailed instructions on running the tests.  
+
+  If you are not sure what version of CVC you are running, execute
+  CVC with no arguments and it will print out its version and the Red Hat
+  Enterprise Linux (RHEL) OS release its libraries are compatible with.
+  Type "CVC -h" for a help page of CVC options and features.
+
+E. GETTING STARTED USING CVC
+
+  The CVC release assumes you are familiar with Verilog and have at least run 
+  simulations with some other Verilog simulator.  CVC has standard command
+  line look and feel and options as much as possible.  The best way to start
+  using CVC is to study the various examples in the "tests_and_examples"
+  release files directory and in the "open_cores" example design directory.
+
+  To start using the CVC PLI, edit the various make files in the appropriate
+  "examples.vpi" or "examples.dpi" directory. 
+
+  The best way to start using the new unique CVC coverage features is to the
+  run CVC on the various ".vc" files in verilog_da_bnchmarks/das_cpu
+  directory.  In order to run those examples, you must make and binaries
+  from the programs in the coverage/src directory.  The README files tell
+  you what to type.  There are no automatic scripts since the idea is that
+  the examples need study.   The Helper c source programs are documented
+  in the "README.coverage.helper-programs" file in the coverage directory.
+
+  See the cvc_quick_start.pdf for more detailed instructions on getting
+  started and using OSS CVC.
+
+  If you need to rebuild the checkcvc and checkcvc64 binaries, run the
+make files in the chkcvc.src.dir directory.
+
+Copyright (c) 2001-2014 Tachyon Design Automation

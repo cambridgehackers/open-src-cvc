@@ -1,0 +1,16 @@
+ ///////////////////////////////////////////////////////////////////////////
+                   CVC COVERAGE HELPER PROGRAMS - SOURCE FILES
+ ///////////////////////////////////////////////////////////////////////////
+
+ - see the '../README.coverage.helper-programs' on level up for more
+   information on these files.
+
+ - these helper programs are pre-compiled in ../bin, but are available if you
+   desire to change them:
+
+- edit the makefile.lnx to choose 64 bit, 32 bit and whether you want -g on   
+   makefile -f maefile.lnx <nbame of helper program to make>
+
+- there are some extern procs for reading, building the toggle dat netlist
+  and other operations in the file tgldat_srvc.c (services) if you want to
+  write your own analysis program.

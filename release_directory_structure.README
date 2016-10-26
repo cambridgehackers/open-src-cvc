@@ -1,0 +1,81 @@
+/////////////////////////////////////////////////////////////////////////
+                      Directory structure
+/////////////////////////////////////////////////////////////////////////
+
+OSS CVC uses a simple program organization.  The cvc64 (and cvc) binaries
+include the simulator and a slow interpreter (use the +interp option).
+The cvc64/cvc binaries produce a model of your design in the cvcsim
+file which must be then executed.  It can be executed multiple times
+without recompiling, but cvcsim requires that design verilog files
+are in the same place when cvcsim is run as they were when cvc64/cvc
+were run.
+
+When a new minor CVC release (usually to fix bugs) is made, only the
+cvc-binaries directory is shipped, not the support files directory.  The
+new release is indicated with a number and letter at the end of the
+major release number.
+
+This directory contains:
+
+   release_directory_structure.README - this file
+   getting_started.README - a file mostly pointing to the cvc_quick_start.pdf
+                            file for getting started running CVC
+   INSTALL - a file giving instructions for copying cvc to an executable
+             file system location on your PATH environment variable so cvc
+             can be run from anywhere on your system.  It also gives 
+             instructions for running installation tests to make sure
+             cvc is properly installed and your system is able to support it.
+
+   src/   -  The source of OSS CVC.  See instructions in the README file for
+             making cvc64/cvc.  If you are an enterprise OSS CVC customer,
+             all you need to do is copy your supplied binaries into the bin
+             directory.
+   
+   bin/ - CVC binary files
+         - checkcvc - checks to make sure configuration is fine for CVC
+         - checkcvc64 - checks to make sure configuration is fine for CVC
+                        64-bit mode
+
+         ** NOTE - the installation test scripts assume that OSS CVC binaries
+                   are either in this bin directory or /tmp.
+
+   coverage/ - Directory contains CVC code coverage helper source files.  The
+               include src directory contains .c files and make files for
+               a program to convert old .tvcd files to new .tgldat format,
+               and a program to check that .tgldat files have correct format.
+
+   doc/ - all CVC documentation except the README file in various directories.
+
+   pli_incs/ - CVC PLI include files from the IEEE 1364 LRM.  If you use the
+               PLI, your gcc compilation must be able to find the pli_incs
+               include file directory (either by install pli_incs in a system
+               include location or using the gcc -I option).
+
+   systemverilog/ - A .v file showing the various RTL programming type
+                    SystemVerilog features supported by CVC.  If you use
+                    these features, you will no longer be compatible with
+                    the IEEE 1364-2005 standard.  OSS CVC does not support
+                    dynamic classes.
+
+   tests_and_examples/ - CVC tests and PLI examples
+
+   tests_and_examples/verilog_da_bnchmarks 
+             - this directory has some functioning (but old) designs to show
+               what CVC can do.  The das_cpu directory contains a cpu model and
+               some .vc files that can be run to show how net toggle coverage
+               and +xprop work on a "real" cpu model.  if +xprop is used,
+               das_cpu model will not run because it will not initialize.
+               There is also a .vc file for testing FST dumpvars.  The output
+               verilog.fst file can be loaded into GTKwave.
+
+   tests_and_examples/open_cores
+             - this directory has some RTL designs that run out of the box.
+               See the README file in the open_cores directory for more
+               information.
+  
+               The open_cores directory README file has a discussion (using
+               the open core RTL designs as examples) of various OSS CVC
+               command line options that can significantly speed up your
+               simulations, if your designs are able to use the option. 
+
+Copyright (c) 2001-2014 Tachyon Design Automation

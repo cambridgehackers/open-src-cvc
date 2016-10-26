@@ -1,0 +1,9 @@
+//**XPROP**//
+
+//Mandatory for all testing
+cpu_mixed.v -y ../libs/lca100kgate +libext+.v
++verbose
+
+//das_cpu is an old style design that will not run with +xprop
+//design does not initialize with new +xprop more pessimistic x feature
++xprop

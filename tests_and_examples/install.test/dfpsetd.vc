@@ -1,0 +1,6 @@
+// use this option to determine SDF delay setting sequence
+// +sdfverbose
+dfpsetd.v
+// two different files on showing no context paths and one with context paths
++sdfannotate dfpsetd1.sdf
++sdfannotate dfpsetd2.sdf+ffnand_test

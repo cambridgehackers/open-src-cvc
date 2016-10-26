@@ -1,0 +1,278 @@
+**fdspec01.v(105) WARN** [653] $period timing check min:typ:max limit expression needs parentheses under 1364 - unportable
+  There are 1 top level modules.
+... printing drivers and loads for test.t_clr0:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(6)
+... printing drivers and loads for test.t_clr1:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(7)
+... printing drivers and loads for test.t_d0:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(6)
+... printing drivers and loads for test.t_d1:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(7)
+... printing drivers and loads for test.t_q:
+  Drivers:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+... printing drivers and loads for test.t_q0:
+  Drivers:
+   Port (vpiHighConn) object at **fdspec01.v(6)
+... printing drivers and loads for test.t_q1:
+  Drivers:
+   Port (vpiHighConn) object at **fdspec01.v(7)
+... printing drivers and loads for test.t_set0:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(6)
+... printing drivers and loads for test.t_set1:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(7)
+... printing drivers and loads for test.t_clk:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+... printing drivers and loads for test.t_clk0:
+... printing drivers and loads for test.t_clk1:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+... printing drivers and loads for test.t_clk2:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(7)
+   Port (vpiHighConn) object at **fdspec01.v(7)
+   Port (vpiHighConn) object at **fdspec01.v(6)
+   Port (vpiHighConn) object at **fdspec01.v(6)
+... printing drivers and loads for test.t_clr:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+... printing drivers and loads for test.t_d:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+... printing drivers and loads for test.t_set:
+  Loads:
+   Port (vpiHighConn) object at **fdspec01.v(8)
+  There are 3 instances in test.
+... printing drivers and loads for test.i1.clk:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i1.clk1:
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(106)
+... printing drivers and loads for test.i1.clr:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+... printing drivers and loads for test.i1.d:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(107)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i1.q:
+  Loads:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Drivers:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Path terminals:
+    vpiModPathOut object at **NONE(0)
+    vpiModPathOut object at **NONE(0)
+... printing drivers and loads for test.i1.set:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+... printing drivers and loads for test.i2.clk:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i2.clk1:
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(106)
+... printing drivers and loads for test.i2.clr:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+... printing drivers and loads for test.i2.d:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(107)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i2.q:
+  Loads:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Drivers:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Path terminals:
+    vpiModPathOut object at **NONE(0)
+    vpiModPathOut object at **NONE(0)
+... printing drivers and loads for test.i2.set:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+... printing drivers and loads for test.i3.clk:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(104)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(103)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i3.clk1:
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(106)
+... printing drivers and loads for test.i3.clr:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+... printing drivers and loads for test.i3.d:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Timing check terminals:
+    vpiTchkTerm object at **fdspec01.v(107)
+    vpiTchkTerm object at **fdspec01.v(101)
+... printing drivers and loads for test.i3.q:
+  Loads:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Drivers:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Path terminals:
+    vpiModPathOut object at **NONE(0)
+    vpiModPathOut object at **NONE(0)
+... printing drivers and loads for test.i3.set:
+  Loads:
+    vpiPrimTerm object at **fdspec01.v(110)
+  Drivers:
+   Port (vpiLowConn) object at **fdspec01.v(76)
+  Path terminals:
+    vpiModPathIn object at **NONE(0)
+  >>> All instances processed - continuing with simulation.
+         0 q=x, clk=x, data=x, clr=x, set=x
+testing set/clear logic
+      2000 q=x, clk=x, data=x, clr=x, set=0
+      2040 q=1, clk=x, data=x, clr=x, set=0
+      3000 q=1, clk=x, data=x, clr=0, set=0
+      4000 q=1, clk=x, data=x, clr=0, set=1
+      4050 q=0, clk=x, data=x, clr=0, set=1
+      5000 q=0, clk=x, data=x, clr=0, set=0
+      5040 q=1, clk=x, data=x, clr=0, set=0
+      6000 q=1, clk=x, data=x, clr=0, set=1
+      6050 q=0, clk=x, data=x, clr=0, set=1
+      7000 q=0, clk=x, data=x, clr=x, set=1
+      7040 q=x, clk=x, data=x, clr=x, set=1
+testing normal logic
+      8000 q=x, clk=x, data=0, clr=1, set=1
+      9000 q=x, clk=1, data=0, clr=1, set=1
+     10000 q=x, clk=0, data=0, clr=1, set=1
+     11000 q=x, clk=1, data=0, clr=1, set=1
+     11250 q=0, clk=1, data=0, clr=1, set=1
+     12000 q=0, clk=0, data=0, clr=1, set=1
+     13000 q=0, clk=1, data=0, clr=1, set=1
+     14000 q=0, clk=0, data=0, clr=1, set=1
+     15000 q=0, clk=x, data=0, clr=1, set=1
+     16000 q=0, clk=0, data=0, clr=1, set=1
+     17000 q=0, clk=z, data=0, clr=1, set=1
+     18000 q=0, clk=0, data=0, clr=1, set=1
+     19000 q=0, clk=x, data=0, clr=1, set=1
+**fdspec01.v(105) WARN** now 20000 [566] timing violation in test.i3 (diff. 1000)
+ $period((posedge clk):19000, (posedge clk):20000, 1200);
+     20000 q=0, clk=1, data=0, clr=1, set=1
+     21000 q=0, clk=1, data=1, clr=1, set=1
+     22000 q=0, clk=0, data=1, clr=1, set=1
+     23000 q=0, clk=1, data=1, clr=1, set=1
+     23140 q=1, clk=1, data=1, clr=1, set=1
+     24000 q=1, clk=0, data=1, clr=1, set=1
+     25000 q=1, clk=1, data=1, clr=1, set=1
+     26000 q=1, clk=0, data=1, clr=1, set=1
+**fdspec01.v(105) WARN** now 26100 [566] timing violation in test.i3 (diff. 1100)
+ $period((posedge clk):25000, (posedge clk):26100, 1200);
+**fdspec01.v(104) WARN** now 26100 [566] timing violation in test.i3 (diff. 100)
+ $width((negedge clk):26000, (posedge clk):26100, 500);
+     26100 q=1, clk=x, data=1, clr=1, set=1
+     27100 q=1, clk=0, data=1, clr=1, set=1
+     28100 q=1, clk=z, data=1, clr=1, set=1
+     29100 q=1, clk=0, data=1, clr=1, set=1
+     30100 q=1, clk=x, data=1, clr=1, set=1
+**fdspec01.v(105) WARN** now 31100 [566] timing violation in test.i3 (diff. 1000)
+ $period((posedge clk):30100, (posedge clk):31100, 1200);
+     31100 q=1, clk=1, data=1, clr=1, set=1
+**fdspec01.v(103) WARN** now 31130 [566] timing violation in test.i3 (diff. 30)
+ $width((posedge clk):31100, (negedge clk):31130, 600);
+     31130 q=1, clk=0, data=1, clr=1, set=1
+**fdspec01.v(105) WARN** now 31190 [566] timing violation in test.i3 (diff. 90)
+ $period((posedge clk):31100, (posedge clk):31190, 1200);
+**fdspec01.v(104) WARN** now 31190 [566] timing violation in test.i3 (diff. 60)
+ $width((negedge clk):31130, (posedge clk):31190, 500);
+     31190 q=1, clk=1, data=1, clr=1, set=1
+**fdspec01.v(101) WARN** now 31220 [566] timing violation in test.i3 (diff. 30)
+ hold(of setuphold)((posedge clk):31190, d:31220, 50);
+     31220 q=1, clk=1, data=0, clr=1, set=1
+**fdspec01.v(103) WARN** now 31250 [566] timing violation in test.i3 (diff. 60)
+ $width((posedge clk):31190, (negedge clk):31250, 600);
+     31250 q=1, clk=0, data=0, clr=1, set=1
+     31280 q=1, clk=0, data=1, clr=1, set=1
+**fdspec01.v(107) WARN** now 31310 [566] timing violation in test.i3 (diff. 30)
+ $recovery((posedge d):31280, clk:31310, 200);
+**fdspec01.v(105) WARN** now 31310 [566] timing violation in test.i3 (diff. 120)
+ $period((posedge clk):31190, (posedge clk):31310, 1200);
+**fdspec01.v(104) WARN** now 31310 [566] timing violation in test.i3 (diff. 60)
+ $width((negedge clk):31250, (posedge clk):31310, 500);
+**fdspec01.v(101) WARN** now 31310 [566] timing violation in test.i3 (diff. 30)
+ setup(of setuphold)(d:31280, (posedge clk):31310, 70);
+     31310 q=1, clk=1, data=1, clr=1, set=1
+**fdspec01.v(107) WARN** now 31410 [566] timing violation in test.i3 (diff. 130)
+ $recovery((posedge d):31280, clk:31410, 200);
+**fdspec01.v(103) WARN** now 31410 [566] timing violation in test.i3 (diff. 100)
+ $width((posedge clk):31310, (negedge clk):31410, 600);
+     31410 q=1, clk=0, data=1, clr=1, set=1
+**fdspec01.v(106) WARN** now 33510 [566] timing violation in test.i3 (diff. 2000)
+ $skew((posedge clk1):31510, (posedge clk):33510, 50);
+     33510 q=1, clk=1, data=1, clr=1, set=1

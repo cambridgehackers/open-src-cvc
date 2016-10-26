@@ -1,0 +1,25 @@
+
+                      ************************************************
+                      **                                            **
+                      **  CVC - Verilog X-propagation   Report      **
+                      **                                            **
+                      **  Generated :  Sun Nov 17 20:41:00 2013     **
+                      ************************************************
+
+
+  ########## X if condition    ############
+  Time 0
+  if (a)  => 'bx1
+  Location xtrace.v : 9
+  Instance : xtrace
+  #########################################
+
+
+  ########## X case condition  ############
+  Time 0
+  case (a)  => 'b1xx
+  Location xtrace.v : 15
+  Instance : xtrace
+  #########################################
+
+

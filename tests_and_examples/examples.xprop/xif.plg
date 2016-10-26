@@ -1,0 +1,4 @@
+test1 b=0001
+test2 b=x01x
+test3 b=11xx
+test4 b=x01x c=xxxx

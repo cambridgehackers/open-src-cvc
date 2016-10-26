@@ -1,0 +1,15 @@
+bench/verilog/test_bench_top.v
+bench/verilog/wb_mast_model.v
+bench/verilog/wb_slv_model.v
+rtl/verilog/wb_dma_ch_arb.v
+rtl/verilog/wb_dma_ch_pri_enc.v
+rtl/verilog/wb_dma_ch_rf.v
+rtl/verilog/wb_dma_ch_sel.v
+rtl/verilog/wb_dma_de.v
+rtl/verilog/wb_dma_inc30r.v
+rtl/verilog/wb_dma_pri_enc_sub.v
+rtl/verilog/wb_dma_rf.v
+rtl/verilog/wb_dma_top.v
+rtl/verilog/wb_dma_wb_if.v
+rtl/verilog/wb_dma_wb_mast.v
+rtl/verilog/wb_dma_wb_slv.v
