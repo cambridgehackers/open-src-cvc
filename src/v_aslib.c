@@ -8043,10 +8043,11 @@ extern void __asl_exec_cause(struct st_t *stp, struct nchglst_t *nchglp)
    if (np->pli_access >= 2) __asl_chk_dce_cbvc(np);
    /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
   /* AIV 02/12/10 - OSX always adds an '_' to symbol names */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
    (np->enter_dce)();
   }
@@ -12522,10 +12523,11 @@ static void asl_loc_record_nchg(struct net_t *np, struct nchglst_t *nchglp)
    /* AIV 05/13/09 - access level > 2 for call backs */
    if (np->pli_access >= 2) __asl_chk_dce_cbvc(np);
    /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
    (np->enter_dce)();
   }
@@ -12574,10 +12576,11 @@ static void asl_loc_record_sel_nchg(struct net_t *np, struct nchglst_t *nchglp,
    /* AIV 05/13/09 - access level > 2 for call backs */
    if (np->pli_access >= 2) __asl_chk_dce_cbvc(np);
    /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
    (np->enter_dce)();
   }
@@ -12725,10 +12728,11 @@ extern void __asl_record_array_net_change(struct net_t *np,
      /* AIV 05/13/09 - access level > 2 for call backs */
      if (np->pli_access >= 2) __asl_chk_dce_cbvc(np);
      /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
      (np->enter_dce)();
     }
@@ -14173,20 +14177,22 @@ extern void __asl_process_alloced_nchg(void)
    /* AIV 05/13/09 - access level > 2 for call backs */
    if (np->pli_access >= 2) __asl_chk_dce_cbvc(np);
    /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
    (np->enter_dce)();
   }
  if (np->enter_npp != NULL)
   {
    /* AIV 01/04/07 - need to tell gcc that %esi cannot be used here */
+   void *p__idp = &__idp;
   #ifdef __CVC32__
-   __asm__ ("movl __idp, %%esi" :: :"%esi");
+   __asm__ ("movl %0, %%esi" :: "r" (p__idp) :"%esi");
   #else
-   __asm__ ("movq __idp, %%r15" :: :"%r15");
+   __asm__ ("movq %0, %%r15" :: "r" (p__idp) :"%r15");
   #endif
    (np->enter_npp)();
   }

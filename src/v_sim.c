@@ -751,7 +751,8 @@ static void do_compiled_sim(void)
 #else
  /* AIV 11/21/08 - just jump to enter for 64-bit need to keep align */
  /* on 16-byte call enter is -8 from rsp */
- __asm__ ("movq   __first_enterp, %%rax" ::: "%rax");
+ void *p__first_enterp = &__first_enterp;
+ __asm__ ("movq   %0, %%rax" :: "r" (p__first_enterp): "%rax");
  __asm__ ("jmp    *%%rax" ::: "%rax");
 #endif
 }
@@ -802,11 +803,12 @@ extern void __process_compiled_thrd_ev(void)
     {
      /* notice if thread completes - stmt suspend must not be T */
      /* AIV 01/04/07 - cannot use %esi here last arg is clob regs */
+     void *p__idp = &__idp;
 #ifdef __CVC32__
-     __asm__ ("movl __idp, %%esi" ::: "%esi");
+     __asm__ ("movl %0, %%esi" :: "r" (p__idp) : "%esi");
      (stp->enterptr)();
 #else
-     __asm__ ("movq __idp, %%r15" ::: "%r15");
+     __asm__ ("movq %0, %%r15" :: "r" (p__idp) : "%r15");
      /* AIV 11/21/08 - need to keep align on 16-byte */
      /* call is -8 bytes our lowered code is expecting align on 16-bytes */
      __asm__ ("subq $8, %%rsp" ::: "%rsp");
@@ -895,11 +897,12 @@ extern void __process_compiled_thrd_ev_auto(void)
     {
      /* notice if thread completes - stmt suspend must not be T */
      /* AIV 01/04/07 - cannot use %esi here last arg is clob regs */
+     void *p__idp = &__idp;
   #ifdef __CVC32__
-     __asm__ ("movl __idp, %%esi" ::: "%esi");
+     __asm__ ("movl %0, %%esi" :: "r" (p__idp) : "%esi");
      (stp->enterptr)();
   #else
-     __asm__ ("movq __idp, %%r15" ::: "%r15");
+     __asm__ ("movq %0, %%r15" :: "r" (p__idp) : "%r15");
      /* AIV 11/21/08 - need to keep align on 16-byte */
      /* call is -8 bytes our lowered code is expecting align on 16-bytes */
      __asm__ ("subq $8, %%rsp" ::: "%rsp");
