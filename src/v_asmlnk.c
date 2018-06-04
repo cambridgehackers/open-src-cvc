@@ -10056,9 +10056,9 @@ static void gen_mkfil_and_compile_solib(void)
  fprintf(fp, "LFLAGS = \n");
  fprintf(fp, "CC = gcc\n");
 #ifdef __CVC32__
- fprintf(fp, "CFLAGS = -g -m32\n");
+ fprintf(fp, "CFLAGS = -no-pie -g -m32\n");
 #else
- fprintf(fp, "CFLAGS = -g\n");
+ fprintf(fp, "CFLAGS = -no-pie -g\n");
 #endif
 
  /* reprise auto heartbeat needs threads */
@@ -10181,10 +10181,10 @@ static void pipe_cvcsim(void)
  /* AIV LOOKATME - don't think flags matter here already compiled with -02 */
  /* gcc just does the linking */
 #ifdef __CVC_DEBUG__
- sprintf(cmd, "gcc -o %s %s %s ", __exe_name, __exe_file_name, 
+ sprintf(cmd, "gcc -no-pie -o %s %s %s ", __exe_name, __exe_file_name, 
    __cvclib_file_name);
 #else
- sprintf(cmd, "gcc -O2 -o %s %s %s ", __exe_name, __exe_file_name,
+ sprintf(cmd, "gcc -no-pie -O2 -o %s %s %s ", __exe_name, __exe_file_name,
   __cvclib_file_name);
 #endif
 
