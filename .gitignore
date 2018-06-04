@@ -1,0 +1,6 @@
+*.o
+verilog.log
+cvcsim
+hexasm
+*.s
+cvc64
