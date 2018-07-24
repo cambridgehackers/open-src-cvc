@@ -168,13 +168,17 @@ OF SUCH DAMAGE.
  * routines to optimize and lower basic block form flow graph insns
  */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
 #include <math.h>
 #include <unistd.h> 
+#ifdef HAVE_ALLOCA_H
 #include <alloca.h>
+#endif
 #include <stdarg.h>
 
 #ifdef __DBMALLOC__
