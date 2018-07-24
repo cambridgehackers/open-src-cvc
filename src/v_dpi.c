@@ -2831,10 +2831,10 @@ static void gen_dpi_wrapper_pipe(void)
  
  /* AIV 12/30/10 - '-x C' states inputing C, - reads from stdin */
 #ifdef __CVC32__
- sprintf(cc_cmd, "gcc -x c -m32 -fPIC -c -O2 -o %s.o -",
+ sprintf(cc_cmd, ASM_CC " -x c -m32 -fPIC -c -O2 -o %s.o -",
   __dpi_interp_wrapper_fnam);
 #else
- sprintf(cc_cmd, "gcc -x c -fPIC -O2 -c -o %s.o -", __dpi_interp_wrapper_fnam);
+ sprintf(cc_cmd, ASM_CC " -x c -fPIC -O2 -c -o %s.o -", __dpi_interp_wrapper_fnam);
 #endif
 
  if ((pp = popen(cc_cmd, "w")) == NULL)
@@ -3290,7 +3290,7 @@ static void gen_rt_dpi_interp_mkfil_and_compile(void)
   }
 
  // SJM 10-29-10 - PUTMEBACK - fprintf(fp, "WARNS=-Wall\n");
- fprintf(fp, "CC=gcc\n");
+ fprintf(fp, "CC=" ASM_CC "\n");
 #ifdef __CVC32__
  fprintf(fp, "LFLAGS= -G -shared -export-dynamic -melf_i386\n");
  fprintf(fp, "CFLAGS= -fPIC -Wall -g -m32\n");
@@ -3343,10 +3343,10 @@ static void gen_rt_dpi_interp_pipe_lib()
 
  /* AIV 01/05/10 - need different flags for Mac */
 #ifdef __CVC32__
- sprintf(ld_cmd, "gcc -m32 -shared -export-dynamic %s.o -o %s.so",
+ sprintf(ld_cmd, ASM_CC " -m32 -shared -export-dynamic %s.o -o %s.so",
   __dpi_interp_wrapper_fnam, __dpi_interp_wrapper_fnam);
 #else
- sprintf(ld_cmd, "gcc -shared -export-dynamic %s.o -o %s.so",
+ sprintf(ld_cmd, ASM_CC " -shared -export-dynamic %s.o -o %s.so",
   __dpi_interp_wrapper_fnam, __dpi_interp_wrapper_fnam);
 #endif
  if ((pp = popen(ld_cmd, "w")) == NULL)

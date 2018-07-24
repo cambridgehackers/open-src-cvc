@@ -254,7 +254,7 @@ v_vpi3.o:	v_vpi3.c
 	$(CC) $(CFLAGS) -c v_vpi3.c 
 
 v_dpi.o:	v_dpi.c
-	$(CC) $(CFLAGS) -c v_dpi.c 
+	$(CC) $(CFLAGS) -c v_dpi.c -D ASM_CC="\"\$(CC)\""
 
 v_acc.o:	v_acc.c
 	$(CC) $(CFLAGS) -c v_acc.c 
@@ -278,7 +278,7 @@ v_cvcms.o:	v_cvcms.c igen.h
 	$(CC) $(CFLAGS) -c v_cvcms.c
 
 v_asmlnk.o:	v_asmlnk.c igen.h 
-	$(CC) $(CFLAGS) -c v_asmlnk.c -DASM_LIBS="\"$(LIBS)\""
+	$(CC) $(CFLAGS) -c v_asmlnk.c  -D ASM_CC="\"\$(CC)\"" -DASM_LIBS="\"$(LIBS)\""
 
 v_cvcrt.o:	v_cvcrt.c igen.h 
 	$(CC) $(CFLAGS) -c v_cvcrt.c
