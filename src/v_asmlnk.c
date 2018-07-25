@@ -10054,7 +10054,7 @@ static void gen_mkfil_and_compile_solib(void)
 --- */
  fprintf(fp, "OPTFLGS =\n");
  fprintf(fp, "LFLAGS = \n");
- fprintf(fp, "CC = gcc\n");
+ fprintf(fp, "CC = " ASM_CC "\n");
 #ifdef __CVC32__
  fprintf(fp, "CFLAGS = -no-pie -g -m32\n");
 #else
@@ -10064,7 +10064,7 @@ static void gen_mkfil_and_compile_solib(void)
  /* reprise auto heartbeat needs threads */
  /* SJM 02-07-13 - this is show asm makefile modules mode so OS tmp ok */
  /* AIV 04/22/10 - FST needs to link in -lz lib */
- fprintf(fp, "LIBS = /tmp/exe_main.o /tmp/cvclib.o -lm -ldl -lpthread -lz\n");
+ fprintf(fp, "LIBS = /tmp/exe_main.o /tmp/cvclib.o " ASM_LIBS "\n");
 
  fprintf(fp, "ASMFLAGS = --gstabs\n");
  fprintf(fp, "\nOBJS=");
@@ -10158,9 +10158,9 @@ static void pipe_cvcsim(void)
 #ifdef __CVC32__
  /* reprise auto heartbeat needs threads */
  /* AIV 04/22/10 - FST needs to link in -lz lib */
- strcpy(libs, " -m32 -lm -ldl -lpthread -lz");
+ strcpy(libs, " -m32 " ASM_LIBS);
 #else
- strcpy(libs, " -lm -ldl -lz -lpthread");
+ strcpy(libs, " " ASM_LIBS);
 #endif
 
  /* AIV 03/24/09 - if has PLI need to compile with this flag for .so to */
@@ -10181,10 +10181,10 @@ static void pipe_cvcsim(void)
  /* AIV LOOKATME - don't think flags matter here already compiled with -02 */
  /* gcc just does the linking */
 #ifdef __CVC_DEBUG__
- sprintf(cmd, "gcc -no-pie -o %s %s %s ", __exe_name, __exe_file_name, 
+ sprintf(cmd, ASM_CC " -no-pie -o %s %s %s ", __exe_name, __exe_file_name, 
    __cvclib_file_name);
 #else
- sprintf(cmd, "gcc -no-pie -O2 -o %s %s %s ", __exe_name, __exe_file_name,
+ sprintf(cmd, ASM_CC " -no-pie -O2 -o %s %s %s ", __exe_name, __exe_file_name,
   __cvclib_file_name);
 #endif
 
