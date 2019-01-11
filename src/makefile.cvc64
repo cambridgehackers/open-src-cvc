@@ -46,7 +46,7 @@ CVCCOBJS=v_bbgen.o v_bbgen2.o v_bbgen3.o v_bbopt.o v_cvcms.o v_asmlnk.o \
  v_aslib.o v_regasn.o v_cvcrt.o v_xprop.o fstapi.o fastlz.o lz4.o
 
 # make normal optimized CVC that pipes .s gas files instead of making .s files
-CVCCFLGS= -D$(LINUX_VERS) $(FLG32)
+CVCCFLGS= -D$(LINUX_VERS) $(FLG32) -fno-pie -no-pie
 
 # __CVC_DEBUG__ must be turned on or the CVC debugging command line options
 # mostly +Odebug and +show_asm won't be recognized
