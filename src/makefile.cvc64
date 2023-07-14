@@ -164,12 +164,16 @@ exe_main_str.o:	exe_main_str.s
 # and once for cvcsim which is handled by this make file
 cvc.o:	cvc.c
 	$(CC) $(CFLAGS) -c cvc.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c cvc.c -o cvc_rt.o
 # this is how to look at gcc .s file output 
 #	$(CC) $(CFLAGS) -S cvc.c
 
+cvc_rt.o:	cvc.c
+	$(CC) $(CFLAGS) -D__CVC_RT__ -c cvc.c -o cvc_rt.o
+
 v_src.o:	v_src.c
 	$(CC) $(CFLAGS) -c v_src.c
+
+v_src_rt.o:	v_src.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_src.c -o v_src_rt.o
 
 v_src2.o:	v_src2.c
@@ -180,18 +184,26 @@ v_src3.o:	v_src3.c
 
 v_fx.o:	v_fx.c
 	$(CC) $(CFLAGS) -c v_fx.c
+
+v_fx_rt.o:	v_fx.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx.c -o v_fx_rt.o
 
 v_genfx.o:	v_genfx.c
 	$(CC) $(CFLAGS) -c v_genfx.c
+
+v_genfx_rt.o:	v_genfx.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_genfx.c -o v_genfx_rt.o
 
 v_fx2.o:	v_fx2.c
 	$(CC) $(CFLAGS) -c v_fx2.c
+
+v_fx2_rt.o:	v_fx2.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx2.c -o v_fx2_rt.o
 
 v_fx3.o:	v_fx3.c
 	$(CC) $(CFLAGS) -c v_fx3.c
+
+v_fx3_rt.o:	v_fx3.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx3.c -o v_fx3_rt.o
 
 v_cnv.o:	v_cnv.c
@@ -239,6 +251,8 @@ v_cvr.o:	v_cvr.c
 
 v_ms.o:	v_ms.c
 	$(CC) $(CFLAGS) -c v_ms.c
+
+v_ms_rt.o:	v_ms.c
 	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_ms.c -o v_ms_rt.o
 
 v_tf.o:	v_tf.c
