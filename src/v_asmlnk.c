@@ -5365,7 +5365,7 @@ extern void __pipe_dsgn_dat_asm_file(void)
 #else
  sprintf(as_cmd, "as -o %s", __comm_file_name);
 #endif
- sprintf(__asm_file_name, __comm_file_name);
+ sprintf(__asm_file_name, "%s", __comm_file_name);
 
  if ((pp = do_popen(as_cmd, "w")) == NULL)
   {
@@ -5388,7 +5388,7 @@ extern void __pipe_dsgn_dat_asm_file(void)
     {
      mdp->m_using_init_file = TRUE;
      /* AIV 08/05/09 - init file should be seperate file */
-     sprintf(__asm_file_name, init_cp);
+     sprintf(__asm_file_name, "%s", init_cp);
 #ifdef __CVC32__
      sprintf(as_cmd, "as --32 -o %s", init_cp);
 #else
