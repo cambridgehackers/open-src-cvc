@@ -387,6 +387,7 @@ extern void __record_sel_nchg(struct net_t *, int32, int32);
 /* but one record called, it must be off for dctrl processing - not needed */ 
 /* DBG ??? release add --- */
 /* AIV 11/29/10 - need to check for toggle coverage */
+extern void __add_dmpv_chglst_el_sel(struct net_t *, int32);
 #define record_sel_nchg_(np, i1, i2) \
  do { \
   __lhs_changed = FALSE; \

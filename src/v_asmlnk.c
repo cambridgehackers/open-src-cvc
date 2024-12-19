@@ -168,6 +168,11 @@ OF SUCH DAMAGE.
  * compiler asm gen routines - routines for post lowering asm gen here
  */
 
+/* AIV 03/28/12 - this is needed for some systems for clone call */
+// #ifndef _GNU_SOURCE
+// #define _GNU_SOURCE
+// #endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -188,12 +193,6 @@ OF SUCH DAMAGE.
 #ifndef __RHEL4X__
 #include <linux/sched.h>
 #endif
-
-/* AIV 03/28/12 - this is needed for some systems for clone call */
-// #ifndef _GNU_SOURCE
-// ##define _GNU_SOURCE
-// #endif
-
 
 #ifdef __DBMALLOC__
 #include "../malloc.h"
