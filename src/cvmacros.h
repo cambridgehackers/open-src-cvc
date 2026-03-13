@@ -355,6 +355,8 @@ extern void __record_nchg(struct net_t *);
 #define record_nchg_(np) __record_nchg(np)
 --- */
 
+extern void __add_dmpv_chglst_el_sel(struct net_t *, int32);
+
 /* SJM 08/08/03 - can't assume caller turns off chged flag any more */
 /* but one record called, it must be off for dctrl processing - not needed */ 
 

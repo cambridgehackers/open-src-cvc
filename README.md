@@ -1,5 +1,28 @@
+# CVC
 
-  This is OSS CVC IEEE P1364 Verilog simulator package release.
+:warning: CVC is NOT an open source project, all rights belong to Tachyon, 
+read the license declaration before using!
+
+This repository contains a fork of CVC sources for building on 
+modern linux systems. In accordance with the license terms all 
+changes made by this fork are outlined in the 
+[CHANGES.md](CHANGES.md) file.
+
+To build cvc 64 bit systems : 
+```
+cd src
+make cvc64
+```
+
+To install the 64 bit version:
+```
+sudo make install
+```
+This will be installed in `/usr/local/bin` by default. 
+
+# License
+
+This is OSS CVC IEEE P1364 Verilog simulator package release.
 
 Before installing or using OSS CVC you must read and agree to the
 "oss cvc dual licensing modified artistic license".  By installing
@@ -8,13 +31,13 @@ do not agree to the license, do not install OSS CVC. Read the
 "oss-cvc-artistic-licensing.faq" in this directory to learn about
 the various possibilities of dual open source and commercial licensing.
 
-INSTALLATION:
+## INSTALLATION
 
 Instructions for making CVC or for installing CVC pre-made binaries (if
 you are an Enterprise OSS CVC customer) are in the INSTALL file in this
 directory.
 
-ENTERPRISE OSS CVC:
+## ENTERPRISE OSS CVC
 
 To purchase Enterprise OSS CVC with pre-made binaries and support send
 email to craigr@tachyon-da.com.

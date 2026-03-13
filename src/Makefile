@@ -25,6 +25,9 @@
 # normally for modern RHEL/Centos 6.x leave variable defines as as is
 LINUX_VERS=__RHEL6X__
 
+# define CVC version
+CVC_VERSION:=64
+
 # for older RHEL/Centos 4.x this is required to activate large models defines
 # for old 4.x only 64 bit CVC can be made
 # LINUX_VERS=__RHEL4x__
@@ -38,6 +41,10 @@ LINUX_VERS=__RHEL6X__
 ifeq ($(LINUX_VERS),__RHEL4x__)
 $(error ... Only cvc64 can be made on older Centos/RHEL 4.x)
 endif
+
+# create version dependant build directory
+BUILD_DIR:=../build$(CVC_VERSION)
+$(shell mkdir -p $(BUILD_DIR))
 
 # no need to tell gcc to use 32 bit compilation and libraries
 FLG32= 
@@ -59,12 +66,13 @@ CVCCFLGS= -D$(LINUX_VERS) $(FLG32) -fno-pie -no-pie
 # hashing seems faster on modern processors
 #CVCCFLGS=-D$(__LINUX_VERS) $(FLG32) -D__STREE__ -D__CVC_DEBUG__
 
-MAINOBJ=dig_main.o
+MAINOBJ=$(BUILD_DIR)/dig_main.o
 
 OBJS=cvc.o v_src.o v_src2.o v_src3.o v_fx.o v_genfx.o v_fx2.o v_fx3.o v_cnv.o \
 v_ex.o v_ex2.o v_ex3.o v_ex4.o v_trch.o v_del.o v_sdf.o v_prp.o v_prp2.o \
 v_sim.o v_dbg.o v_dbg2.o v_cvr.o v_ms.o v_tf.o v_acc.o v_vpi.o v_vpi2.o \
 v_vpi3.o v_dpi.o $(CVCCOBJS)
+BUILD_OBJS:=$(foreach x,$(OBJS),$(BUILD_DIR)/$x)
 
 # runtime linked in obj files
 # no compiler files (v_bbgen*.c, v_bbopt) just CVC runtime file v_cvcrt.o 
@@ -74,11 +82,16 @@ v_genfx_rt.o v_fx2_rt.o v_fx3_rt.o v_cnv.o v_ex.o v_ex2.o v_ex3.o \
 v_ex4.o v_trch.o v_del.o v_sdf.o v_prp.o v_prp2.o v_sim.o v_dbg.o \
 v_dbg2.o v_cvr.o v_ms_rt.o v_tf.o v_acc.o v_vpi.o \
 v_vpi2.o v_vpi3.o v_aslib.o v_cvcrt.o v_xprop.o v_dpi.o fstapi.o fastlz.o lz4.o
+BUILD_RT_OBJS:=$(foreach x,$(RT_OBJS),$(BUILD_DIR)/$x)
 
-LIBS= -lm -ldl -lpthread -lz
+# automatic dependancy tracking produced by -MMD, used to define when to rebuild depandancies
+BUILD_DEPS:=$(wildcard $(BUILD_DIR)/*.d)
+-include $(BUILD_DEPS)
+
+LIBS= -lm -ldl -lpthread -lz -lc
 
 # choose gcc warns here depending on taste
-WARNS=-Wall
+WARNS=-Wall -Wno-incompatible-pointer-types 
 #WARNS=
 
 # pli incs directory must be one level up from source (normal convention)
@@ -115,7 +128,7 @@ CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) $(OPTFLGS) -O2
 # CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) -D__DBMALLOC__ $(CVCCFLGS) -g 
 
 # select gcc version to use - for older Linux systems may need older compiler
-CC=gcc
+CC=gcc -std=gnu99 -MMD 
 
 # this is ld equivalent of gcc -m32 so not used here
 # LD=ld -m elf_i386
@@ -124,203 +137,61 @@ LD=ld
 # loader flags
 LFLAGS=-export-dynamic
 
+.PHONY:cvc64 clean install cvc32
+
+cvc64: $(BUILD_DIR)/cvc64 
+
+cvc32:
+	$(MAKE) -f makefile.cvc	
+
 # rule for making the cvc64/cvc binary - this must be first rule in make file
-cvc64:	$(MAINOBJ) $(OBJS) hexasm cvclib_str.o exe_main_str.o 
-	$(CC) $(CFLAGS) $(LFLAGS) $(MAINOBJ) $(OBJS) $(PLIOBJS)\
-        $(LIBS) cvclib_str.o exe_main_str.o -o cvc64
+$(BUILD_DIR)/cvc64: $(MAINOBJ) $(BUILD_OBJS) hexasm $(BUILD_DIR)/cvclib_str.o $(BUILD_DIR)/exe_main_str.o $(BUILD_DIR)/v_aslib.s
+	$(CC) $(CFLAGS) $(LFLAGS) $(MAINOBJ) $(BUILD_OBJS) $(PLIOBJS)\
+	$(LIBS) $(BUILD_DIR)/cvclib_str.o $(BUILD_DIR)/exe_main_str.o -o $@
 
 # hexasm just takes an object file and dumps it as a long value array
 # create the object files and then create the .s files
 
-cvclib.o: $(RT_OBJS)
-	$(LD) --relocatable -o cvclib.o $(RT_OBJS) 
+$(BUILD_DIR)/cvclib.o: $(BUILD_RT_OBJS)
+	$(LD) --relocatable -o $(BUILD_DIR)/cvclib.o $(BUILD_RT_OBJS) 
 
-cvclib_str.s: hexasm cvclib.o
-	./hexasm cvclib.o __cvclib 8 > cvclib_str.s
+$(BUILD_DIR)/cvclib_str.s: $(BUILD_DIR)/hexasm $(BUILD_DIR)/cvclib.o
+	./$(BUILD_DIR)/hexasm $(BUILD_DIR)/cvclib.o __cvclib 8 > $(BUILD_DIR)/cvclib_str.s
 
-exe_main_str.s: hexasm exe_main.o
-	./hexasm exe_main.o __exe_main 8 > exe_main_str.s
+$(BUILD_DIR)/exe_main_str.s: $(BUILD_DIR)/hexasm $(BUILD_DIR)/exe_main.o
+	./$(BUILD_DIR)/hexasm $(BUILD_DIR)/exe_main.o __exe_main 8 > $(BUILD_DIR)/exe_main_str.s
 
-hexasm:
-	$(CC) hexasm.c -o hexasm
+$(BUILD_DIR)/hexasm:
+	$(CC) hexasm.c -o $(BUILD_DIR)/hexasm
 
+#implicit pattern rules 
+# objects
+$(BUILD_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OBJS):	v.h systsks.h igen.h cvmacros.h config.h lz4.h fstapi.h
+# asembly files
+$(BUILD_DIR)/%.o: $(BUILD_DIR)/%.s
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-dig_main.o:	dig_main.c
-	$(CC) $(CFLAGS) -c dig_main.c
+# RT specific obj
+$(BUILD_DIR)/%_rt.o: %.c
+	$(CC) $(CFLAGS) -o $@ -D__CVC_RT__ -c $<
 
-exe_main.o:	exe_main.c
-	$(CC) $(CFLAGS) -c exe_main.c
+$(BUILD_DIR)/v_dpi.o:	v_dpi.c
+	$(CC) $(CFLAGS) -o $@ -c v_dpi.c -D ASM_CC="\"\$(CC)\""
 
-cvclib_str.o:	cvclib_str.s
-	$(CC) $(CFLAGS) -c cvclib_str.s
+$(BUILD_DIR)/v_asmlnk.o:	v_asmlnk.c igen.h 
+	$(CC) $(CFLAGS) -o $@ -c v_asmlnk.c  -D ASM_CC="\"\$(CC)\"" -DASM_LIBS="\"$(LIBS)\""
 
-exe_main_str.o:	exe_main_str.s
-	$(CC) $(CFLAGS) -c exe_main_str.s
-
-# when adding source files need line here - insures exactly right c files used
-# notice some of the .c file need to be made twice - once for cvc compiler
-# and once for cvcsim which is handled by this make file
-cvc.o:	cvc.c
-	$(CC) $(CFLAGS) -c cvc.c
-# this is how to look at gcc .s file output 
-#	$(CC) $(CFLAGS) -S cvc.c
-
-cvc_rt.o:	cvc.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c cvc.c -o cvc_rt.o
-
-v_src.o:	v_src.c
-	$(CC) $(CFLAGS) -c v_src.c
-
-v_src_rt.o:	v_src.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_src.c -o v_src_rt.o
-
-v_src2.o:	v_src2.c
-	$(CC) $(CFLAGS) -c v_src2.c
-
-v_src3.o:	v_src3.c
-	$(CC) $(CFLAGS) -c v_src3.c
-
-v_fx.o:	v_fx.c
-	$(CC) $(CFLAGS) -c v_fx.c
-
-v_fx_rt.o:	v_fx.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx.c -o v_fx_rt.o
-
-v_genfx.o:	v_genfx.c
-	$(CC) $(CFLAGS) -c v_genfx.c
-
-v_genfx_rt.o:	v_genfx.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_genfx.c -o v_genfx_rt.o
-
-v_fx2.o:	v_fx2.c
-	$(CC) $(CFLAGS) -c v_fx2.c
-
-v_fx2_rt.o:	v_fx2.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx2.c -o v_fx2_rt.o
-
-v_fx3.o:	v_fx3.c
-	$(CC) $(CFLAGS) -c v_fx3.c
-
-v_fx3_rt.o:	v_fx3.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_fx3.c -o v_fx3_rt.o
-
-v_cnv.o:	v_cnv.c
-	$(CC) $(CFLAGS) -c v_cnv.c
-
-v_ex.o:	v_ex.c
-	$(CC) $(CFLAGS) -c v_ex.c
-
-v_ex2.o:	v_ex2.c
-	$(CC) $(CFLAGS) -c v_ex2.c
-
-v_ex3.o:	v_ex3.c
-	$(CC) $(CFLAGS) -c v_ex3.c
-
-v_ex4.o:	v_ex4.c
-	$(CC) $(CFLAGS) -c v_ex4.c
-
-v_trch.o:	v_trch.c
-	$(CC) $(CFLAGS) -c v_trch.c
-
-v_del.o:	v_del.c
-	$(CC) $(CFLAGS) -c v_del.c
-
-v_sdf.o:	v_sdf.c
-	$(CC) $(CFLAGS) -c v_sdf.c
-
-v_prp.o:	v_prp.c
-	$(CC) $(CFLAGS) -c v_prp.c
-
-v_prp2.o:	v_prp2.c
-	$(CC) $(CFLAGS) -c v_prp2.c
-
-v_sim.o:	v_sim.c
-	$(CC) $(CFLAGS) -c v_sim.c
-#	$(CC) $(CFLAGS) -S v_sim.c
-
-v_dbg.o:	v_dbg.c
-	$(CC) $(CFLAGS) -c v_dbg.c
-
-v_dbg2.o:	v_dbg2.c
-	$(CC) $(CFLAGS) -c v_dbg2.c
-
-v_cvr.o:	v_cvr.c
-	$(CC) $(CFLAGS) -c v_cvr.c
-
-v_ms.o:	v_ms.c
-	$(CC) $(CFLAGS) -c v_ms.c
-
-v_ms_rt.o:	v_ms.c
-	$(CC) $(CFLAGS) -D__CVC_RT__ -c v_ms.c -o v_ms_rt.o
-
-v_tf.o:	v_tf.c
-	$(CC) $(CFLAGS) -c v_tf.c
-
-v_vpi.o:	v_vpi.c 
-	$(CC) $(CFLAGS) -c v_vpi.c
-
-v_vpi2.o:	v_vpi2.c
-	$(CC) $(CFLAGS) -c v_vpi2.c 
-
-v_vpi3.o:	v_vpi3.c
-	$(CC) $(CFLAGS) -c v_vpi3.c 
-
-v_dpi.o:	v_dpi.c
-	$(CC) $(CFLAGS) -c v_dpi.c -D ASM_CC="\"\$(CC)\""
-
-v_acc.o:	v_acc.c
-	$(CC) $(CFLAGS) -c v_acc.c 
-
-v_bbgen.o:	v_bbgen.c igen.h
-	$(CC) $(CFLAGS) -c v_bbgen.c
-
-v_bbgen2.o:	v_bbgen2.c igen.h
-	$(CC) $(CFLAGS) -c v_bbgen2.c
-
-v_bbgen3.o:	v_bbgen3.c igen.h
-	$(CC) $(CFLAGS) -c v_bbgen3.c
-
-v_bbopt.o:	v_bbopt.c igen.h 
-	$(CC) $(CFLAGS) -c v_bbopt.c
-
-v_regasn.o:	v_regasn.c igen.h 
-	$(CC) $(CFLAGS) -c v_regasn.c
-
-v_cvcms.o:	v_cvcms.c igen.h 
-	$(CC) $(CFLAGS) -c v_cvcms.c
-
-v_asmlnk.o:	v_asmlnk.c igen.h 
-	$(CC) $(CFLAGS) -c v_asmlnk.c  -D ASM_CC="\"\$(CC)\"" -DASM_LIBS="\"$(LIBS)\""
-
-v_cvcrt.o:	v_cvcrt.c igen.h 
-	$(CC) $(CFLAGS) -c v_cvcrt.c
-
-v_xprop.o:	v_xprop.c 
-	$(CC) $(CFLAGS) -c v_xprop.c
-
-v_aslib.o:	v_aslib.c igen.h 
-##	$(CC) $(ASL_CFLAGS) -c v_aslib.c
-	$(CC) $(CFLAGS) -c v_aslib.c
 # needed for including the runtime library in cvcsim
-	$(CC) $(CFLAGS) -S v_aslib.c
+$(BUILD_DIR)/v_aslib.s:	v_aslib.c igen.h 
+	$(CC) $(CFLAGS) -o $@ -S v_aslib.c
 
-fastlz.o:	fastlz.c
-	$(CC) $(CFLAGS) -c fastlz.c
+# only valid for 64 bit version
+install: cvc64
+	cp $(BUILD_DIR)/cvc64 /usr/local/bin/cvc64
 
-lz4.o:	lz4.c
-	$(CC) $(CFLAGS) -c lz4.c
-
-# needed because CVC writes the Gtkwave FST format
-fstapi.o:	fstapi.c
-	$(CC) $(CFLAGS) -c fstapi.c
-
-# BEWARE you must run "make -f makefile.cvc64 clean" before making a 32 bit cvc
-
-.PHONEY: clean
 clean:
-	rm -f $(OBJS) $(RT_OBJS) *.s cvclib.o cvclib_str.o dig_main.o \
-	exe_main.o exe_main_str.o hexasm cvc cvc64
+	rm -rf $(BUILD_DIR)
  
 # Copyright (c) 2001-2014 Tachyon Design Automation
