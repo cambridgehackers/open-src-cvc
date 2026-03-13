@@ -4,3 +4,4 @@ cvcsim
 hexasm
 *.s
 cvc64
+build64

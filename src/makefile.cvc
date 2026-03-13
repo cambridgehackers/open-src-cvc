@@ -78,7 +78,7 @@ v_vpi2.o v_vpi3.o v_aslib.o v_cvcrt.o v_xprop.o v_dpi.o fstapi.o fastlz.o lz4.o
 LIBS= -lm -ldl -lpthread -lz
 
 # choose gcc warns here depending on taste
-WARNS=-Wall
+WARNS=-Wall -Wno-incompatible-pointer-types -Wno-implicit-function-declaration
 #WARNS=
 
 # pli incs directory must be one level up from source (normal convention)
@@ -115,7 +115,7 @@ CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) $(CVCCFLGS) $(OPTFLGS) -O2
 # CFLAGS= $(ARCHFLGS) -pipe $(WARNS) $(INCS) -D__DBMALLOC__ $(CVCCFLGS) -g 
 
 # select gcc version to use - for older Linux systems may need older compiler
-CC=gcc
+CC=gcc -std=gnu99
 
 # not needed for 64 bit cvc
 # LD=ld

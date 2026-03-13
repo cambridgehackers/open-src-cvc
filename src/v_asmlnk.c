@@ -183,16 +183,23 @@ OF SUCH DAMAGE.
 #include <err.h>
 #include <fcntl.h>
 #include <sys/wait.h>
+
+/* AIV 03/28/12 - this is needed for some systems for clone call */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+
+/* Julia Desmazes 03/13/2026 - this is also needed on some systems for defining the clone syscall */
+#ifndef __USE_GNU
+#define __USE_GNU
+#endif
+
 #include <sched.h>
+
 // SJM 05-30-13 - valut 4x does not support this include
 #ifndef __RHEL4X__
 #include <linux/sched.h>
 #endif
-
-/* AIV 03/28/12 - this is needed for some systems for clone call */
-// #ifndef _GNU_SOURCE
-// ##define _GNU_SOURCE
-// #endif
 
 
 #ifdef __DBMALLOC__
@@ -10588,8 +10595,10 @@ static FILE *my_popen(void)
  /* DBG remove --
  __cv_msg("parent pid=%d\n", getpid());
  -- */
- pid = clone(popen_child_process_func, stack_aligned, 
-        CLONE_VM|SIGCHLD|CLONE_VFORK, NULL);
+ pid = clone(popen_child_process_func, 
+		stack_aligned, 
+        CLONE_VM|SIGCHLD|CLONE_VFORK, 
+		NULL);
  if (pid <= 0) return(NULL);
 
  /* DBG remove -- */
