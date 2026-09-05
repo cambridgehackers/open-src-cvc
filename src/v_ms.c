@@ -3049,7 +3049,7 @@ done:
  */
 static int32 try_chg_tononesc(void) 
 {
- char *chp;
+ char *chp, c;
  int32 len, ctval;
  char s1[IDLEN];
 
@@ -3058,8 +3058,10 @@ static int32 try_chg_tononesc(void)
  chp++;  
  for (len = 0; *chp != '\0'; chp++)
   {
-   if ((ctval = __pv_ctab[*chp & 0x7f]) != 0)
+   c = *chp & 0x7f;
+   if (!(c >= 0x21 && c <= 0x7e))
     {
+     ctval = __pv_ctab[c];
      if (ctval == 1 || ctval == 3)
       {
        /* if next is end of ID \0, then found legal non escaped */
